@@ -19,6 +19,8 @@ namespace QLYVATTU
             InitializeComponent();
         }
 
+        private Datatable dasdsa;
+
         //check form 
         private Form CheckExists(Type ftype)
         {
