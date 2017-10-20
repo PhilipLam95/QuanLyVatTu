@@ -76,10 +76,7 @@ namespace QLYVATTU
 
         }
 
-        private void adsadsa()
-        {
-            
-        }
+    
 
         
     }

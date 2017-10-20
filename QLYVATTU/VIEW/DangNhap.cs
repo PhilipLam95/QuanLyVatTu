@@ -22,6 +22,6 @@ namespace QLYVATTU.VIEW
         {
 
         }
-        private datatable aa;
+       
     }
 }
