@@ -18,10 +18,14 @@ namespace QLYVATTU.VIEW
             InitializeComponent();
         }
 
-        private void DangNhap_Load(object sender, EventArgs e)
+        private void DangNhapcs_Load(object sender, EventArgs e)
         {
 
         }
-       
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
