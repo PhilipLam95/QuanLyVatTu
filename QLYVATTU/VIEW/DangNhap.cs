@@ -13,15 +13,38 @@ namespace QLYVATTU.VIEW
 {
     public partial class DangNhap : DevExpress.XtraEditors.XtraForm
     {
+
+        public DataTable tenchinhanh;
         public DangNhap()
         {
             InitializeComponent();
         }
 
-        private void DangNhap_Load(object sender, EventArgs e)
+        private void DangNhapcs_Load(object sender, EventArgs e)
+        {
+            add_CN();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
         {
 
         }
-       
+
+        private void add_CN()
+        {
+            MODEL.ChiNhanh chinhanh = new MODEL.ChiNhanh();
+            tenchinhanh = chinhanh.getChiNhanh();
+            comboBox1.Items.Clear();
+            foreach (DataRow dr in tenchinhanh.Rows)
+            {
+                comboBox1.Items.Add(dr["TENCN"].ToString());
+            }
+            comboBox1.SelectedIndex = 0;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

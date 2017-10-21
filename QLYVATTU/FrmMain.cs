@@ -19,6 +19,8 @@ namespace QLYVATTU
             InitializeComponent();
         }
 
+        
+
         //check form 
         private Form CheckExists(Type ftype)
         {
