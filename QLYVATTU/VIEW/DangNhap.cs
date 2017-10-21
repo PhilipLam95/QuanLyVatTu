@@ -39,7 +39,7 @@ namespace QLYVATTU.VIEW
             {
                 comboBox1.Items.Add(dr["TENCN"].ToString());
             }
-            comboBox1.SelectedIndex = 0;
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
