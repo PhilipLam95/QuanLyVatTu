@@ -38,19 +38,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -70,6 +70,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(253, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // textBox2
             // 
@@ -162,37 +163,88 @@
             this.panel2.Size = new System.Drawing.Size(1108, 382);
             this.panel2.TabIndex = 9;
             // 
-            // panel3
+            // label15
             // 
-            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(23, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(210, 230);
-            this.panel3.TabIndex = 9;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label15.Location = new System.Drawing.Point(697, 307);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(380, 18);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "8. Hãy vui vẻ, nếu không, mọi thứ đều không đáng.";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
-            // label5
+            // label14
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label5.Location = new System.Drawing.Point(13, 167);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "CÔNG TY TNHH 3 THÀNH VIÊN";
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label14.Location = new System.Drawing.Point(697, 272);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(484, 18);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "7. Luôn giữ mối quan hệ đôi bên cùng có lợi (win-win) với đối tác";
             // 
-            // label6
+            // label13
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label6.Location = new System.Drawing.Point(30, 197);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 33);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "TIN CẬY";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label13.Location = new System.Drawing.Point(697, 234);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(461, 18);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "6. Lắng nghe khách hàng, vì họ hầu như luôn nhìn thấy vấn đề";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.Location = new System.Drawing.Point(697, 199);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(377, 18);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "5. Luôn chuyên nghiệp trong phong cách và lời nói";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.Location = new System.Drawing.Point(697, 95);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(496, 18);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "2. Luôn nói sự thật. Chúng ta muốn nghe tin xấu càng sớm càng tốt";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.Location = new System.Drawing.Point(697, 131);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(631, 18);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "3. Mức độ chính trực cao nhất luôn được mong đợi. Hãy đặt câu hỏi nếu thấy nghi n" +
+    "gờ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.Location = new System.Drawing.Point(697, 164);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(609, 18);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "4. Học cách trở thành doanh nhân giỏi, không chỉ là một nhân viên kinh doanh giỏi" +
+    "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.Location = new System.Drawing.Point(697, 61);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(345, 18);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "1. Vứt bỏ cái cũ, tập trung tối đa cho tương lai";
             // 
             // label7
             // 
@@ -206,88 +258,37 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "NỘI QUY";
             // 
-            // label8
+            // panel3
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(697, 61);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(345, 18);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "1. Vứt bỏ cái cũ, tập trung tối đa cho tương lai";
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(23, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(210, 230);
+            this.panel3.TabIndex = 9;
             // 
-            // label9
+            // label6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(697, 164);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(609, 18);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "4. Học cách trở thành doanh nhân giỏi, không chỉ là một nhân viên kinh doanh giỏi" +
-    "";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label6.Location = new System.Drawing.Point(30, 197);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 33);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "TIN CẬY";
             // 
-            // label10
+            // label5
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(697, 131);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(631, 18);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "3. Mức độ chính trực cao nhất luôn được mong đợi. Hãy đặt câu hỏi nếu thấy nghi n" +
-    "gờ";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(697, 95);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(496, 18);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "2. Luôn nói sự thật. Chúng ta muốn nghe tin xấu càng sớm càng tốt";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(697, 199);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(377, 18);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "5. Luôn chuyên nghiệp trong phong cách và lời nói";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label13.Location = new System.Drawing.Point(697, 234);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(461, 18);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "6. Lắng nghe khách hàng, vì họ hầu như luôn nhìn thấy vấn đề";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label14.Location = new System.Drawing.Point(697, 272);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(484, 18);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "7. Luôn giữ mối quan hệ đôi bên cùng có lợi (win-win) với đối tác";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label15.Location = new System.Drawing.Point(697, 307);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(380, 18);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "8. Hãy vui vẻ, nếu không, mọi thứ đều không đáng.";
-            this.label15.Click += new System.EventHandler(this.label15_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label5.Location = new System.Drawing.Point(13, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "CÔNG TY TNHH 3 THÀNH VIÊN";
             // 
             // DangNhap
             // 
