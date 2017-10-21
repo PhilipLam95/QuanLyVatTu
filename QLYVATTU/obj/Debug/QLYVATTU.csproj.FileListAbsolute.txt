@@ -70,3 +70,5 @@ F:\ProjectPhantan\QLYVATTU\QLYVATTU\bin\Debug\de\DevExpress.XtraLayout.v16.1.res
 F:\ProjectPhantan\QLYVATTU\QLYVATTU\bin\Debug\es\DevExpress.XtraLayout.v16.1.resources.dll
 F:\ProjectPhantan\QLYVATTU\QLYVATTU\bin\Debug\ja\DevExpress.XtraLayout.v16.1.resources.dll
 F:\ProjectPhantan\QLYVATTU\QLYVATTU\bin\Debug\ru\DevExpress.XtraLayout.v16.1.resources.dll
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
