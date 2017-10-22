@@ -1,28 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+
 
 namespace QLYVATTU.MODEL
 {
     class Access
     {
-    	public static String DATA_SOURCE = @"DELL-A75\SERVER1";//địa chỉ cơ sở dữ liệu
-        public static String INITIAL_CATALOG = "QLVT";//tên cơ sở dữ liệu
+
+        public static String DATA_SOURCE = @"DELL-A75\SERVER1";//địa chỉ cơ sở dữ liệu
+        public static String INITIAL_CATALOG = "QL_VATTU";//tên cơ sở dữ liệu
         public static String CONNECTION_STRING;// 
         public static String USERNAME = "sa";//tài khoản
         public static String PASSWORD = "123";//mật khẩu
 
+        //thông tin tài khoản đang đăng nhập
+        public static String HOTEN = "";
+        public static String ROLE = "";
+        public static String MANV = "";
 
+        public static List<Connection> CnnList = new List<Connection>();
 
         public static SqlConnection con;
         public static bool Open()
         {
-     
             if (con != null)
             {
                 if (con.State == ConnectionState.Open)
@@ -30,17 +33,14 @@ namespace QLYVATTU.MODEL
             }
             try
             {
-              
                 con = new SqlConnection();
                 CONNECTION_STRING = "Data Source=" + DATA_SOURCE + "; "
                         + "Initial Catalog=" + INITIAL_CATALOG + ";"
-                        + "Persist Security Info=True" + ";" 
+                        + "Persist Security Info=True" + ";"
                         + "User ID =" + USERNAME + ";"
-                        + "password =" + PASSWORD +";";
+                        + "password =" + PASSWORD;
                 con.ConnectionString = CONNECTION_STRING;
                 con.Open();
-                MessageBox.Show(CONNECTION_STRING);
-
 
                 return true;
             }
@@ -51,8 +51,7 @@ namespace QLYVATTU.MODEL
             }
         }
 
-
-         //thực thi sp ép về dạng reader
+        //thực thi sp ép về dạng reader
         public static SqlDataReader execSP(String sp, SqlParameter[] param)
         {
             SqlDataReader sdr;
@@ -80,7 +79,7 @@ namespace QLYVATTU.MODEL
             return sdr;
         }
 
-         //Thực thi SP return int
+        //Thực thi SP return int
         public static int execIntSP(String sp, SqlParameter[] param)
         {
             SqlConnection myCon = new SqlConnection();//tạo connection riêng cho hàm này sử dụng
@@ -129,7 +128,7 @@ namespace QLYVATTU.MODEL
             }
         }
 
-         //Thực thi sp ép về dạng DataTable
+        //Thực thi sp ép về dạng DataTable
         public static DataTable execDataTableSP(String sp, SqlParameter[] param)
         {
             SqlConnection myCon = new SqlConnection();//tạo connection riêng để dùng cho hàm này
@@ -171,13 +170,5 @@ namespace QLYVATTU.MODEL
                     con.Close();
             }
         }
-
-
-
-
-
-
-
-
     }
 }
