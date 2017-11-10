@@ -142,3 +142,5 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\de\DevExpress.Pdf.v16.
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\es\DevExpress.Pdf.v16.1.Core.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ja\DevExpress.Pdf.v16.1.Core.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ru\DevExpress.Pdf.v16.1.Core.resources.dll
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
