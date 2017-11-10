@@ -312,7 +312,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(780, 316);
+            this.panel3.Size = new System.Drawing.Size(780, 270);
             this.panel3.TabIndex = 19;
             // 
             // tboxPassword
@@ -400,9 +400,9 @@
             // 
             this.panel4.Controls.Add(this.sP_LAY_NHANVIENGridControl);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 370);
+            this.panel4.Location = new System.Drawing.Point(0, 324);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(780, 191);
+            this.panel4.Size = new System.Drawing.Size(780, 130);
             this.panel4.TabIndex = 20;
             // 
             // sP_LAY_NHANVIENGridControl
@@ -412,7 +412,7 @@
             this.sP_LAY_NHANVIENGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_LAY_NHANVIENGridControl.MainView = this.gridView1;
             this.sP_LAY_NHANVIENGridControl.Name = "sP_LAY_NHANVIENGridControl";
-            this.sP_LAY_NHANVIENGridControl.Size = new System.Drawing.Size(780, 191);
+            this.sP_LAY_NHANVIENGridControl.Size = new System.Drawing.Size(780, 130);
             this.sP_LAY_NHANVIENGridControl.TabIndex = 0;
             this.sP_LAY_NHANVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -506,7 +506,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 561);
+            this.ClientSize = new System.Drawing.Size(780, 454);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
