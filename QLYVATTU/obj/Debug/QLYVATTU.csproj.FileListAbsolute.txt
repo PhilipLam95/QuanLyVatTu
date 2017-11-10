@@ -116,3 +116,15 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\es\DevExpress.Office.v
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ja\DevExpress.Office.v16.1.Core.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
+E:\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
+E:\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe
+E:\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.pdb
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.FrmMain.resources
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.Properties.Resources.resources
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DangNhap.resources
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.TaoTaiKhoan.resources
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.GenerateResource.Cache
+E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
