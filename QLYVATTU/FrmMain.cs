@@ -138,7 +138,7 @@ namespace QLYVATTU
             if (frm != null) frm.Activate();
             else
             {
-                VIEW.PhieuXuat f = new VIEW.PhieuXuat() { MdiParent = this, Text = "Phiếu xuất" };
+                VIEW.PhieuXuat f = new VIEW.PhieuXuat() { MdiParent = this, Text = "Phiếu xuất " };
                 f.Show();
             }
         }
