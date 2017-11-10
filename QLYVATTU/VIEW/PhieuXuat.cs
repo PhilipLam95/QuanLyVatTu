@@ -24,18 +24,27 @@ namespace QLYVATTU.VIEW
 
         private void PhieuXuat_Load(object sender, EventArgs e)
         {
+            load_khachhang();
+            load_hoadon();
+
+        }
+
+
+        private void load_hoadon()
+        {
+            HoaDon hoadon = new HoaDon();
+            hd = hoadon.getHoaDon();
+            sP_DANHSACHPHIEUXUATGridControl.DataSource = hd;
+            sP_DANHSACHPHIEUXUATGridControl.DataMember = hd.TableName;
+        }
+
+        private void load_khachhang()
+        {
 
             KhachHang khachhang = new KhachHang();
             kh = khachhang.getKhachHang();
             sP_TIMKIEM_KHACHHANGGridControl.DataSource = kh;
             sP_TIMKIEM_KHACHHANGGridControl.DataMember = kh.TableName;
-
-
-            HoaDon hoadon = new HoaDon();
-            hd = hoadon.getHoaDon();
-            sP_DANHSACHPHIEUXUATGridControl.DataSource = hd;
-            sP_DANHSACHPHIEUXUATGridControl.DataMember = hd.TableName;
-
         }
 
         private void sP_DANHSACHPHIEUXUATGridControl_Click(object sender, EventArgs e)
