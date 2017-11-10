@@ -10,7 +10,7 @@ namespace QLYVATTU.MODEL
     {
         public string Name { get; set; }
         public string DataSource { get; set; }
-        public string InitCatalog { get; set; }
+        public string MaCN { get; set; }
     
     }
 }

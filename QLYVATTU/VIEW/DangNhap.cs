@@ -68,27 +68,28 @@ namespace QLYVATTU.VIEW
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+
             CheckEmpty();
             Connection cnn = Access.CnnList[comboBox1.SelectedIndex];
-            Access.DATA_SOURCE = cnn.DataSource;
-            Access.INITIAL_CATALOG = cnn.InitCatalog;
-            string username = tboxTaiKhoan.Text.Trim().ToUpper();
-            string password = tboxMatKhau.Text.Trim();
-            Access.USERNAME = username;
-            Access.PASSWORD = password;
+                Access.DATA_SOURCE = cnn.DataSource;
+                Access.MACN = cnn.MaCN;
+                string username = tboxTaiKhoan.Text.Trim().ToUpper();
+                string password = tboxMatKhau.Text.Trim();
+                Access.USERNAME = username;
+                Access.PASSWORD = password;
 
-            if (!Access.Open())
+            if (!Access.Connect())
             {
-                MessageBox.Show("Không thể kết nối đến máy chủ !!!");
+                MessageBox.Show("Tài khoản hoặc mật khẩu của bạn đã sai !!!");
                 return;
             }
             else
             {
                 try
                 {
-                    SqlParameter[] param = new SqlParameter[1];
+                    /*SqlParameter[] param = new SqlParameter[1];
                     param[0] = new SqlParameter("@LOGINNAME", Access.USERNAME);
-                    SqlDataReader reader = Access.execSP("SP_DANGNHAP", param);
+                    SqlDataReader reader = Access.ExecSqlDataReader("SP_DANGNHAP", param);
                     if (reader.Read())
                     {
                         Console.WriteLine(reader["MANV"].ToString() + reader["HOTEN"].ToString() + reader["ROLE"].ToString());
@@ -109,10 +110,10 @@ namespace QLYVATTU.VIEW
                            
                             return;
                         }
-                        */
+                        
 
 
-                    }
+                    }*/
                 }
 
                 catch
