@@ -120,6 +120,7 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
 >>>>>>> bb48f85fdc3b4e65f506d77fc7120fd8c680159c
 E:\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
 E:\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe
@@ -131,3 +132,6 @@ E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DangNhap.resources
 E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.TaoTaiKhoan.resources
 E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.GenerateResource.Cache
 E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
+=======
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.PhieuXuat.resources
+>>>>>>> cea8b184bd2fe178c4a72cc2a95bb7cfdd978d65
