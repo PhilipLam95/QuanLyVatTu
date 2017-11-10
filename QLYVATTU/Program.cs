@@ -22,7 +22,7 @@ namespace QLYVATTU
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            MODEL.Access.Open();
+            MODEL.Access.Connect();
 
             fmain = new FrmMain();
             Application.Run(fmain);

@@ -10,11 +10,12 @@ namespace QLYVATTU.MODEL
     class Access
     {
 
-        public static String DATA_SOURCE = @"DELL-A75\SERVER1";//địa chỉ cơ sở dữ liệu
+        public static String DATA_SOURCE = @"DELL-A75\SERVER_0";//địa chỉ cơ sở dữ liệu
         public static String INITIAL_CATALOG = "QL_VATTU";//tên cơ sở dữ liệu
         public static String CONNECTION_STRING;// 
         public static String USERNAME = "sa";//tài khoản
         public static String PASSWORD = "123";//mật khẩu
+        public static string MACN = ""; // Ma chi nhanh
 
         //thông tin tài khoản đang đăng nhập
         public static String HOTEN = "";
@@ -23,152 +24,144 @@ namespace QLYVATTU.MODEL
 
         public static List<Connection> CnnList = new List<Connection>();
 
-        public static SqlConnection con;
-        public static bool Open()
+        public static SqlConnection connection;
+
+
+
+
+        public static bool Connect()
         {
-            if (con != null)
-            {
-                if (con.State == ConnectionState.Open)
-                    con.Close();
-            }
+            if (connection != null && connection.State == ConnectionState.Open)
+                connection.Close();
             try
             {
-                con = new SqlConnection();
-                CONNECTION_STRING = "Data Source=" + DATA_SOURCE + "; "
-                        + "Initial Catalog=" + INITIAL_CATALOG + ";"
-                        + "Persist Security Info=True" + ";"
-                        + "User ID =" + USERNAME + ";"
-                        + "password =" + PASSWORD;
-                con.ConnectionString = CONNECTION_STRING;
-                con.Open();
+                /*string connectionString = string.Format(@"Data Source={0};Initial Catalog={1};Persist Security Info=True;
+                                        User ID={2};Password={3};", dataSource, initCatalog, username, password);*/
+                string connectionString = string.Format(@"Data Source=" + DATA_SOURCE + ";" + "Initial Catalog=" + INITIAL_CATALOG + ";"
+                    + "Persist Security Info=True" + ";" + "User ID=" +  USERNAME+ ";" + "password=" + PASSWORD + ";");
 
+
+                
+               /* string connectionString = string.Format(@"Data Source=DELL-PC\SERVER_ONE;Initial Catalog=QLDSV;Persist Security Info=True;User ID=sa;Password=123");*/
+                connection = new SqlConnection(connectionString);
+                connection.Open();
                 return true;
             }
             catch (Exception e)
             {
-                Console.WriteLine("ERR---------" + e.ToString());
+                MessageBox.Show(e.Message);
                 return false;
             }
+
         }
 
-        //thực thi sp ép về dạng reader
-        public static SqlDataReader execSP(String sp, SqlParameter[] param)
+        public static void Close()
         {
-            SqlDataReader sdr;
-            try
-            {
-                SqlConnection myCon = new SqlConnection();//tạo kết nối riêng cho hàm này sử dụng, vì khi SqlDataReader sử dụng connection thì những thực thi khác k thể dùng connection này nữa
-                myCon.ConnectionString = CONNECTION_STRING;
-                myCon.Open();
-                SqlCommand command = new SqlCommand();
-                command.CommandType = CommandType.StoredProcedure; // định dạng quyền truy xuất này là sp
-                command.CommandText = sp; // câu lệnh sp
-
-                if (param != null)
-                    command.Parameters.AddRange(param); // đưa các thông số vào sp
-
-                command.Connection = myCon;
-                sdr = command.ExecuteReader();
-            }
-            catch (Exception e)
-            {
-                sdr = null;
-                //MessageBox.Show(e.ToString());
-            }
-
-            return sdr;
+            if (connection.State == ConnectionState.Open)
+                connection.Close();
         }
 
-        //Thực thi SP return int
-        public static int execIntSP(String sp, SqlParameter[] param)
+        public static DataTable ExecuteQuery(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
+            CommandType cmdType = CommandType.StoredProcedure)
         {
-            SqlConnection myCon = new SqlConnection();//tạo connection riêng cho hàm này sử dụng
-            myCon.ConnectionString = CONNECTION_STRING;
             try
             {
-                myCon.Open();
-                //tạo command thực thi sp
-                SqlCommand command = new SqlCommand();
-                command.CommandType = CommandType.StoredProcedure;//định dạng thực thi sp
-                command.CommandText = sp;// câu lệnh sp
-                command.Connection = myCon; // connect tới csdl
-
-                //tạo biến SqlParam nhận giá trị return
-                SqlParameter returnValue = new SqlParameter("@Return", SqlDbType.Int);
-                returnValue.Direction = ParameterDirection.ReturnValue;
-                command.Parameters.Add(returnValue);
-                //truyền đối số cần thiết vào sp
-                if (param != null)
-                    command.Parameters.AddRange(param);
-                command.ExecuteNonQuery();//thưc thi
-                int intReturn = 0;
-                //ép về int32 và return
-                try
+                DataTable dataTable;
+                if (connection == null || connection.State == ConnectionState.Closed)
                 {
-                    intReturn = Convert.ToInt32(returnValue.Value);
+                    Connect();
                 }
-                catch (Exception e)
+                using (SqlCommand sqlCmd = new SqlCommand(_cmd, connection))
                 {
-                    intReturn = 0;
-                    Console.WriteLine(e.ToString());
+                    for (int i = 0; i < NoParam; i++)
+                    {
+                        sqlCmd.Parameters.AddWithValue(name[i], value[i]);
+                    }
+                    sqlCmd.CommandType = cmdType;
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCmd);
+                    dataTable = new DataTable();
+                    Close();
+                    dataAdapter.Fill(dataTable);
+                    Close();
                 }
-
-                //đóng kết nối
-                if (myCon.State == ConnectionState.Open)
-                    myCon.Close();
-                return intReturn;
+                return dataTable;
             }
-            catch (Exception e)
+            catch (SqlException e)
             {
-                Console.WriteLine(e.ToString());
-                //đóng kết nối
-                if (myCon.State == ConnectionState.Open)
-                    myCon.Close();
+                MessageBox.Show(e.Message);
+                Close();
+                return null;
+            }
+
+        }
+
+        
+
+
+        public static SqlDataReader ExecSqlDataReader(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
+                    CommandType cmdType = CommandType.StoredProcedure)
+        {
+            try
+            {
+                SqlDataReader reader;
+                if (connection == null || connection.State == ConnectionState.Closed)
+                    Connect();
+                using (SqlCommand sqlCmd = new SqlCommand(_cmd, connection) { CommandType = CommandType.Text })
+                {
+                    for (int i = 0; i < NoParam; i++)
+                    {
+                        sqlCmd.Parameters.AddWithValue(name[i], value[i]);
+                    }
+                    sqlCmd.CommandType = cmdType;
+                    reader = sqlCmd.ExecuteReader();
+                }
+                return reader;
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+                Close();
+                return null;
+            }
+
+        }
+
+        public static int ExecuteNonQuery(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
+            CommandType cmdType = CommandType.StoredProcedure)
+        {
+            int retval;
+            if (connection == null || connection.State == ConnectionState.Closed)
+            {
+                Connect();
+            }
+            try
+            {
+                using (SqlCommand sqlCmd = new SqlCommand(_cmd, connection))
+                {
+                    for (int i = 0; i < NoParam; i++)
+                    {
+                        sqlCmd.Parameters.AddWithValue(name[i], value[i]);
+                    }
+                    SqlParameter retParam = new SqlParameter() 
+                        { 
+                            SqlDbType = SqlDbType.Int, 
+                            ParameterName = "@retParam", 
+                            Direction = ParameterDirection.ReturnValue 
+                        };
+                    sqlCmd.Parameters.Add(retParam);
+                    sqlCmd.CommandType = cmdType;
+                    sqlCmd.ExecuteNonQuery();
+                    retval = (int)sqlCmd.Parameters["@retParam"].Value;
+                    Close();
+                }
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.Message);
+                Close();
                 return -1;
             }
-        }
-
-        //Thực thi sp ép về dạng DataTable
-        public static DataTable execDataTableSP(String sp, SqlParameter[] param)
-        {
-            SqlConnection myCon = new SqlConnection();//tạo connection riêng để dùng cho hàm này
-            myCon.ConnectionString = CONNECTION_STRING;
-            DataTable dt = new DataTable();
-            try
-            {
-                myCon.Open();//mở connect
-                //tạo command thực thi sp
-                SqlCommand command = new SqlCommand();
-                command.CommandType = CommandType.StoredProcedure;//khai báo thực thi dạng sp
-                command.CommandText = sp;//khai báo sp để thực thi
-                command.Connection = myCon;
-                //truyền thông số vào sp
-                if (param != null)
-                    command.Parameters.AddRange(param);
-
-                //tạo DataAdapter để đổ dữ liệu vào DataTable
-                SqlDataAdapter da = new SqlDataAdapter();
-                da.SelectCommand = command;
-                da.Fill(dt);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            //đóng connect
-            if (myCon.State == ConnectionState.Open)
-                myCon.Close();
-            return dt;
-        }
-
-
-        public static void close()
-        {
-            if (con != null)
-            {
-                if (con.State == ConnectionState.Open)
-                    con.Close();
-            }
+            return retval;
         }
     }
 }

@@ -32,7 +32,7 @@ namespace QLYVATTU
         {
             ChiNhanh chinhanh = new ChiNhanh();
             tenchinhanh = chinhanh.getChiNhanh();
-            Console.WriteLine(tenchinhanh);
+
             if (tenchinhanh == null)
             {
                 MessageBox.Show("Lỗi CDSL! Không thể lấy danh sách chi nhánh");
@@ -50,7 +50,7 @@ namespace QLYVATTU
                 {
                     Name = dr["TENCN"].ToString(),
                     DataSource = dr["DATASOURCE"].ToString(),
-                    InitCatalog = dr["INITCATALOG"].ToString()
+                    MaCN = dr["MA_CHINHANH"].ToString(),
 
                 };
                 Access.CnnList.Add(cnn);
