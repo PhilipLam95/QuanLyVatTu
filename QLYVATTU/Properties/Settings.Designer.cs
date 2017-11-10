@@ -33,5 +33,15 @@ namespace QLYVATTU.Properties {
                 return ((string)(this["QL_VATTU1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DELL-A75\\SERVER_0;Initial Catalog=QL_VATTU;User ID=sa;Password=123")]
+        public string QL_VATTUConnectionString {
+            get {
+                return ((string)(this["QL_VATTUConnectionString"]));
+            }
+        }
     }
 }
