@@ -12,7 +12,6 @@ namespace QLYVATTU.MODEL
 
         public static String DATA_SOURCE = @"DELL-A75\SERVER_0";//địa chỉ cơ sở dữ liệu
         public static String INITIAL_CATALOG = "QL_VATTU";//tên cơ sở dữ liệu
-        public static String CONNECTION_STRING;// 
         public static String USERNAME = "sa";//tài khoản
         public static String PASSWORD = "123";//mật khẩu
         public static string MACN = ""; // Ma chi nhanh

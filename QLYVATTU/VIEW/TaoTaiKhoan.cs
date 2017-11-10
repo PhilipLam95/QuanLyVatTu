@@ -19,7 +19,7 @@ namespace QLYVATTU.VIEW
             InitializeComponent();
         }
         private DataTable nv;
-        private DataTable x;
+   
 
         private void label1_Click(object sender, EventArgs e)
         {

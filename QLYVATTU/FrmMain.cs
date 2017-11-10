@@ -136,6 +136,15 @@ namespace QLYVATTU
             labelten.Text = "xin chào:" + " " + Access.hoTen;*/
         }
 
-       
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(VIEW.PhieuXuat));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.PhieuXuat f = new VIEW.PhieuXuat() { MdiParent = this, Text = "Phiếu xuất " };
+                f.Show();
+            }
+        }
     }
 }
