@@ -127,7 +127,7 @@
             // 
             // panel1
             // 
-            this.panel1.AutoScroll = true;
+            this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.sP_DANHSACHPHIEUXUATGridControl);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
