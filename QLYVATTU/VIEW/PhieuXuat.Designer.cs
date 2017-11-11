@@ -48,14 +48,16 @@
             this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hOTENTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.sP_TIMKIEM_KHACHHANGGridControl = new DevExpress.XtraGrid.GridControl();
             this.sP_TIMKIEM_KHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tboxHotenSearch = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.sP_TIMKIEM_KHACHHANGGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             hotenTbox = new System.Windows.Forms.Label();
             tENKHOLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -70,11 +72,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.kHACHHANGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_TIMKIEM_KHACHHANGGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_TIMKIEM_KHACHHANGBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_TIMKIEM_KHACHHANGGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // hotenTbox
@@ -164,6 +166,8 @@
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.sdtTbox);
             this.groupBox1.Controls.Add(label2);
             this.groupBox1.Controls.Add(this.diachiTbox);
@@ -174,7 +178,7 @@
             this.groupBox1.Controls.Add(this.hOTENTextBox);
             this.groupBox1.Location = new System.Drawing.Point(1, 187);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(481, 125);
+            this.groupBox1.Size = new System.Drawing.Size(481, 127);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Khách Hàng Và Kho Xuất";
@@ -207,7 +211,7 @@
             this.tenkhoCompobox.FormattingEnabled = true;
             this.tenkhoCompobox.Location = new System.Drawing.Point(96, 85);
             this.tenkhoCompobox.Name = "tenkhoCompobox";
-            this.tenkhoCompobox.Size = new System.Drawing.Size(121, 21);
+            this.tenkhoCompobox.Size = new System.Drawing.Size(139, 21);
             this.tenkhoCompobox.TabIndex = 3;
             // 
             // kHOBindingSource
@@ -238,36 +242,10 @@
             this.groupBox2.Text = "Tìm kiếm Khách hàng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.sP_TIMKIEM_KHACHHANGGridControl);
-            this.panel2.Location = new System.Drawing.Point(6, 59);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(426, 121);
-            this.panel2.TabIndex = 3;
-            // 
-            // sP_TIMKIEM_KHACHHANGGridControl
-            // 
-            this.sP_TIMKIEM_KHACHHANGGridControl.DataSource = this.sP_TIMKIEM_KHACHHANGBindingSource;
-            this.sP_TIMKIEM_KHACHHANGGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sP_TIMKIEM_KHACHHANGGridControl.Location = new System.Drawing.Point(0, 0);
-            this.sP_TIMKIEM_KHACHHANGGridControl.MainView = this.gridView2;
-            this.sP_TIMKIEM_KHACHHANGGridControl.Name = "sP_TIMKIEM_KHACHHANGGridControl";
-            this.sP_TIMKIEM_KHACHHANGGridControl.Size = new System.Drawing.Size(426, 121);
-            this.sP_TIMKIEM_KHACHHANGGridControl.TabIndex = 3;
-            this.sP_TIMKIEM_KHACHHANGGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
             // sP_TIMKIEM_KHACHHANGBindingSource
             // 
             this.sP_TIMKIEM_KHACHHANGBindingSource.DataMember = "SP_TIMKIEM_KHACHHANG";
             this.sP_TIMKIEM_KHACHHANGBindingSource.DataSource = this.qL_VATTUDataSet;
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.sP_TIMKIEM_KHACHHANGGridControl;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
             // simpleButton1
             // 
@@ -305,11 +283,55 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Mặt Hàng Trong Phiếu";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(277, 85);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "OK";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(382, 85);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Hủy";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // sP_TIMKIEM_KHACHHANGGridControl
+            // 
+            this.sP_TIMKIEM_KHACHHANGGridControl.DataSource = this.sP_TIMKIEM_KHACHHANGBindingSource;
+            this.sP_TIMKIEM_KHACHHANGGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sP_TIMKIEM_KHACHHANGGridControl.Location = new System.Drawing.Point(0, 0);
+            this.sP_TIMKIEM_KHACHHANGGridControl.MainView = this.gridView2;
+            this.sP_TIMKIEM_KHACHHANGGridControl.Name = "sP_TIMKIEM_KHACHHANGGridControl";
+            this.sP_TIMKIEM_KHACHHANGGridControl.Size = new System.Drawing.Size(426, 121);
+            this.sP_TIMKIEM_KHACHHANGGridControl.TabIndex = 3;
+            this.sP_TIMKIEM_KHACHHANGGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.sP_TIMKIEM_KHACHHANGGridControl;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.sP_TIMKIEM_KHACHHANGGridControl);
+            this.panel2.Location = new System.Drawing.Point(6, 59);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(426, 121);
+            this.panel2.TabIndex = 3;
+            // 
             // PhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 466);
+            this.ClientSize = new System.Drawing.Size(924, 466);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -328,11 +350,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sP_TIMKIEM_KHACHHANGGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_TIMKIEM_KHACHHANGBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sP_TIMKIEM_KHACHHANGGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,10 +378,12 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.TextBox tboxHotenSearch;
         private System.Windows.Forms.BindingSource sP_TIMKIEM_KHACHHANGBindingSource;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl sP_TIMKIEM_KHACHHANGGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
