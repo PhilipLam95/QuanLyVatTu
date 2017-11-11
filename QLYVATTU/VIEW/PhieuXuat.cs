@@ -62,5 +62,10 @@ namespace QLYVATTU.VIEW
         {
 
         }
+
+        private void hotenTbox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
