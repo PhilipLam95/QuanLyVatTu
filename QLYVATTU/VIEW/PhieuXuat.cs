@@ -72,5 +72,31 @@ namespace QLYVATTU.VIEW
         {
 
         }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+               // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
