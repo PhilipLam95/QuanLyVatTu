@@ -60,8 +60,8 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.contaner = new System.Windows.Forms.Panel();
             this.pnleft = new System.Windows.Forms.Panel();
-            this.pnCTPX = new System.Windows.Forms.Panel();
             this.pnKHC = new System.Windows.Forms.Panel();
+            this.pnCTPX = new System.Windows.Forms.Panel();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -220,9 +220,6 @@
             // 
             // gbKH
             // 
-            this.gbKH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbKH.Controls.Add(this.button2);
             this.gbKH.Controls.Add(this.button1);
             this.gbKH.Controls.Add(this.sdtTbox);
@@ -233,9 +230,10 @@
             this.gbKH.Controls.Add(this.tenkhoCompobox);
             this.gbKH.Controls.Add(hotenTbox);
             this.gbKH.Controls.Add(this.hOTENTextBox);
+            this.gbKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbKH.Location = new System.Drawing.Point(0, 0);
             this.gbKH.Name = "gbKH";
-            this.gbKH.Size = new System.Drawing.Size(530, 136);
+            this.gbKH.Size = new System.Drawing.Size(530, 134);
             this.gbKH.TabIndex = 3;
             this.gbKH.TabStop = false;
             this.gbKH.Text = "Khách Hàng Và Kho Xuất";
@@ -308,7 +306,7 @@
             this.pnTTKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTTKH.Location = new System.Drawing.Point(0, 0);
             this.pnTTKH.Name = "pnTTKH";
-            this.pnTTKH.Size = new System.Drawing.Size(530, 136);
+            this.pnTTKH.Size = new System.Drawing.Size(530, 134);
             this.pnTTKH.TabIndex = 5;
             // 
             // pnphieuxuat
@@ -317,7 +315,7 @@
             this.pnphieuxuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnphieuxuat.Location = new System.Drawing.Point(0, 0);
             this.pnphieuxuat.Name = "pnphieuxuat";
-            this.pnphieuxuat.Size = new System.Drawing.Size(530, 151);
+            this.pnphieuxuat.Size = new System.Drawing.Size(530, 173);
             this.pnphieuxuat.TabIndex = 0;
             // 
             // sP_DANHSACHPHIEUXUATGridControl
@@ -330,7 +328,7 @@
             this.sP_DANHSACHPHIEUXUATGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_DANHSACHPHIEUXUATGridControl.MainView = this.gridView1;
             this.sP_DANHSACHPHIEUXUATGridControl.Name = "sP_DANHSACHPHIEUXUATGridControl";
-            this.sP_DANHSACHPHIEUXUATGridControl.Size = new System.Drawing.Size(530, 151);
+            this.sP_DANHSACHPHIEUXUATGridControl.Size = new System.Drawing.Size(530, 173);
             this.sP_DANHSACHPHIEUXUATGridControl.TabIndex = 0;
             this.sP_DANHSACHPHIEUXUATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -364,27 +362,28 @@
             this.pnleft.Size = new System.Drawing.Size(530, 466);
             this.pnleft.TabIndex = 5;
             // 
-            // pnCTPX
-            // 
-            this.pnCTPX.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnCTPX.Location = new System.Drawing.Point(0, 287);
-            this.pnCTPX.Name = "pnCTPX";
-            this.pnCTPX.Size = new System.Drawing.Size(530, 179);
-            this.pnCTPX.TabIndex = 6;
-            // 
             // pnKHC
             // 
             this.pnKHC.Controls.Add(this.pnTTKH);
             this.pnKHC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnKHC.Location = new System.Drawing.Point(0, 151);
+            this.pnKHC.Location = new System.Drawing.Point(0, 173);
             this.pnKHC.Name = "pnKHC";
-            this.pnKHC.Size = new System.Drawing.Size(530, 136);
+            this.pnKHC.Size = new System.Drawing.Size(530, 134);
             this.pnKHC.TabIndex = 7;
+            // 
+            // pnCTPX
+            // 
+            this.pnCTPX.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnCTPX.Location = new System.Drawing.Point(0, 307);
+            this.pnCTPX.Name = "pnCTPX";
+            this.pnCTPX.Size = new System.Drawing.Size(530, 159);
+            this.pnCTPX.TabIndex = 6;
             // 
             // PhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(941, 466);
             this.Controls.Add(this.contaner);
