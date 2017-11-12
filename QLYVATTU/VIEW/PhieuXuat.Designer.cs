@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label3;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label tENKHOLabel;
             System.Windows.Forms.Label hotenTbox;
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
             this.panel1 = new System.Windows.Forms.Panel();
             this.sP_DANHSACHPHIEUXUATGridControl = new DevExpress.XtraGrid.GridControl();
-            this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource();
+            this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource();
-            this.kHOBindingSource = new System.Windows.Forms.BindingSource();
-            this.sP_TIMKIEM_KHACHHANGBindingSource = new System.Windows.Forms.BindingSource();
+            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_TIMKIEM_KHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tboxHotenSearch = new System.Windows.Forms.TextBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -80,10 +81,53 @@
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(6, 26);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(46, 13);
+            label3.TabIndex = 1;
+            label3.Text = "Họ Tên:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(247, 25);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(78, 13);
+            label2.TabIndex = 6;
+            label2.Text = "Số Điện Thoại:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(15, 59);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(47, 13);
+            label1.TabIndex = 4;
+            label1.Text = "Địa Chỉ :";
+            // 
+            // tENKHOLabel
+            // 
+            tENKHOLabel.AutoSize = true;
+            tENKHOLabel.Location = new System.Drawing.Point(15, 88);
+            tENKHOLabel.Name = "tENKHOLabel";
+            tENKHOLabel.Size = new System.Drawing.Size(76, 13);
+            tENKHOLabel.TabIndex = 2;
+            tENKHOLabel.Text = "Tên Kho Xuất:";
+            // 
+            // hotenTbox
+            // 
+            hotenTbox.AutoSize = true;
+            hotenTbox.Location = new System.Drawing.Point(15, 25);
+            hotenTbox.Name = "hotenTbox";
+            hotenTbox.Size = new System.Drawing.Size(46, 13);
+            hotenTbox.TabIndex = 0;
+            hotenTbox.Text = "Họ Tên:";
+            // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.sP_DANHSACHPHIEUXUATGridControl);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -144,15 +188,6 @@
             this.tboxHotenSearch.Name = "tboxHotenSearch";
             this.tboxHotenSearch.Size = new System.Drawing.Size(211, 20);
             this.tboxHotenSearch.TabIndex = 0;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(6, 26);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(46, 13);
-            label3.TabIndex = 1;
-            label3.Text = "Họ Tên:";
             // 
             // simpleButton1
             // 
@@ -253,15 +288,6 @@
             this.sdtTbox.Size = new System.Drawing.Size(139, 20);
             this.sdtTbox.TabIndex = 7;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(247, 25);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(78, 13);
-            label2.TabIndex = 6;
-            label2.Text = "Số Điện Thoại:";
-            // 
             // diachiTbox
             // 
             this.diachiTbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "HOTEN", true));
@@ -269,24 +295,6 @@
             this.diachiTbox.Name = "diachiTbox";
             this.diachiTbox.Size = new System.Drawing.Size(374, 20);
             this.diachiTbox.TabIndex = 5;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(15, 59);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(47, 13);
-            label1.TabIndex = 4;
-            label1.Text = "Địa Chỉ :";
-            // 
-            // tENKHOLabel
-            // 
-            tENKHOLabel.AutoSize = true;
-            tENKHOLabel.Location = new System.Drawing.Point(15, 88);
-            tENKHOLabel.Name = "tENKHOLabel";
-            tENKHOLabel.Size = new System.Drawing.Size(76, 13);
-            tENKHOLabel.TabIndex = 2;
-            tENKHOLabel.Text = "Tên Kho Xuất:";
             // 
             // tenkhoCompobox
             // 
@@ -296,15 +304,6 @@
             this.tenkhoCompobox.Name = "tenkhoCompobox";
             this.tenkhoCompobox.Size = new System.Drawing.Size(139, 21);
             this.tenkhoCompobox.TabIndex = 3;
-            // 
-            // hotenTbox
-            // 
-            hotenTbox.AutoSize = true;
-            hotenTbox.Location = new System.Drawing.Point(15, 25);
-            hotenTbox.Name = "hotenTbox";
-            hotenTbox.Size = new System.Drawing.Size(46, 13);
-            hotenTbox.TabIndex = 0;
-            hotenTbox.Text = "Họ Tên:";
             // 
             // hOTENTextBox
             // 
