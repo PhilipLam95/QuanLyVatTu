@@ -22,6 +22,8 @@ namespace QLYVATTU.VIEW
             InitializeComponent();
         }
 
+
+        private SqlDataReader reader;
         private void DangNhapcs_Load(object sender, EventArgs e)
         {
             add_CN();
@@ -69,8 +71,8 @@ namespace QLYVATTU.VIEW
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
 
-            CheckEmpty();
-            Connection cnn = Access.CnnList[comboBox1.SelectedIndex];
+                 CheckEmpty();
+                Connection cnn = Access.CnnList[comboBox1.SelectedIndex];
                 Access.DATA_SOURCE = cnn.DataSource;
                 Access.MACN = cnn.MaCN;
                 string username = tboxTaiKhoan.Text.Trim().ToUpper();
@@ -87,38 +89,29 @@ namespace QLYVATTU.VIEW
             {
                 try
                 {
-                    /*SqlParameter[] param = new SqlParameter[1];
-                    param[0] = new SqlParameter("@LOGINNAME", Access.USERNAME);
-                    SqlDataReader reader = Access.ExecSqlDataReader("SP_DANGNHAP", param);
-                    if (reader.Read())
+                    string[] param = { username };
+                    ChiNhanh chinhanh = new ChiNhanh();
+                    reader = chinhanh.getLogin(param);
+                    reader.Read();
+                    if (reader.HasRows)
                     {
                         Console.WriteLine(reader["MANV"].ToString() + reader["HOTEN"].ToString() + reader["ROLE"].ToString());
 
                         Access.ROLE = reader["ROLE"].ToString();
                         Access.HOTEN = reader["HOTEN"].ToString();
                         Access.MANV = reader["MANV"].ToString();
-                        MessageBox.Show(" Đăng Nhập Thành Công ! ");
-                        Program.fmain.HienThiQuyen();
-                        /*
-                        if (Access.ROLE == "CongTy")
+                        if (Access.ROLE == "ChiNhanh")
                         {
-                           
-                            return;
-                        }
-                        if (Access.role == "Chinhanh")
-                        {
-                           
-                            return;
-                        }
-                        
-
-
-                    }*/
+                            MessageBox.Show("Đăng Nhập Thành Công");
+                            Program.fmain.HienThiQuyen_ChiNhanh();
+                        }                   
+                               
+                    }
                 }
 
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Sai thông tin tài khoản");
+                    MessageBox.Show(ex+ "Sai thông tin tài khoản");
                 }
             }
            

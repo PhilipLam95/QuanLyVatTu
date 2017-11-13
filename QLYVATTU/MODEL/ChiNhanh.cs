@@ -20,5 +20,14 @@ namespace QLYVATTU.MODEL
     		DataTable chinhanh = Access.ExecuteQuery(SP_LAYCHINHANH,null);
     		return chinhanh;
     	}
+
+        public SqlDataReader getLogin(string[] param)
+        {
+
+            string[] name = { "@LOGINNAME" };
+            SqlDataReader reader = Access.ExecSqlDataReader("SP_DANGNHAP", name, param, 1);
+            return reader;
+        }
+
     }
 }
