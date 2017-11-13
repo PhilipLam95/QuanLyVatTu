@@ -263,6 +263,7 @@
             this.tboxSDT.Name = "tboxSDT";
             this.tboxSDT.Size = new System.Drawing.Size(168, 21);
             this.tboxSDT.TabIndex = 16;
+            this.tboxSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tboxSDT_KeyPress);
             // 
             // dateTimePicker1
             // 
@@ -567,7 +568,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rabtnChiNhanh;
         private System.Windows.Forms.RadioButton rabtnCongTy;
-        private QL_VATTUDataSet qL_VATTUDataSet1;
         private System.Windows.Forms.TextBox tboxUserName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tboxPassword;
