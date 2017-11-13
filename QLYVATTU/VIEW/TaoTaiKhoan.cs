@@ -19,7 +19,7 @@ namespace QLYVATTU.VIEW
             InitializeComponent();
         }
         private DataTable nv;
-        private DataTable x;
+   
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -47,8 +47,61 @@ namespace QLYVATTU.VIEW
 
         }
 
+
+        private bool CheckForTaoTaiKhoan()
+        {
+            if(tboxUserName.Text == "")
+            {
+                MessageBox.Show("Tên tài khoản không được để trống");
+                return false;
+            }
+
+            if(tboxPassword.Text == "")
+            {
+                MessageBox.Show("Mật Khẩu không được để trống");
+                return false;
+            }
+            if(tboxHo.Text == "" || tboxTen.Text == "")
+            {
+                MessageBox.Show("Họ và tên không được để trống");
+                return false;
+            }
+
+            if(nGAYSINHDateEdit.Text == "")
+            {
+                MessageBox.Show("Hãy chọn ngày sinh");
+                return false;
+            }
+            if(tboxDiachi.Text =="")
+            {
+                MessageBox.Show("Nhập địa chỉ");
+                return false;
+
+            }
+
+            if(tboxSDT.Text== "")
+            {
+                MessageBox.Show("Nhập số điện thoại");
+                return false;
+            }
+
+            if(tboxSDT.MaxLength <9)
+            {
+                MessageBox.Show("Số điện thoại phải từ 9 số trở lên");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+
+         
+        }
+
         private void btnTao_Click(object sender, EventArgs e)
         {
+            CheckForTaoTaiKhoan();
             string ho = tboxHo.Text.ToString();
             string ten = tboxTen.Text.ToString();
             string phai = "";
@@ -80,6 +133,17 @@ namespace QLYVATTU.VIEW
 
 
 
+        }
+
+        private void tboxSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Nhập kiểu số ", "Thông Báo ");
+            }
+
+            
         }
     }
 }

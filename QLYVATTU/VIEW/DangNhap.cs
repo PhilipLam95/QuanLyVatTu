@@ -22,6 +22,8 @@ namespace QLYVATTU.VIEW
             InitializeComponent();
         }
 
+
+        private SqlDataReader reader;
         private void DangNhapcs_Load(object sender, EventArgs e)
         {
             add_CN();
@@ -69,73 +71,65 @@ namespace QLYVATTU.VIEW
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
 
-            CheckEmpty();
-            Connection cnn = Access.CnnList[comboBox1.SelectedIndex];
-                Access.DATA_SOURCE = cnn.DataSource;
-                Access.MACN = cnn.MaCN;
-                string username = tboxTaiKhoan.Text.Trim().ToUpper();
-                string password = tboxMatKhau.Text.Trim();
-                Access.USERNAME = username;
-                Access.PASSWORD = password;
+            try
+            { 
+                    CheckEmpty();
+                    Connection cnn = Access.CnnList[comboBox1.SelectedIndex];
+                    Access.DATA_SOURCE = cnn.DataSource;
+                    Access.MACN = cnn.MaCN;
+                    string username = tboxTaiKhoan.Text.Trim().ToUpper();
+                    string password = tboxMatKhau.Text.Trim();
+                    Access.USERNAME = username;
+                    Access.PASSWORD = password;
 
-            if (!Access.Connect())
-            {
-                MessageBox.Show("Tài khoản hoặc mật khẩu của bạn đã sai !!!");
-                return;
-            }
-            else
-            {
-                try
+                if (!Access.Connect())
                 {
-                    /*SqlParameter[] param = new SqlParameter[1];
-                    param[0] = new SqlParameter("@LOGINNAME", Access.USERNAME);
-                    SqlDataReader reader = Access.ExecSqlDataReader("SP_DANGNHAP", param);
-                    if (reader.Read())
+                    MessageBox.Show("Tài khoản hoặc mật khẩu của bạn đã sai !!!");
+                    return;
+                }
+                else
+                {
+                    try
                     {
-                        Console.WriteLine(reader["MANV"].ToString() + reader["HOTEN"].ToString() + reader["ROLE"].ToString());
-
-                        Access.ROLE = reader["ROLE"].ToString();
-                        Access.HOTEN = reader["HOTEN"].ToString();
-                        Access.MANV = reader["MANV"].ToString();
-                        MessageBox.Show(" Đăng Nhập Thành Công ! ");
-                        Program.fmain.HienThiQuyen();
-                        /*
-                        if (Access.ROLE == "CongTy")
+                        string[] param = { username };
+                        ChiNhanh chinhanh = new ChiNhanh();
+                        reader = chinhanh.getLogin(param);
+                        reader.Read();
+                        if (reader.HasRows)
                         {
-                           
-                            return;
+                            Console.WriteLine(reader["MANV"].ToString() + reader["HOTEN"].ToString() + reader["ROLE"].ToString());
+
+                            Access.ROLE = reader["ROLE"].ToString();
+                            Access.HOTEN = reader["HOTEN"].ToString();
+                            Access.MANV = reader["MANV"].ToString();
+                            if (Access.ROLE == "ChiNhanh")
+                            {
+                                MessageBox.Show("Đăng Nhập Thành Công");
+                                Program.fmain.HienThiQuyen_ChiNhanh();
+                            }
+
+                            if (Access.ROLE == "CongTy")
+                            {
+                                MessageBox.Show("Đăng Nhập Thành Công");
+                                Program.fmain.HienThiQuyen_CongTy();
+                            }
+
                         }
-                        if (Access.role == "Chinhanh")
-                        {
-                           
-                            return;
-                        }
-                        
+                    }
 
-
-                    }*/
-                }
-
-                catch
-                {
-                    MessageBox.Show("Sai thông tin tài khoản");
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex + "Sai thông tin tài khoản");
+                    }
                 }
             }
-           
-
-
-
-            /* foreach (DataRow dr in tenchinhanh.Rows)
-             {
-                 if ( dr["TENCN"].ToString() == comboBox1.Text)
-                 {
-
-                 }
-
-             }*/
-
-
+            catch
+            {
+                    MessageBox.Show("Không Tồn Tại Server này!!!. Mời bạn chọn lại " );
+            }
         }
+
+    
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {

@@ -10,11 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace QLYVATTU
 {
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        //goi view
+
         public static FrmMain INSTANCE;
         public FrmMain()
         {
@@ -26,6 +27,8 @@ namespace QLYVATTU
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadSetting();
+            VIEW.DangNhap f = new VIEW.DangNhap() { MdiParent = this, Text = "Đăng nhập" };
+            f.Show();
         }
 
         private void LoadSetting() // cài đặt begin
@@ -74,18 +77,6 @@ namespace QLYVATTU
 
         }
 
-        private void btnDangNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//FORM DANG NHAP
-        {
-
-            Form frm = this.CheckExists(typeof(VIEW.DangNhap));
-            if (frm != null) frm.Activate();
-            else
-            {
-                VIEW.DangNhap f = new VIEW.DangNhap() { MdiParent = this, Text = "Đăng nhập" };
-                f.Show();
-            }
-
-        }
 
         private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//FORM LOAI HÀNG
         {
@@ -120,18 +111,70 @@ namespace QLYVATTU
         {
 
         }
-        public void HienThiQuyen()
+
+
+        public void HienThiTrangChu()
         {
-          
-
-            foreach (Form f in this.MdiChildren)
-                f.Close();
-
-           /* labelten.Visible = true;
-            btnOut.Visible = true;
-            labelten.Text = "xin chào:" + " " + Access.hoTen;*/
+            btnLoaiHang.Enabled = true;
+            btnHang.Enabled = true;
+            btnNhaCC.Enabled = true;
+            btnKhachHang.Enabled = true;
+            btnDoiMatKhau.Enabled = true;
+            //btnDangXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnDangXuat.Visible = true;
         }
 
-       
+
+        public void AnTrangChu()
+        {
+            btnLoaiHang.Enabled = false;
+            btnHang.Enabled = false;
+            btnNhaCC.Enabled = false;
+            btnKhachHang.Enabled = false;
+            btnDoiMatKhau.Enabled = false;
+            // btnDangXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnDangXuat.Visible = false;
+        }
+        public void HienThiQuyen_ChiNhanh()
+        {
+
+            HienThiTrangChu();
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Hide();
+            }
+        }
+
+        public void HienThiQuyen_CongTy()
+        {
+            HienThiTrangChu();
+            if (ActiveMdiChild != null)
+            {
+                ActiveMdiChild.Hide();
+            }
+        }
+
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(VIEW.PhieuXuat));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.PhieuXuat f = new VIEW.PhieuXuat() { MdiParent = this, Text = "Phiếu xuất " };
+                f.Show();
+            }
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            foreach (Form c in this.MdiChildren)
+            {
+                c.Close();
+            }
+            AnTrangChu();
+            VIEW.DangNhap f = new VIEW.DangNhap() { MdiParent = this, Text = "Đăng nhập" };
+            f.Show();
+        }
     }
 }
