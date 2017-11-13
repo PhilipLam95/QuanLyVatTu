@@ -10,11 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace QLYVATTU
 {
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        //goi view
+       VIEW.DangNhap form_dangnhap;
+
+
+
+
+
         public static FrmMain INSTANCE;
         public FrmMain()
         {
@@ -120,16 +126,25 @@ namespace QLYVATTU
         {
 
         }
-        public void HienThiQuyen()
+        public void HienThiQuyen_ChiNhanh()
         {
-          
 
-            foreach (Form f in this.MdiChildren)
-                f.Close();
+            btnDangNhap.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnDangXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnDoiMatKhau.Enabled = true;
+            btnHang.Enabled = true;
+            btnLoaiHang.Enabled = true;
+            ribbonPage2.Visible = true;
+            rbpNghiepVu.Visible = true;
+            rbpBaoCao.Visible = true;
+            rbDoiTac.Visible = true;
 
-           /* labelten.Visible = true;
-            btnOut.Visible = true;
-            labelten.Text = "xin chào:" + " " + Access.hoTen;*/
+
+
+
+            /* labelten.Visible = true;
+             btnOut.Visible = true;
+             labelten.Text = "xin chào:" + " " + Access.hoTen;*/
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
