@@ -31,7 +31,7 @@ namespace QLYVATTU.VIEW
 
         }
 
-       
+      
 
         private void TaoTaiKhoan_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,23 @@ namespace QLYVATTU.VIEW
             nv = nhanvien.getNhanVien();
             sP_LAY_NHANVIENGridControl.DataSource = nv;
            sP_LAY_NHANVIENGridControl.DataMember = nv.TableName;
+            Check_role_congty();
 
+        }
+
+
+        private void Check_role_congty()
+        {
+            if(Access.ROLE == "CongTy")
+            {
+               
+                rabtnChiNhanh.Checked = false;
+                rabtnChiNhanh.Visible = false;
+                rabtnUser.Checked = false;
+                rabtnUser.Visible = false;
+                rabtnCongTy.Checked = true;
+                rabtnCongTy.Visible = true;
+            }
         }
 
         private void gridView1_Click(object sender, EventArgs e)
@@ -113,13 +129,31 @@ namespace QLYVATTU.VIEW
             {
                 phai = rabtnNu.Text.ToString();
             }
+            string role = "";
+            if (Access.ROLE == "ChiNhanh")
+            {
+                if (rabtnUser.Checked == true)
+                {
+                    role = rabtnUser.Text.ToString();
+                }
+                else
+                {
+                    role = rabtnChiNhanh.Text.ToString();
+                }
+            }
+            else
+            {
+                role = Access.ROLE;
+            }
+
+
             DateTime ngaysinh = this.nGAYSINHDateEdit.DateTime;
             string  nsinh = String.Format("{0:MM-dd-yyyy}", ngaysinh);
             string diachi = tboxDiachi.Text.ToString();
             string sodt = tboxSDT.Text.ToString();
             string password = tboxPassword.Text.ToString();
             string username = tboxUserName.Text.ToString();
-            string role = "CHINHANH";
+            //string role = "CHINHANH";
             string[] param = { ho, ten, phai , nsinh,diachi,sodt, username , password, role };
             NhanVien nhanvien = new NhanVien();
             int x  =  nhanvien.InserCusomer(param);

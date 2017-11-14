@@ -57,7 +57,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rabtnChiNhanh = new System.Windows.Forms.RadioButton();
-            this.rabtnCongTy = new System.Windows.Forms.RadioButton();
+            this.rabtnUser = new System.Windows.Forms.RadioButton();
             this.btnTao = new DevExpress.XtraEditors.SimpleButton();
             this.panel4 = new System.Windows.Forms.Panel();
             this.sP_LAY_NHANVIENGridControl = new DevExpress.XtraGrid.GridControl();
@@ -71,6 +71,7 @@
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSODT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.rabtnCongTy = new System.Windows.Forms.RadioButton();
             nGAYSINHLabel = new System.Windows.Forms.Label();
             sODTLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -354,14 +355,15 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rabtnChiNhanh);
             this.groupBox1.Controls.Add(this.rabtnCongTy);
+            this.groupBox1.Controls.Add(this.rabtnChiNhanh);
+            this.groupBox1.Controls.Add(this.rabtnUser);
             this.groupBox1.Location = new System.Drawing.Point(361, 229);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 45);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Chọn nhóm";
+            this.groupBox1.Text = "Nhóm";
             // 
             // rabtnChiNhanh
             // 
@@ -371,19 +373,18 @@
             this.rabtnChiNhanh.Name = "rabtnChiNhanh";
             this.rabtnChiNhanh.Size = new System.Drawing.Size(78, 17);
             this.rabtnChiNhanh.TabIndex = 20;
-            this.rabtnChiNhanh.TabStop = true;
             this.rabtnChiNhanh.Text = "CHINHANH";
             this.rabtnChiNhanh.UseVisualStyleBackColor = true;
             // 
-            // rabtnCongTy
+            // rabtnUser
             // 
-            this.rabtnCongTy.AutoSize = true;
-            this.rabtnCongTy.Location = new System.Drawing.Point(19, 20);
-            this.rabtnCongTy.Name = "rabtnCongTy";
-            this.rabtnCongTy.Size = new System.Drawing.Size(66, 17);
-            this.rabtnCongTy.TabIndex = 20;
-            this.rabtnCongTy.Text = "CONGTY";
-            this.rabtnCongTy.UseVisualStyleBackColor = true;
+            this.rabtnUser.AutoSize = true;
+            this.rabtnUser.Location = new System.Drawing.Point(19, 20);
+            this.rabtnUser.Name = "rabtnUser";
+            this.rabtnUser.Size = new System.Drawing.Size(51, 17);
+            this.rabtnUser.TabIndex = 20;
+            this.rabtnUser.Text = "USER";
+            this.rabtnUser.UseVisualStyleBackColor = true;
             // 
             // btnTao
             // 
@@ -503,6 +504,17 @@
             this.colSODT.Visible = true;
             this.colSODT.VisibleIndex = 7;
             // 
+            // rabtnCongTy
+            // 
+            this.rabtnCongTy.AutoSize = true;
+            this.rabtnCongTy.Location = new System.Drawing.Point(76, 20);
+            this.rabtnCongTy.Name = "rabtnCongTy";
+            this.rabtnCongTy.Size = new System.Drawing.Size(62, 17);
+            this.rabtnCongTy.TabIndex = 21;
+            this.rabtnCongTy.Text = "CongTy";
+            this.rabtnCongTy.UseVisualStyleBackColor = true;
+            this.rabtnCongTy.Visible = false;
+            // 
             // TaoTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,10 +579,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSODT;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rabtnChiNhanh;
-        private System.Windows.Forms.RadioButton rabtnCongTy;
+        private System.Windows.Forms.RadioButton rabtnUser;
         private System.Windows.Forms.TextBox tboxUserName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tboxPassword;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RadioButton rabtnCongTy;
     }
 }
