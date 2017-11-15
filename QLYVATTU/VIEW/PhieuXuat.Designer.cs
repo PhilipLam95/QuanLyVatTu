@@ -62,7 +62,6 @@
             this.pnphieuxuat = new System.Windows.Forms.Panel();
             this.sP_DANHSACHPHIEUXUATGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contaner = new System.Windows.Forms.Panel();
             this.pnRight = new System.Windows.Forms.Panel();
             this.pnVatTu = new System.Windows.Forms.Panel();
@@ -95,10 +94,6 @@
             this.sP_CHITIETHDTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_CHITIETHDTableAdapter();
             this.tableAdapterManager = new QLYVATTU.QL_VATTUDataSetTableAdapters.TableAdapterManager();
             this.sP_DSVT_PHIEUXUATTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_DSVT_PHIEUXUATTableAdapter();
-            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAY = new DevExpress.XtraGrid.Columns.GridColumn();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -416,22 +411,9 @@
             // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAHD,
-            this.colMAKH,
-            this.colMAKHO,
-            this.colMANV,
-            this.colNGAY});
             this.gridView1.GridControl = this.sP_DANHSACHPHIEUXUATGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            // 
-            // colMAHD
-            // 
-            this.colMAHD.FieldName = "Mã Hóa Đơn";
-            this.colMAHD.Name = "colMAHD";
-            this.colMAHD.Visible = true;
-            this.colMAHD.VisibleIndex = 0;
             // 
             // contaner
             // 
@@ -736,34 +718,6 @@
             // 
             this.sP_DSVT_PHIEUXUATTableAdapter.ClearBeforeFill = true;
             // 
-            // colMAKH
-            // 
-            this.colMAKH.FieldName = "Mã Khách Háng";
-            this.colMAKH.Name = "colMAKH";
-            this.colMAKH.Visible = true;
-            this.colMAKH.VisibleIndex = 1;
-            // 
-            // colMAKHO
-            // 
-            this.colMAKHO.FieldName = "Mã Kho";
-            this.colMAKHO.Name = "colMAKHO";
-            this.colMAKHO.Visible = true;
-            this.colMAKHO.VisibleIndex = 2;
-            // 
-            // colMANV
-            // 
-            this.colMANV.FieldName = "Mã Nhân Viên";
-            this.colMANV.Name = "colMANV";
-            this.colMANV.Visible = true;
-            this.colMANV.VisibleIndex = 3;
-            // 
-            // colNGAY
-            // 
-            this.colNGAY.FieldName = "Ngày Lập";
-            this.colNGAY.Name = "colNGAY";
-            this.colNGAY.Visible = true;
-            this.colNGAY.VisibleIndex = 4;
-            // 
             // PhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -854,7 +808,6 @@
         private QL_VATTUDataSetTableAdapters.SP_DSVT_PHIEUXUATTableAdapter sP_DSVT_PHIEUXUATTableAdapter;
         private DevExpress.XtraGrid.GridControl sP_DSVT_PHIEUXUATGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAHD;
         private System.Windows.Forms.GroupBox gbVTChon;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
@@ -869,9 +822,5 @@
         private System.Windows.Forms.GroupBox gbHoanThanh;
         private System.Windows.Forms.Button btHuyPX;
         private System.Windows.Forms.Button btLapPX;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
-        private DevExpress.XtraGrid.Columns.GridColumn colMANV;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAY;
     }
 }
