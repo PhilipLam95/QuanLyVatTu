@@ -76,6 +76,7 @@
     <Compile Include="MODEL\HoaDon.cs" />
     <Compile Include="MODEL\KhachHang.cs" />
     <Compile Include="MODEL\NhanVien.cs" />
+    <Compile Include="MODEL\VatTu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QL_VATTUDataSet.Designer.cs">
