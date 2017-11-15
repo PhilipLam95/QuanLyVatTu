@@ -473,9 +473,7 @@
             // 
             // btHuyPX
             // 
-            this.btHuyPX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btHuyPX.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btHuyPX.Location = new System.Drawing.Point(383, 19);
             this.btHuyPX.Name = "btHuyPX";
             this.btHuyPX.Size = new System.Drawing.Size(103, 28);
