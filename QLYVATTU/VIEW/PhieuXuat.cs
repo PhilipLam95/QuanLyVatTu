@@ -24,6 +24,8 @@ namespace QLYVATTU.VIEW
 
         private void PhieuXuat_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qL_VATTUDataSet.SP_DSVT_PHIEUXUAT' table. You can move, or remove it, as needed.
+            this.sP_DSVT_PHIEUXUATTableAdapter.Fill(this.qL_VATTUDataSet.SP_DSVT_PHIEUXUAT);
 
             KhachHang khachhang = new KhachHang();
             kh = khachhang.getKhachHang();
