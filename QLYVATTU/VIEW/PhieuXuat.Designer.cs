@@ -35,7 +35,7 @@
             System.Windows.Forms.Label hotenTbox;
             System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
             this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource();
@@ -79,11 +79,15 @@
             this.sP_CHITIETHDTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_CHITIETHDTableAdapter();
             this.tableAdapterManager = new QLYVATTU.QL_VATTUDataSetTableAdapters.TableAdapterManager();
             this.sP_DSVT_PHIEUXUATTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_DSVT_PHIEUXUATTableAdapter();
-            this.colMavt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gbVTChon = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.colDONVI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -368,9 +372,9 @@
             // 
             this.sP_DANHSACHPHIEUXUATGridControl.DataSource = this.sP_DANHSACHPHIEUXUATBindingSource;
             this.sP_DANHSACHPHIEUXUATGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.sP_DANHSACHPHIEUXUATGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.sP_DANHSACHPHIEUXUATGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_DANHSACHPHIEUXUATGridControl.MainView = this.gridView1;
             this.sP_DANHSACHPHIEUXUATGridControl.Name = "sP_DANHSACHPHIEUXUATGridControl";
@@ -441,7 +445,11 @@
             // gridView4
             // 
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMavt});
+            this.colDONVI,
+            this.colDONGIA,
+            this.colMALOAI,
+            this.colMAVT,
+            this.colTENVT});
             this.gridView4.GridControl = this.sP_DSVT_PHIEUXUATGridControl;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
@@ -560,13 +568,6 @@
             // 
             this.sP_DSVT_PHIEUXUATTableAdapter.ClearBeforeFill = true;
             // 
-            // colMavt
-            // 
-            this.colMavt.Caption = "gridColumn1";
-            this.colMavt.Name = "colMavt";
-            this.colMavt.Visible = true;
-            this.colMavt.VisibleIndex = 0;
-            // 
             // colMAHD
             // 
             this.colMAHD.FieldName = "MAHD";
@@ -619,6 +620,41 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(34, 20);
             this.textBox3.TabIndex = 0;
+            // 
+            // colDONVI
+            // 
+            this.colDONVI.FieldName = "DONVI";
+            this.colDONVI.Name = "colDONVI";
+            this.colDONVI.Visible = true;
+            this.colDONVI.VisibleIndex = 0;
+            // 
+            // colDONGIA
+            // 
+            this.colDONGIA.FieldName = "DONGIA";
+            this.colDONGIA.Name = "colDONGIA";
+            this.colDONGIA.Visible = true;
+            this.colDONGIA.VisibleIndex = 1;
+            // 
+            // colMALOAI
+            // 
+            this.colMALOAI.FieldName = "MALOAI";
+            this.colMALOAI.Name = "colMALOAI";
+            this.colMALOAI.Visible = true;
+            this.colMALOAI.VisibleIndex = 2;
+            // 
+            // colMAVT
+            // 
+            this.colMAVT.FieldName = "MAVT";
+            this.colMAVT.Name = "colMAVT";
+            this.colMAVT.Visible = true;
+            this.colMAVT.VisibleIndex = 3;
+            // 
+            // colTENVT
+            // 
+            this.colTENVT.FieldName = "TENVT";
+            this.colTENVT.Name = "colTENVT";
+            this.colTENVT.Visible = true;
+            this.colTENVT.VisibleIndex = 4;
             // 
             // PhieuXuat
             // 
@@ -710,9 +746,13 @@
         private DevExpress.XtraGrid.GridControl sP_DSVT_PHIEUXUATGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private DevExpress.XtraGrid.Columns.GridColumn colMAHD;
-        private DevExpress.XtraGrid.Columns.GridColumn colMavt;
         private System.Windows.Forms.GroupBox gbVTChon;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONVI;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOAI;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENVT;
     }
 }
