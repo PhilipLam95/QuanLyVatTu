@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label tENKHOLabel;
             System.Windows.Forms.Label hotenTbox;
             System.Windows.Forms.Label label4;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
-            this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
-            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource();
-            this.kHOBindingSource = new System.Windows.Forms.BindingSource();
-            this.sP_TIMKIEM_KHACHHANGBindingSource = new System.Windows.Forms.BindingSource();
+            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_TIMKIEM_KHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tboxHotenSearch = new System.Windows.Forms.TextBox();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.pnKHG = new System.Windows.Forms.Panel();
@@ -61,12 +62,25 @@
             this.pnphieuxuat = new System.Windows.Forms.Panel();
             this.sP_DANHSACHPHIEUXUATGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAHD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contaner = new System.Windows.Forms.Panel();
             this.pnRight = new System.Windows.Forms.Panel();
             this.pnVatTu = new System.Windows.Forms.Panel();
+            this.gbHoanThanh = new System.Windows.Forms.GroupBox();
+            this.gbVTChon = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lbDonViTinh = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.sP_DSVT_PHIEUXUATGridControl = new DevExpress.XtraGrid.GridControl();
-            this.sP_DSVT_PHIEUXUATBindingSource = new System.Windows.Forms.BindingSource();
+            this.sP_DSVT_PHIEUXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONVI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gbVatTu = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -74,23 +88,13 @@
             this.pnKHC = new System.Windows.Forms.Panel();
             this.pnCTPX = new System.Windows.Forms.Panel();
             this.sP_CHITIETHDGridControl = new DevExpress.XtraGrid.GridControl();
-            this.sP_CHITIETHDBindingSource = new System.Windows.Forms.BindingSource();
+            this.sP_CHITIETHDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.sP_CHITIETHDTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_CHITIETHDTableAdapter();
             this.tableAdapterManager = new QLYVATTU.QL_VATTUDataSetTableAdapters.TableAdapterManager();
             this.sP_DSVT_PHIEUXUATTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_DSVT_PHIEUXUATTableAdapter();
-            this.colMAHD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gbVTChon = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.colDONVI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMALOAI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lbDonViTinh = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btLapPX = new System.Windows.Forms.Button();
+            this.btHuyPX = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -117,6 +121,8 @@
             this.contaner.SuspendLayout();
             this.pnRight.SuspendLayout();
             this.pnVatTu.SuspendLayout();
+            this.gbHoanThanh.SuspendLayout();
+            this.gbVTChon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
@@ -127,7 +133,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sP_CHITIETHDGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CHITIETHDBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            this.gbVTChon.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -184,6 +189,24 @@
             label4.TabIndex = 1;
             label4.Text = "Tên Vật Tư:";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new System.Drawing.Point(6, 22);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(64, 13);
+            label5.TabIndex = 1;
+            label5.Text = "Tên Vật Tư:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new System.Drawing.Point(235, 23);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(56, 13);
+            label6.TabIndex = 1;
+            label6.Text = "Số Lượng:";
+            // 
             // sP_DANHSACHPHIEUXUATBindingSource
             // 
             this.sP_DANHSACHPHIEUXUATBindingSource.DataMember = "SP_DANHSACHPHIEUXUAT";
@@ -234,7 +257,7 @@
             this.pnKHG.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnKHG.Location = new System.Drawing.Point(3, 59);
             this.pnKHG.Name = "pnKHG";
-            this.pnKHG.Size = new System.Drawing.Size(618, 121);
+            this.pnKHG.Size = new System.Drawing.Size(437, 121);
             this.pnKHG.TabIndex = 3;
             // 
             // sP_TIMKIEM_KHACHHANGGridControl
@@ -244,7 +267,7 @@
             this.sP_TIMKIEM_KHACHHANGGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_TIMKIEM_KHACHHANGGridControl.MainView = this.gridView2;
             this.sP_TIMKIEM_KHACHHANGGridControl.Name = "sP_TIMKIEM_KHACHHANGGridControl";
-            this.sP_TIMKIEM_KHACHHANGGridControl.Size = new System.Drawing.Size(618, 121);
+            this.sP_TIMKIEM_KHACHHANGGridControl.Size = new System.Drawing.Size(437, 121);
             this.sP_TIMKIEM_KHACHHANGGridControl.TabIndex = 3;
             this.sP_TIMKIEM_KHACHHANGGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -265,7 +288,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(624, 183);
+            this.groupBox2.Size = new System.Drawing.Size(443, 183);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm Khách hàng";
@@ -286,7 +309,7 @@
             this.gbKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbKH.Location = new System.Drawing.Point(0, 0);
             this.gbKH.Name = "gbKH";
-            this.gbKH.Size = new System.Drawing.Size(380, 121);
+            this.gbKH.Size = new System.Drawing.Size(561, 121);
             this.gbKH.TabIndex = 3;
             this.gbKH.TabStop = false;
             this.gbKH.Text = "Khách Hàng Và Kho Xuất";
@@ -349,7 +372,7 @@
             this.pnKH.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnKH.Location = new System.Drawing.Point(0, 0);
             this.pnKH.Name = "pnKH";
-            this.pnKH.Size = new System.Drawing.Size(624, 183);
+            this.pnKH.Size = new System.Drawing.Size(443, 183);
             this.pnKH.TabIndex = 4;
             // 
             // pnTTKH
@@ -359,7 +382,7 @@
             this.pnTTKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTTKH.Location = new System.Drawing.Point(0, 0);
             this.pnTTKH.Name = "pnTTKH";
-            this.pnTTKH.Size = new System.Drawing.Size(380, 121);
+            this.pnTTKH.Size = new System.Drawing.Size(561, 121);
             this.pnTTKH.TabIndex = 5;
             // 
             // pnphieuxuat
@@ -368,20 +391,20 @@
             this.pnphieuxuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnphieuxuat.Location = new System.Drawing.Point(0, 0);
             this.pnphieuxuat.Name = "pnphieuxuat";
-            this.pnphieuxuat.Size = new System.Drawing.Size(380, 189);
+            this.pnphieuxuat.Size = new System.Drawing.Size(561, 189);
             this.pnphieuxuat.TabIndex = 0;
             // 
             // sP_DANHSACHPHIEUXUATGridControl
             // 
             this.sP_DANHSACHPHIEUXUATGridControl.DataSource = this.sP_DANHSACHPHIEUXUATBindingSource;
             this.sP_DANHSACHPHIEUXUATGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.sP_DANHSACHPHIEUXUATGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.sP_DANHSACHPHIEUXUATGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_DANHSACHPHIEUXUATGridControl.MainView = this.gridView1;
             this.sP_DANHSACHPHIEUXUATGridControl.Name = "sP_DANHSACHPHIEUXUATGridControl";
-            this.sP_DANHSACHPHIEUXUATGridControl.Size = new System.Drawing.Size(380, 189);
+            this.sP_DANHSACHPHIEUXUATGridControl.Size = new System.Drawing.Size(561, 189);
             this.sP_DANHSACHPHIEUXUATGridControl.TabIndex = 0;
             this.sP_DANHSACHPHIEUXUATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -395,6 +418,13 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colMAHD
+            // 
+            this.colMAHD.FieldName = "MAHD";
+            this.colMAHD.Name = "colMAHD";
+            this.colMAHD.Visible = true;
+            this.colMAHD.VisibleIndex = 0;
             // 
             // contaner
             // 
@@ -411,22 +441,94 @@
             this.pnRight.Controls.Add(this.pnVatTu);
             this.pnRight.Controls.Add(this.pnKH);
             this.pnRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnRight.Location = new System.Drawing.Point(380, 0);
+            this.pnRight.Location = new System.Drawing.Point(561, 0);
             this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(624, 476);
+            this.pnRight.Size = new System.Drawing.Size(443, 476);
             this.pnRight.TabIndex = 6;
             // 
             // pnVatTu
             // 
             this.pnVatTu.AutoScroll = true;
+            this.pnVatTu.Controls.Add(this.gbHoanThanh);
             this.pnVatTu.Controls.Add(this.gbVTChon);
             this.pnVatTu.Controls.Add(this.sP_DSVT_PHIEUXUATGridControl);
             this.pnVatTu.Controls.Add(this.gbVatTu);
             this.pnVatTu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnVatTu.Location = new System.Drawing.Point(0, 183);
             this.pnVatTu.Name = "pnVatTu";
-            this.pnVatTu.Size = new System.Drawing.Size(624, 293);
+            this.pnVatTu.Size = new System.Drawing.Size(443, 293);
             this.pnVatTu.TabIndex = 5;
+            // 
+            // gbHoanThanh
+            // 
+            this.gbHoanThanh.Controls.Add(this.btHuyPX);
+            this.gbHoanThanh.Controls.Add(this.btLapPX);
+            this.gbHoanThanh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbHoanThanh.Location = new System.Drawing.Point(0, 231);
+            this.gbHoanThanh.Name = "gbHoanThanh";
+            this.gbHoanThanh.Size = new System.Drawing.Size(443, 59);
+            this.gbHoanThanh.TabIndex = 3;
+            this.gbHoanThanh.TabStop = false;
+            this.gbHoanThanh.Text = "Hoàn Thành Phiếu";
+            // 
+            // gbVTChon
+            // 
+            this.gbVTChon.Controls.Add(this.button4);
+            this.gbVTChon.Controls.Add(this.button3);
+            this.gbVTChon.Controls.Add(this.lbDonViTinh);
+            this.gbVTChon.Controls.Add(this.textBox3);
+            this.gbVTChon.Controls.Add(this.textBox2);
+            this.gbVTChon.Controls.Add(label6);
+            this.gbVTChon.Controls.Add(label5);
+            this.gbVTChon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gbVTChon.Location = new System.Drawing.Point(0, 178);
+            this.gbVTChon.Name = "gbVTChon";
+            this.gbVTChon.Size = new System.Drawing.Size(443, 53);
+            this.gbVTChon.TabIndex = 2;
+            this.gbVTChon.TabStop = false;
+            this.gbVTChon.Text = "Vật Tư Chọn";
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(502, 18);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Xóa Khỏi Phiếu";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(403, 18);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Thêm Vào";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // lbDonViTinh
+            // 
+            this.lbDonViTinh.AutoSize = true;
+            this.lbDonViTinh.Location = new System.Drawing.Point(343, 21);
+            this.lbDonViTinh.Name = "lbDonViTinh";
+            this.lbDonViTinh.Size = new System.Drawing.Size(37, 13);
+            this.lbDonViTinh.TabIndex = 2;
+            this.lbDonViTinh.Text = "aaaaa";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(297, 19);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(34, 20);
+            this.textBox3.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(73, 19);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(156, 20);
+            this.textBox2.TabIndex = 0;
             // 
             // sP_DSVT_PHIEUXUATGridControl
             // 
@@ -435,7 +537,7 @@
             this.sP_DSVT_PHIEUXUATGridControl.Location = new System.Drawing.Point(0, 58);
             this.sP_DSVT_PHIEUXUATGridControl.MainView = this.gridView4;
             this.sP_DSVT_PHIEUXUATGridControl.Name = "sP_DSVT_PHIEUXUATGridControl";
-            this.sP_DSVT_PHIEUXUATGridControl.Size = new System.Drawing.Size(624, 120);
+            this.sP_DSVT_PHIEUXUATGridControl.Size = new System.Drawing.Size(443, 120);
             this.sP_DSVT_PHIEUXUATGridControl.TabIndex = 1;
             this.sP_DSVT_PHIEUXUATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -457,6 +559,41 @@
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
+            // colMAVT
+            // 
+            this.colMAVT.FieldName = "MAVT";
+            this.colMAVT.Name = "colMAVT";
+            this.colMAVT.Visible = true;
+            this.colMAVT.VisibleIndex = 3;
+            // 
+            // colTENVT
+            // 
+            this.colTENVT.FieldName = "TENVT";
+            this.colTENVT.Name = "colTENVT";
+            this.colTENVT.Visible = true;
+            this.colTENVT.VisibleIndex = 4;
+            // 
+            // colMALOAI
+            // 
+            this.colMALOAI.FieldName = "MALOAI";
+            this.colMALOAI.Name = "colMALOAI";
+            this.colMALOAI.Visible = true;
+            this.colMALOAI.VisibleIndex = 2;
+            // 
+            // colDONGIA
+            // 
+            this.colDONGIA.FieldName = "DONGIA";
+            this.colDONGIA.Name = "colDONGIA";
+            this.colDONGIA.Visible = true;
+            this.colDONGIA.VisibleIndex = 1;
+            // 
+            // colDONVI
+            // 
+            this.colDONVI.FieldName = "DONVI";
+            this.colDONVI.Name = "colDONVI";
+            this.colDONVI.Visible = true;
+            this.colDONVI.VisibleIndex = 0;
+            // 
             // gbVatTu
             // 
             this.gbVatTu.Controls.Add(this.textBox1);
@@ -465,7 +602,7 @@
             this.gbVatTu.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbVatTu.Location = new System.Drawing.Point(0, 0);
             this.gbVatTu.Name = "gbVatTu";
-            this.gbVatTu.Size = new System.Drawing.Size(624, 58);
+            this.gbVatTu.Size = new System.Drawing.Size(443, 58);
             this.gbVatTu.TabIndex = 0;
             this.gbVatTu.TabStop = false;
             this.gbVatTu.Text = "Tiềm Kiếm Vật Tư";
@@ -498,7 +635,7 @@
             this.pnleft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnleft.Location = new System.Drawing.Point(0, 0);
             this.pnleft.Name = "pnleft";
-            this.pnleft.Size = new System.Drawing.Size(380, 476);
+            this.pnleft.Size = new System.Drawing.Size(561, 476);
             this.pnleft.TabIndex = 5;
             // 
             // pnKHC
@@ -507,7 +644,7 @@
             this.pnKHC.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnKHC.Location = new System.Drawing.Point(0, 189);
             this.pnKHC.Name = "pnKHC";
-            this.pnKHC.Size = new System.Drawing.Size(380, 121);
+            this.pnKHC.Size = new System.Drawing.Size(561, 121);
             this.pnKHC.TabIndex = 7;
             // 
             // pnCTPX
@@ -516,7 +653,7 @@
             this.pnCTPX.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnCTPX.Location = new System.Drawing.Point(0, 310);
             this.pnCTPX.Name = "pnCTPX";
-            this.pnCTPX.Size = new System.Drawing.Size(380, 166);
+            this.pnCTPX.Size = new System.Drawing.Size(561, 166);
             this.pnCTPX.TabIndex = 6;
             // 
             // sP_CHITIETHDGridControl
@@ -526,7 +663,7 @@
             this.sP_CHITIETHDGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_CHITIETHDGridControl.MainView = this.gridView3;
             this.sP_CHITIETHDGridControl.Name = "sP_CHITIETHDGridControl";
-            this.sP_CHITIETHDGridControl.Size = new System.Drawing.Size(380, 166);
+            this.sP_CHITIETHDGridControl.Size = new System.Drawing.Size(561, 166);
             this.sP_CHITIETHDGridControl.TabIndex = 0;
             this.sP_CHITIETHDGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -571,124 +708,29 @@
             // 
             this.sP_DSVT_PHIEUXUATTableAdapter.ClearBeforeFill = true;
             // 
-            // colMAHD
+            // btLapPX
             // 
-            this.colMAHD.FieldName = "MAHD";
-            this.colMAHD.Name = "colMAHD";
-            this.colMAHD.Visible = true;
-            this.colMAHD.VisibleIndex = 0;
+            this.btLapPX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btLapPX.Location = new System.Drawing.Point(154, 19);
+            this.btLapPX.Name = "btLapPX";
+            this.btLapPX.Size = new System.Drawing.Size(0, 31);
+            this.btLapPX.TabIndex = 3;
+            this.btLapPX.Text = "Hoàn Thành";
+            this.btLapPX.UseVisualStyleBackColor = true;
             // 
-            // gbVTChon
+            // btHuyPX
             // 
-            this.gbVTChon.Controls.Add(this.button4);
-            this.gbVTChon.Controls.Add(this.button3);
-            this.gbVTChon.Controls.Add(this.lbDonViTinh);
-            this.gbVTChon.Controls.Add(this.textBox3);
-            this.gbVTChon.Controls.Add(this.textBox2);
-            this.gbVTChon.Controls.Add(label6);
-            this.gbVTChon.Controls.Add(label5);
-            this.gbVTChon.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbVTChon.Location = new System.Drawing.Point(0, 178);
-            this.gbVTChon.Name = "gbVTChon";
-            this.gbVTChon.Size = new System.Drawing.Size(624, 81);
-            this.gbVTChon.TabIndex = 2;
-            this.gbVTChon.TabStop = false;
-            this.gbVTChon.Text = "Vật Tư Chọn";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(6, 22);
-            label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(64, 13);
-            label5.TabIndex = 1;
-            label5.Text = "Tên Vật Tư:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(73, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 0;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(235, 23);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(56, 13);
-            label6.TabIndex = 1;
-            label6.Text = "Số Lượng:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(297, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(34, 20);
-            this.textBox3.TabIndex = 0;
-            // 
-            // colDONVI
-            // 
-            this.colDONVI.FieldName = "DONVI";
-            this.colDONVI.Name = "colDONVI";
-            this.colDONVI.Visible = true;
-            this.colDONVI.VisibleIndex = 0;
-            // 
-            // colDONGIA
-            // 
-            this.colDONGIA.FieldName = "DONGIA";
-            this.colDONGIA.Name = "colDONGIA";
-            this.colDONGIA.Visible = true;
-            this.colDONGIA.VisibleIndex = 1;
-            // 
-            // colMALOAI
-            // 
-            this.colMALOAI.FieldName = "MALOAI";
-            this.colMALOAI.Name = "colMALOAI";
-            this.colMALOAI.Visible = true;
-            this.colMALOAI.VisibleIndex = 2;
-            // 
-            // colMAVT
-            // 
-            this.colMAVT.FieldName = "MAVT";
-            this.colMAVT.Name = "colMAVT";
-            this.colMAVT.Visible = true;
-            this.colMAVT.VisibleIndex = 3;
-            // 
-            // colTENVT
-            // 
-            this.colTENVT.FieldName = "TENVT";
-            this.colTENVT.Name = "colTENVT";
-            this.colTENVT.Visible = true;
-            this.colTENVT.VisibleIndex = 4;
-            // 
-            // lbDonViTinh
-            // 
-            this.lbDonViTinh.AutoSize = true;
-            this.lbDonViTinh.Location = new System.Drawing.Point(343, 21);
-            this.lbDonViTinh.Name = "lbDonViTinh";
-            this.lbDonViTinh.Size = new System.Drawing.Size(37, 13);
-            this.lbDonViTinh.TabIndex = 2;
-            this.lbDonViTinh.Text = "aaaaa";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(403, 18);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Thêm Vào";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(502, 18);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Xóa Khỏi Phiếu";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btHuyPX.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btHuyPX.Location = new System.Drawing.Point(346, 19);
+            this.btHuyPX.Name = "btHuyPX";
+            this.btHuyPX.Size = new System.Drawing.Size(0, 31);
+            this.btHuyPX.TabIndex = 3;
+            this.btHuyPX.Text = "Hủy Phiếu Xuất";
+            this.btHuyPX.UseVisualStyleBackColor = true;
             // 
             // PhieuXuat
             // 
@@ -719,6 +761,9 @@
             this.contaner.ResumeLayout(false);
             this.pnRight.ResumeLayout(false);
             this.pnVatTu.ResumeLayout(false);
+            this.gbHoanThanh.ResumeLayout(false);
+            this.gbVTChon.ResumeLayout(false);
+            this.gbVTChon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
@@ -730,8 +775,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sP_CHITIETHDGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_CHITIETHDBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            this.gbVTChon.ResumeLayout(false);
-            this.gbVTChon.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -791,5 +834,8 @@
         private System.Windows.Forms.Label lbDonViTinh;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox gbHoanThanh;
+        private System.Windows.Forms.Button btHuyPX;
+        private System.Windows.Forms.Button btLapPX;
     }
 }
