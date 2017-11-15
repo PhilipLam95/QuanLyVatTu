@@ -35,7 +35,7 @@
             System.Windows.Forms.Label hotenTbox;
             System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
             this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource();
@@ -89,6 +89,8 @@
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbDonViTinh = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -373,9 +375,9 @@
             // 
             this.sP_DANHSACHPHIEUXUATGridControl.DataSource = this.sP_DANHSACHPHIEUXUATBindingSource;
             this.sP_DANHSACHPHIEUXUATGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.sP_DANHSACHPHIEUXUATGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.sP_DANHSACHPHIEUXUATGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_DANHSACHPHIEUXUATGridControl.MainView = this.gridView1;
             this.sP_DANHSACHPHIEUXUATGridControl.Name = "sP_DANHSACHPHIEUXUATGridControl";
@@ -578,6 +580,8 @@
             // 
             // gbVTChon
             // 
+            this.gbVTChon.Controls.Add(this.button4);
+            this.gbVTChon.Controls.Add(this.button3);
             this.gbVTChon.Controls.Add(this.lbDonViTinh);
             this.gbVTChon.Controls.Add(this.textBox3);
             this.gbVTChon.Controls.Add(this.textBox2);
@@ -666,6 +670,25 @@
             this.lbDonViTinh.Size = new System.Drawing.Size(37, 13);
             this.lbDonViTinh.TabIndex = 2;
             this.lbDonViTinh.Text = "aaaaa";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(403, 18);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Thêm Vào";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(502, 18);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(94, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Xóa Khỏi Phiếu";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // PhieuXuat
             // 
@@ -766,5 +789,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
         private DevExpress.XtraGrid.Columns.GridColumn colTENVT;
         private System.Windows.Forms.Label lbDonViTinh;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
     }
 }
