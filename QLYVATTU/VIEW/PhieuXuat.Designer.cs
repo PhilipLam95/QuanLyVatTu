@@ -35,7 +35,7 @@
             System.Windows.Forms.Label hotenTbox;
             System.Windows.Forms.Label label4;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
             this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource();
@@ -372,9 +372,9 @@
             // 
             this.sP_DANHSACHPHIEUXUATGridControl.DataSource = this.sP_DANHSACHPHIEUXUATBindingSource;
             this.sP_DANHSACHPHIEUXUATGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.sP_DANHSACHPHIEUXUATGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.sP_DANHSACHPHIEUXUATGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_DANHSACHPHIEUXUATGridControl.MainView = this.gridView1;
             this.sP_DANHSACHPHIEUXUATGridControl.Name = "sP_DANHSACHPHIEUXUATGridControl";
@@ -445,11 +445,11 @@
             // gridView4
             // 
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDONVI,
-            this.colDONGIA,
-            this.colMALOAI,
             this.colMAVT,
-            this.colTENVT});
+            this.colTENVT,
+            this.colMALOAI,
+            this.colDONGIA,
+            this.colDONVI});
             this.gridView4.GridControl = this.sP_DSVT_PHIEUXUATGridControl;
             this.gridView4.Name = "gridView4";
             this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
