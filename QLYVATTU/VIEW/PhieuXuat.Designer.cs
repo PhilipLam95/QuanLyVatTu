@@ -76,6 +76,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.sP_DSVT_PHIEUXUATGridControl = new DevExpress.XtraGrid.GridControl();
             this.sP_DSVT_PHIEUXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -94,6 +95,11 @@
             this.sP_CHITIETHDTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_CHITIETHDTableAdapter();
             this.tableAdapterManager = new QLYVATTU.QL_VATTUDataSetTableAdapters.TableAdapterManager();
             this.sP_DSVT_PHIEUXUATTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_DSVT_PHIEUXUATTableAdapter();
+            this.colMAVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOAI1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONVI1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONGIA1 = new DevExpress.XtraGrid.Columns.GridColumn();
             label3 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -124,6 +130,7 @@
             this.gbVTChon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.gbVatTu.SuspendLayout();
             this.pnleft.SuspendLayout();
@@ -146,7 +153,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(244, 25);
+            label2.Location = new System.Drawing.Point(324, 25);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(78, 13);
             label2.TabIndex = 6;
@@ -305,7 +312,7 @@
             this.gbKH.Controls.Add(this.tenkhoCompobox);
             this.gbKH.Controls.Add(hotenTbox);
             this.gbKH.Controls.Add(this.hOTENTextBox);
-            this.gbKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gbKH.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbKH.Location = new System.Drawing.Point(0, 0);
             this.gbKH.Name = "gbKH";
             this.gbKH.Size = new System.Drawing.Size(641, 121);
@@ -316,7 +323,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(382, 85);
+            this.button2.Location = new System.Drawing.Point(436, 85);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
@@ -325,7 +332,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(277, 85);
+            this.button1.Location = new System.Drawing.Point(331, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -335,9 +342,9 @@
             // sdtTbox
             // 
             this.sdtTbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "HOTEN", true));
-            this.sdtTbox.Location = new System.Drawing.Point(330, 22);
+            this.sdtTbox.Location = new System.Drawing.Point(410, 22);
             this.sdtTbox.Name = "sdtTbox";
-            this.sdtTbox.Size = new System.Drawing.Size(126, 20);
+            this.sdtTbox.Size = new System.Drawing.Size(146, 20);
             this.sdtTbox.TabIndex = 7;
             // 
             // diachiTbox
@@ -345,7 +352,7 @@
             this.diachiTbox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "HOTEN", true));
             this.diachiTbox.Location = new System.Drawing.Point(96, 53);
             this.diachiTbox.Name = "diachiTbox";
-            this.diachiTbox.Size = new System.Drawing.Size(360, 20);
+            this.diachiTbox.Size = new System.Drawing.Size(460, 20);
             this.diachiTbox.TabIndex = 5;
             // 
             // tenkhoCompobox
@@ -354,7 +361,7 @@
             this.tenkhoCompobox.FormattingEnabled = true;
             this.tenkhoCompobox.Location = new System.Drawing.Point(96, 85);
             this.tenkhoCompobox.Name = "tenkhoCompobox";
-            this.tenkhoCompobox.Size = new System.Drawing.Size(139, 21);
+            this.tenkhoCompobox.Size = new System.Drawing.Size(175, 21);
             this.tenkhoCompobox.TabIndex = 3;
             // 
             // hOTENTextBox
@@ -362,7 +369,7 @@
             this.hOTENTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "HOTEN", true));
             this.hOTENTextBox.Location = new System.Drawing.Point(96, 22);
             this.hOTENTextBox.Name = "hOTENTextBox";
-            this.hOTENTextBox.Size = new System.Drawing.Size(139, 20);
+            this.hOTENTextBox.Size = new System.Drawing.Size(222, 20);
             this.hOTENTextBox.TabIndex = 1;
             // 
             // pnKH
@@ -545,17 +552,24 @@
             this.sP_DSVT_PHIEUXUATGridControl.DataSource = this.sP_DSVT_PHIEUXUATBindingSource;
             this.sP_DSVT_PHIEUXUATGridControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.sP_DSVT_PHIEUXUATGridControl.Location = new System.Drawing.Point(0, 58);
-            this.sP_DSVT_PHIEUXUATGridControl.MainView = this.gridView4;
+            this.sP_DSVT_PHIEUXUATGridControl.MainView = this.gridView5;
             this.sP_DSVT_PHIEUXUATGridControl.Name = "sP_DSVT_PHIEUXUATGridControl";
             this.sP_DSVT_PHIEUXUATGridControl.Size = new System.Drawing.Size(346, 133);
             this.sP_DSVT_PHIEUXUATGridControl.TabIndex = 1;
             this.sP_DSVT_PHIEUXUATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5,
             this.gridView4});
             // 
             // sP_DSVT_PHIEUXUATBindingSource
             // 
             this.sP_DSVT_PHIEUXUATBindingSource.DataMember = "SP_DSVT_PHIEUXUAT";
             this.sP_DSVT_PHIEUXUATBindingSource.DataSource = this.qL_VATTUDataSet;
+            // 
+            // gridView5
+            // 
+            this.gridView5.GridControl = this.sP_DSVT_PHIEUXUATGridControl;
+            this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
             // gridView4
             // 
@@ -651,7 +665,7 @@
             // pnKHC
             // 
             this.pnKHC.Controls.Add(this.pnTTKH);
-            this.pnKHC.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnKHC.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnKHC.Location = new System.Drawing.Point(0, 189);
             this.pnKHC.Name = "pnKHC";
             this.pnKHC.Size = new System.Drawing.Size(641, 121);
@@ -718,6 +732,31 @@
             // 
             this.sP_DSVT_PHIEUXUATTableAdapter.ClearBeforeFill = true;
             // 
+            // colMAVT1
+            // 
+            this.colMAVT1.FieldName = "MAVT";
+            this.colMAVT1.Name = "colMAVT1";
+            // 
+            // colTENVT1
+            // 
+            this.colTENVT1.FieldName = "TENVT";
+            this.colTENVT1.Name = "colTENVT1";
+            // 
+            // colMALOAI1
+            // 
+            this.colMALOAI1.FieldName = "MALOAI";
+            this.colMALOAI1.Name = "colMALOAI1";
+            // 
+            // colDONVI1
+            // 
+            this.colDONVI1.FieldName = "DONVI";
+            this.colDONVI1.Name = "colDONVI1";
+            // 
+            // colDONGIA1
+            // 
+            this.colDONGIA1.FieldName = "DONGIA";
+            this.colDONGIA1.Name = "colDONGIA1";
+            // 
             // PhieuXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,6 +791,7 @@
             this.gbVTChon.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DSVT_PHIEUXUATBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.gbVatTu.ResumeLayout(false);
             this.gbVatTu.PerformLayout();
@@ -822,5 +862,11 @@
         private System.Windows.Forms.GroupBox gbHoanThanh;
         private System.Windows.Forms.Button btHuyPX;
         private System.Windows.Forms.Button btLapPX;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAVT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENVT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOAI1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONVI1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA1;
     }
 }
