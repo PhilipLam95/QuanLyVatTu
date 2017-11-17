@@ -21,11 +21,17 @@ namespace QLYVATTU.VIEW
 
         private DataTable hd;
         private DataTable kh;
+        private DataTable vt;
 
         private void PhieuXuat_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             load_khachhang();
             load_hoadon();
+=======
+            // TODO: This line of code loads data into the 'qL_VATTUDataSet.SP_DSVT_PHIEUXUAT' table. You can move, or remove it, as needed.
+            //this.sP_DSVT_PHIEUXUATTableAdapter.Fill(this.qL_VATTUDataSet.SP_DSVT_PHIEUXUAT);
+>>>>>>> ThanhAndroi
 
         }
 
@@ -38,6 +44,7 @@ namespace QLYVATTU.VIEW
             sP_DANHSACHPHIEUXUATGridControl.DataMember = hd.TableName;
         }
 
+<<<<<<< HEAD
         private void load_khachhang()
         {
 
@@ -45,6 +52,13 @@ namespace QLYVATTU.VIEW
             kh = khachhang.getKhachHang();
             sP_TIMKIEM_KHACHHANGGridControl.DataSource = kh;
             sP_TIMKIEM_KHACHHANGGridControl.DataMember = kh.TableName;
+=======
+            VatTu vattu = new VatTu();
+            vt = vattu.getVatTu();
+            sP_DSVT_PHIEUXUATGridControl.DataSource = vt;
+            sP_DSVT_PHIEUXUATGridControl.DataMember = vt.TableName;
+
+>>>>>>> ThanhAndroi
         }
 
         private void sP_DANHSACHPHIEUXUATGridControl_Click(object sender, EventArgs e)
@@ -71,5 +85,43 @@ namespace QLYVATTU.VIEW
         {
 
         }
+
+        private void hotenTbox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+               // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+               // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+      
     }
 }
