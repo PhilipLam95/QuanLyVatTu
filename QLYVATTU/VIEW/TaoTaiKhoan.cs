@@ -31,15 +31,32 @@ namespace QLYVATTU.VIEW
 
         }
 
-       
+      
 
         private void TaoTaiKhoan_Load(object sender, EventArgs e)
         {
             NhanVien nhanvien = new NhanVien();
             nv = nhanvien.getNhanVien();
             sP_LAY_NHANVIENGridControl.DataSource = nv;
-           sP_LAY_NHANVIENGridControl.DataMember = nv.TableName;
+            sP_LAY_NHANVIENGridControl.DataMember = nv.TableName;
+            //int gioitinh = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]));
+            Check_role_congty();
 
+        }
+
+
+        private void Check_role_congty()
+        {
+            if(Access.ROLE == "CongTy")
+            {
+               
+                rabtnChiNhanh.Checked = false;
+                rabtnChiNhanh.Visible = false;
+                rabtnUser.Checked = false;
+                rabtnUser.Visible = false;
+                rabtnCongTy.Checked = true;
+                rabtnCongTy.Visible = true;
+            }
         }
 
         private void gridView1_Click(object sender, EventArgs e)
@@ -113,13 +130,31 @@ namespace QLYVATTU.VIEW
             {
                 phai = rabtnNu.Text.ToString();
             }
+            string role = "";
+            if (Access.ROLE == "ChiNhanh")
+            {
+                if (rabtnUser.Checked == true)
+                {
+                    role = rabtnUser.Text.ToString();
+                }
+                else
+                {
+                    role = rabtnChiNhanh.Text.ToString();
+                }
+            }
+            else
+            {
+                role = Access.ROLE;
+            }
+
+
             DateTime ngaysinh = this.nGAYSINHDateEdit.DateTime;
             string  nsinh = String.Format("{0:MM-dd-yyyy}", ngaysinh);
             string diachi = tboxDiachi.Text.ToString();
             string sodt = tboxSDT.Text.ToString();
             string password = tboxPassword.Text.ToString();
             string username = tboxUserName.Text.ToString();
-            string role = "CHINHANH";
+            //string role = "CHINHANH";
             string[] param = { ho, ten, phai , nsinh,diachi,sodt, username , password, role };
             NhanVien nhanvien = new NhanVien();
             int x  =  nhanvien.InserCusomer(param);
@@ -144,6 +179,29 @@ namespace QLYVATTU.VIEW
             }
 
             
+        }
+
+        private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            //if(e.Column.FieldName == "PHAI")
+            //{
+            //    if((bool)e.Value == true)
+            //    {
+
+            //        Convert.ToString(e.Value == "Nam"); 
+
+            //    }
+            //    else
+            //    {
+            //        Convert.ToString(e.Value == "Nữ");
+            //    }
+               
+            //}
+        }
+
+        private void sP_LAY_NHANVIENGridControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
