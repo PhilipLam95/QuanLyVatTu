@@ -10,7 +10,11 @@ namespace QLYVATTU.MODEL
     class Access
     {
 
+<<<<<<< HEAD
+        public static String DATA_SOURCE = @"NGOC-THANH-IS";//địa chỉ cơ sở dữ liệu
+=======
         public static String DATA_SOURCE = @"DELL-A75\SERVER_0";//địa chỉ cơ sở dữ liệu
+>>>>>>> de35ca1d7738ca811fd787fbf07942a58a8df794
         public static String INITIAL_CATALOG = "QL_VATTU";//tên cơ sở dữ liệu
         public static String USERNAME = "sa";//tài khoản
         public static String PASSWORD = "123";//mật khẩu
