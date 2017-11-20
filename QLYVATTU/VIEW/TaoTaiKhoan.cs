@@ -38,7 +38,8 @@ namespace QLYVATTU.VIEW
             NhanVien nhanvien = new NhanVien();
             nv = nhanvien.getNhanVien();
             sP_LAY_NHANVIENGridControl.DataSource = nv;
-           sP_LAY_NHANVIENGridControl.DataMember = nv.TableName;
+            sP_LAY_NHANVIENGridControl.DataMember = nv.TableName;
+            //int gioitinh = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]));
             Check_role_congty();
 
         }
@@ -178,6 +179,29 @@ namespace QLYVATTU.VIEW
             }
 
             
+        }
+
+        private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            //if(e.Column.FieldName == "PHAI")
+            //{
+            //    if((bool)e.Value == true)
+            //    {
+
+            //        Convert.ToString(e.Value == "Nam"); 
+
+            //    }
+            //    else
+            //    {
+            //        Convert.ToString(e.Value == "Nữ");
+            //    }
+               
+            //}
+        }
+
+        private void sP_LAY_NHANVIENGridControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

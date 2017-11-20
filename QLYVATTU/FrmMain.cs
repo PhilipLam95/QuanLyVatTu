@@ -64,7 +64,7 @@ namespace QLYVATTU
         }
 
         //check form 
-        private Form CheckExists(Type ftype)
+        public Form CheckExists(Type ftype)
         {
 
             foreach (Form f in this.MdiChildren)
@@ -124,6 +124,29 @@ namespace QLYVATTU
             }
         }
 
+
+        private void btnHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(VIEW.MatHang));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.MatHang f = new VIEW.MatHang() { MdiParent = this, Text = "Các mặt hàng " };
+                f.Show();
+            }
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(VIEW.MatHang));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.DonDatHang f = new VIEW.DonDatHang() { MdiParent = this, Text = "Đơn Đặt Hàng " };
+                f.Show();
+            }
+        }
+
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
 
 
@@ -133,10 +156,7 @@ namespace QLYVATTU
         }
 
 
-        private void btnHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-
-        }
+        
 
 
         public void HienThiQuanLyNhanVien()
@@ -223,6 +243,9 @@ namespace QLYVATTU
         }
 
         int x =450, y = 85, a = 1;
+
+       
+
         Random random = new Random();
 
         private void timer1_Tick(object sender, EventArgs e)

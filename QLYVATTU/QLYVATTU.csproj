@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CMD\cmd_DonDatHang.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,7 +74,15 @@
     <Compile Include="MODEL\Access.cs" />
     <Compile Include="MODEL\ChiNhanh.cs" />
     <Compile Include="MODEL\Connection.cs" />
-    <Compile Include="MODEL\HoaDon.cs" />
+    <Compile Include="MODEL\DonDH.cs" />
+    <Compile Include="MODEL\VatTu.cs" />
+    <Compile Include="VIEW\DonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\DonDatHang.Designer.cs">
+      <DependentUpon>DonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\HoaDon.cs" />
     <Compile Include="MODEL\KhachHang.cs" />
     <Compile Include="MODEL\NhanVien.cs" />
     <Compile Include="Program.cs" />
@@ -100,6 +109,14 @@
     </Compile>
     <Compile Include="VIEW\LoaiHang.Designer.cs">
       <DependentUpon>LoaiHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\MatHang.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="VIEW\MatHang.Designer.cs">
+      <DependentUpon>MatHang.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="VIEW\PhieuXuat.cs">
       <SubType>Form</SubType>
@@ -131,6 +148,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\DonDatHang.resx">
+      <DependentUpon>DonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\MatHang.resx">
+      <DependentUpon>MatHang.cs</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\PhieuXuat.resx">
       <DependentUpon>PhieuXuat.cs</DependentUpon>

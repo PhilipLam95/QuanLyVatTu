@@ -56,6 +56,7 @@
             this.tboxUserName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rabtnCongTy = new System.Windows.Forms.RadioButton();
             this.rabtnChiNhanh = new System.Windows.Forms.RadioButton();
             this.rabtnUser = new System.Windows.Forms.RadioButton();
             this.btnTao = new DevExpress.XtraEditors.SimpleButton();
@@ -71,7 +72,6 @@
             this.colNGAYSINH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSODT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.rabtnCongTy = new System.Windows.Forms.RadioButton();
             nGAYSINHLabel = new System.Windows.Forms.Label();
             sODTLabel = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -274,7 +274,7 @@
             this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dateTimePicker1.Location = new System.Drawing.Point(185, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(259, 27);
+            this.dateTimePicker1.Size = new System.Drawing.Size(341, 27);
             this.dateTimePicker1.TabIndex = 17;
             // 
             // panel2
@@ -284,7 +284,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(780, 54);
+            this.panel2.Size = new System.Drawing.Size(862, 54);
             this.panel2.TabIndex = 18;
             // 
             // panel3
@@ -314,7 +314,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 54);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(780, 270);
+            this.panel3.Size = new System.Drawing.Size(862, 270);
             this.panel3.TabIndex = 19;
             // 
             // tboxPassword
@@ -365,6 +365,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nhóm";
             // 
+            // rabtnCongTy
+            // 
+            this.rabtnCongTy.AutoSize = true;
+            this.rabtnCongTy.Location = new System.Drawing.Point(76, 20);
+            this.rabtnCongTy.Name = "rabtnCongTy";
+            this.rabtnCongTy.Size = new System.Drawing.Size(62, 17);
+            this.rabtnCongTy.TabIndex = 21;
+            this.rabtnCongTy.Text = "CongTy";
+            this.rabtnCongTy.UseVisualStyleBackColor = true;
+            this.rabtnCongTy.Visible = false;
+            // 
             // rabtnChiNhanh
             // 
             this.rabtnChiNhanh.AutoSize = true;
@@ -373,6 +384,7 @@
             this.rabtnChiNhanh.Name = "rabtnChiNhanh";
             this.rabtnChiNhanh.Size = new System.Drawing.Size(78, 17);
             this.rabtnChiNhanh.TabIndex = 20;
+            this.rabtnChiNhanh.TabStop = true;
             this.rabtnChiNhanh.Text = "CHINHANH";
             this.rabtnChiNhanh.UseVisualStyleBackColor = true;
             // 
@@ -404,7 +416,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 324);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(780, 130);
+            this.panel4.Size = new System.Drawing.Size(862, 130);
             this.panel4.TabIndex = 20;
             // 
             // sP_LAY_NHANVIENGridControl
@@ -414,10 +426,11 @@
             this.sP_LAY_NHANVIENGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_LAY_NHANVIENGridControl.MainView = this.gridView1;
             this.sP_LAY_NHANVIENGridControl.Name = "sP_LAY_NHANVIENGridControl";
-            this.sP_LAY_NHANVIENGridControl.Size = new System.Drawing.Size(780, 130);
+            this.sP_LAY_NHANVIENGridControl.Size = new System.Drawing.Size(862, 130);
             this.sP_LAY_NHANVIENGridControl.TabIndex = 0;
             this.sP_LAY_NHANVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.sP_LAY_NHANVIENGridControl.Click += new System.EventHandler(this.sP_LAY_NHANVIENGridControl_Click);
             // 
             // sP_LAY_NHANVIENBindingSource
             // 
@@ -437,7 +450,9 @@
             this.gridView1.GridControl = this.sP_LAY_NHANVIENGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
             this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
             // 
             // colMANV
@@ -475,6 +490,7 @@
             // colPHAI
             // 
             this.colPHAI.Caption = "Gioi tính";
+            this.colPHAI.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colPHAI.FieldName = "PHAI";
             this.colPHAI.Name = "colPHAI";
             this.colPHAI.Visible = true;
@@ -504,22 +520,11 @@
             this.colSODT.Visible = true;
             this.colSODT.VisibleIndex = 7;
             // 
-            // rabtnCongTy
-            // 
-            this.rabtnCongTy.AutoSize = true;
-            this.rabtnCongTy.Location = new System.Drawing.Point(76, 20);
-            this.rabtnCongTy.Name = "rabtnCongTy";
-            this.rabtnCongTy.Size = new System.Drawing.Size(62, 17);
-            this.rabtnCongTy.TabIndex = 21;
-            this.rabtnCongTy.Text = "CongTy";
-            this.rabtnCongTy.UseVisualStyleBackColor = true;
-            this.rabtnCongTy.Visible = false;
-            // 
             // TaoTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(780, 454);
+            this.ClientSize = new System.Drawing.Size(862, 454);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -557,7 +562,7 @@
         private System.Windows.Forms.TextBox tboxTen;
         private System.Windows.Forms.RadioButton rabtnNam;
         private System.Windows.Forms.RadioButton rabtnNu;
-        private QL_VATTUDataSet qL_VATTUDataSet;
+       // private QL_VATTUDataSet qL_VATTUDataSet;
         private DevExpress.XtraEditors.DateEdit nGAYSINHDateEdit;
         private System.Windows.Forms.TextBox tboxDiachi;
         private System.Windows.Forms.TextBox tboxSDT;
@@ -566,8 +571,16 @@
         private System.Windows.Forms.Panel panel3;
         private DevExpress.XtraEditors.SimpleButton btnTao;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.BindingSource sP_LAY_NHANVIENBindingSource;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rabtnChiNhanh;
+        private System.Windows.Forms.RadioButton rabtnUser;
+        private System.Windows.Forms.TextBox tboxUserName;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tboxPassword;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RadioButton rabtnCongTy;
         private DevExpress.XtraGrid.GridControl sP_LAY_NHANVIENGridControl;
+        private System.Windows.Forms.BindingSource sP_LAY_NHANVIENBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
@@ -577,13 +590,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYSINH;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colSODT;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton rabtnChiNhanh;
-        private System.Windows.Forms.RadioButton rabtnUser;
-        private System.Windows.Forms.TextBox tboxUserName;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox tboxPassword;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton rabtnCongTy;
     }
 }

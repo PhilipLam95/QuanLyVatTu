@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label hotenTbox;
             System.Windows.Forms.Label tENKHOLabel;
             System.Windows.Forms.Label label1;
@@ -36,23 +37,35 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
             this.panel1 = new System.Windows.Forms.Panel();
             this.sP_DANHSACHPHIEUXUATGridControl = new DevExpress.XtraGrid.GridControl();
-            this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource();
+            this.sP_DANHSACHPHIEUXUATBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sdtTbox = new System.Windows.Forms.TextBox();
-            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource();
+            this.kHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.diachiTbox = new System.Windows.Forms.TextBox();
             this.tenkhoCompobox = new System.Windows.Forms.ComboBox();
-            this.kHOBindingSource = new System.Windows.Forms.BindingSource();
+            this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.hOTENTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sP_TIMKIEM_KHACHHANGGridControl = new DevExpress.XtraGrid.GridControl();
-            this.sP_TIMKIEM_KHACHHANGBindingSource = new System.Windows.Forms.BindingSource();
+            this.sP_TIMKIEM_KHACHHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.tboxHotenSearch = new System.Windows.Forms.TextBox();
+            this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrowguid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAHD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAY = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             hotenTbox = new System.Windows.Forms.Label();
             tENKHOLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
@@ -152,9 +165,17 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAHD,
+            this.colNGAY,
+            this.colMANV,
+            this.gridColumn1,
+            this.colMAKHO,
+            this.gridColumn2});
             this.gridView1.GridControl = this.sP_DANHSACHPHIEUXUATGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // groupBox1
             // 
@@ -260,9 +281,19 @@
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAKH,
+            this.colHOTEN,
+            this.colDIACHI,
+            this.colSDT,
+            this.colMACN,
+            this.colrowguid});
             this.gridView2.GridControl = this.sP_TIMKIEM_KHACHHANGGridControl;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colrowguid, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // simpleButton1
             // 
@@ -282,6 +313,90 @@
             this.tboxHotenSearch.Name = "tboxHotenSearch";
             this.tboxHotenSearch.Size = new System.Drawing.Size(211, 20);
             this.tboxHotenSearch.TabIndex = 0;
+            // 
+            // colMAKH
+            // 
+            this.colMAKH.FieldName = "MAKH";
+            this.colMAKH.Name = "colMAKH";
+            this.colMAKH.Visible = true;
+            this.colMAKH.VisibleIndex = 0;
+            // 
+            // colHOTEN
+            // 
+            this.colHOTEN.FieldName = "HOTEN";
+            this.colHOTEN.Name = "colHOTEN";
+            this.colHOTEN.Visible = true;
+            this.colHOTEN.VisibleIndex = 1;
+            // 
+            // colDIACHI
+            // 
+            this.colDIACHI.FieldName = "DIACHI";
+            this.colDIACHI.Name = "colDIACHI";
+            this.colDIACHI.Visible = true;
+            this.colDIACHI.VisibleIndex = 2;
+            // 
+            // colSDT
+            // 
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 3;
+            // 
+            // colMACN
+            // 
+            this.colMACN.FieldName = "MACN";
+            this.colMACN.Name = "colMACN";
+            this.colMACN.Visible = true;
+            this.colMACN.VisibleIndex = 4;
+            // 
+            // colrowguid
+            // 
+            this.colrowguid.FieldName = "rowguid";
+            this.colrowguid.Name = "colrowguid";
+            this.colrowguid.Visible = true;
+            this.colrowguid.VisibleIndex = 5;
+            // 
+            // colMAHD
+            // 
+            this.colMAHD.FieldName = "MAHD";
+            this.colMAHD.Name = "colMAHD";
+            this.colMAHD.Visible = true;
+            this.colMAHD.VisibleIndex = 0;
+            // 
+            // colNGAY
+            // 
+            this.colNGAY.FieldName = "NGAY";
+            this.colNGAY.Name = "colNGAY";
+            this.colNGAY.Visible = true;
+            this.colNGAY.VisibleIndex = 1;
+            // 
+            // colMANV
+            // 
+            this.colMANV.FieldName = "MANV";
+            this.colMANV.Name = "colMANV";
+            this.colMANV.Visible = true;
+            this.colMANV.VisibleIndex = 2;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.FieldName = "MAKH";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 3;
+            // 
+            // colMAKHO
+            // 
+            this.colMAKHO.FieldName = "MAKHO";
+            this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.Visible = true;
+            this.colMAKHO.VisibleIndex = 4;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.FieldName = "rowguid";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
             // 
             // PhieuXuat
             // 
@@ -335,5 +450,17 @@
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl sP_TIMKIEM_KHACHHANGGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAHD;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAY;
+        private DevExpress.XtraGrid.Columns.GridColumn colMANV;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colHOTEN;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colMACN;
+        private DevExpress.XtraGrid.Columns.GridColumn colrowguid;
     }
 }
