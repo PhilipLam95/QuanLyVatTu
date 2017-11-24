@@ -108,7 +108,6 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\es\DevExpress.Office.v
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ja\DevExpress.Office.v16.1.Core.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
 <<<<<<< HEAD
-F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
 E:\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
 E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
 E:\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
@@ -133,12 +132,10 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.PhieuXuat.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DoiMatKhau.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.MatHang.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.resx
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.cs
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.Designer.cs
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DonDatHang.resources
-=======
 >>>>>>> de35ca1d7738ca811fd787fbf07942a58a8df794
 >>>>>>> 0f6227217c1f3240a1b45272825e5fc4bd8d12b2
