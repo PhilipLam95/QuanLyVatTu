@@ -117,3 +117,14 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.PhieuXuat.resources
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.FrmMain.resources
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.Properties.Resources.resources
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DangNhap.resources
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.PhieuXuat.resources
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.TaoTaiKhoan.resources
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.GenerateResource.Cache
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
