@@ -10,7 +10,7 @@ namespace QLYVATTU.MODEL
     class VatTu
     {
         public static String SP_DSVT_PHIEUXUAT = "SP_DSVT_PHIEUXUAT";
-        public DataTable getVatTu() // lay nhan vien
+        public DataTable getVatTu() 
         {
             DataTable hoadon = Access.ExecuteQuery(SP_DSVT_PHIEUXUAT, null);
             return hoadon;
