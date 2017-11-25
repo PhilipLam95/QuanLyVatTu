@@ -128,3 +128,5 @@ C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.Ph
 C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.TaoTaiKhoan.resources
 C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.GenerateResource.Cache
 C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe
+C:\Users\Rittou\Documents\GitHub\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.pdb

@@ -21,9 +21,7 @@ namespace QLYVATTU
             InitializeComponent();
         }
 
-<<<<<<< HEAD
-        
-=======
+
         private DataTable tenchinhanh;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,7 +59,6 @@ namespace QLYVATTU
             }
 
         }
->>>>>>> Lam
 
         //check form 
         private Form CheckExists(Type ftype)
