@@ -336,12 +336,55 @@ namespace QLYVATTU.VIEW
             {
                 MessageBox.Show("Vui Lòng Nhấn 'Tạo Khách Hàng Mới' Để Tiếp Tục!");
             }
+            else if (cb_DSKho.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui Lòng Chọn Kho Để Xuất Hàng!");
+            }
             else
             {
-                if (cb_DSKho.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Vui Lòng Chọn Kho Để Xuất Hàng!");
-                }
+                //-------lay ma phieu xuat-----------//
+                SqlDataReader maHD;
+                HoaDon HoaDon = new HoaDon();
+                //tạo 1 mã khách hàng mới
+                maHD = HoaDon.getMaPX();
+                maHD.Read();
+                maPX = maHD["MAHD"].ToString();
+                maHD.Close();
+                MessageBox.Show(maPX);
+                //-------hoan thanh lay ma-----------//
+                //try
+                //{
+                //    int nuRow = gridView3.RowCount;
+                //    for (int i = 0; i < nuRow; i++)
+                //    {
+                //        string maddh = labelDDH.Text.ToString();
+                //        string mavt = gridView3.GetRowCellValue(i, gridView3.Columns[1]).ToString();
+                //        string soluong = gridView3.GetRowCellValue(i, gridView3.Columns[3]).ToString();
+                //        string maNV = Access.MANV.ToString();
+                //        string nhacc = gridView3.GetRowCellValue(i, gridView3.Columns[4]).ToString();
+                //        string makho = gridView3.GetRowCellValue(i, gridView3.Columns[5]).ToString();
+                //        string[] param = { maddh, mavt, soluong, maNV, makho, nhacc };
+                //        DonDH dondh = new DonDH();
+                //        int x = dondh.Create_DonHang(param);
+                //        if (x == 0 && i == (nuRow - 1))
+                //        {
+                //            MessageBox.Show("Thêm Đơn đặt hàng " + labelDDH.Text + " thành công");
+                //            panel5.Hide();
+                //            tBoxMavattu.Text = "";
+                //            tBoxTenvattu.Text = "";
+                //            tBoxSoluong.Text = "";
+                //            tBoxNhacc.Text = "";
+                //            tENKHOComboBox.Text = "";
+                //            mAKHOComboBox.Text = "";
+                //        }
+                //    }
+
+
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("Them DDH that bai");
+                //}
             }
         }
 
