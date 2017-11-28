@@ -45,6 +45,7 @@ namespace QLYVATTU.VIEW
             chitietDDH.Columns.Add("Nhà cung cấp", typeof(string));
             chitietDDH.Columns.Add("Mã kho", typeof(string));
             chitietDDH.Columns.Add("Xóa", typeof(bool));
+            chitietDDH.Columns[6].DefaultValue = false;
         }
 
         private void load_nhacungcap()
@@ -145,7 +146,7 @@ namespace QLYVATTU.VIEW
                 if (cnnNhacungcap.Count > 0)
                 {
                     label10.Text = cnnNhacungcap[0].SDT_NCC;
-                    label12.Text = cnnNhacungcap[0].Diachi_NCC;
+                    rTboxDiachiNCC.Text = cnnNhacungcap[0].Diachi_NCC;
                     label8.Text = cnnNhacungcap[0].TenNCC;
                 }
             }
@@ -166,25 +167,7 @@ namespace QLYVATTU.VIEW
 
         private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
-            if (e.Column.FieldName == "TRTHAI")
-            {
-                if (Convert.ToInt32(e.Value) == 0)
-                {
-
-                    e.DisplayText = "Đang xử lý";
-
-                }
-                if (Convert.ToInt32(e.Value) == 1)
-                {
-                    e.DisplayText = "Hàng về";
-                }
-                if (Convert.ToInt32(e.Value) == 2)
-                {
-                    e.DisplayText = "Đã nhập hàng";
-                }
-
-
-            }
+            
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -196,6 +179,7 @@ namespace QLYVATTU.VIEW
                 bool soluongBool = f.CheckNullValue(tBoxSoluong);
                 bool mavattuBool = f.CheckNullValue(tBoxMavattu);
                 bool tenvattuBool = f.CheckNullValue(tBoxTenvattu);
+                Console.WriteLine(gridView3.RowCount);
                 if (soluongBool &&  mavattuBool && tenvattuBool)
                 {
                     for (int i = 0; i < gridView3.RowCount; i++)
@@ -210,7 +194,7 @@ namespace QLYVATTU.VIEW
                         {
                             int x = Int32.Parse(gridView3.GetRowCellValue(i, gridView3.Columns[3]).ToString()) + Int32.Parse(tBoxSoluong.Text);
                             gridView3.DeleteRow(i);
-                            chitietDDH.Rows.Add(labelDDH.Text, tBoxMavattu.Text, tBoxTenvattu.Text, x, cBoxNhaCC.Text, mAKHOComboBox.Text);
+                            chitietDDH.Rows.Add(labelDDH.Text, tBoxMavattu.Text, tBoxTenvattu.Text, x, cBoxNhaCC.SelectedItem, mAKHOComboBox.SelectedItem);
                             gridControl1.DataSource = chitietDDH;
                             gridControl1.DataBindings.Clear();
                             for(int j =0;j<6;j++)
@@ -218,12 +202,12 @@ namespace QLYVATTU.VIEW
                                 gridView3.Columns[j].OptionsColumn.AllowEdit = false;
                                 gridView3.Columns[3].OptionsColumn.AllowEdit = true;
                             }
-                           
+                            
                             x = 0;
                             return;
                         }
                     }
-                    chitietDDH.Rows.Add(labelDDH.Text, tBoxMavattu.Text, tBoxTenvattu.Text, tBoxSoluong.Text, cBoxNhaCC.Text, mAKHOComboBox.Text);
+                    chitietDDH.Rows.Add(labelDDH.Text, tBoxMavattu.Text, tBoxTenvattu.Text, tBoxSoluong.Text, cBoxNhaCC.SelectedItem, mAKHOComboBox.SelectedItem);
                     gridControl1.DataSource = chitietDDH;
                     gridControl1.DataBindings.Clear();
                     for (int j = 0; j < 6; j++)
@@ -255,10 +239,6 @@ namespace QLYVATTU.VIEW
             tBoxTenvattu.Text = red["TENVT"].ToString();
             tBoxSoluongKho.Text = red["SOLUONGTON"].ToString();
             tboxDonvi.Text = red["DONVI"].ToString();
-
-
-
-
         }
 
         private void gridViewVatTu_Click(object sender, EventArgs e)
@@ -306,6 +286,8 @@ namespace QLYVATTU.VIEW
             tENKHOComboBox.Enabled = true;
             cBoxNhaCC.Enabled = true;
             btnThietLapDDH.Visible = true;
+            gridView3.Columns.Clear();
+            chitietDDH.Clear();
 
             btnHuy.Visible = false;
             gridView3.OptionsBehavior.Editable = false;
@@ -408,7 +390,7 @@ namespace QLYVATTU.VIEW
                     if(cBoxNhaCC.Text == cnnNhacungcap[i].MaNCC)
                     {
                         label10.Text = cnnNhacungcap[i].SDT_NCC;
-                        label12.Text = cnnNhacungcap[i].Diachi_NCC;
+                        rTboxDiachiNCC.Text = cnnNhacungcap[i].Diachi_NCC;
                         label8.Text = cnnNhacungcap[i].TenNCC;
                     }
                 }
@@ -426,18 +408,24 @@ namespace QLYVATTU.VIEW
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            for(int i =0;i<gridView3.RowCount;i++)
+            for (int i = 0; i < gridView3.RowCount; i++)
             {
-                string check = gridView3.GetRowCellValue(i, gridView3.Columns[6]).ToString();
-                 if(check == "True")
+                var check = gridView3.GetRowCellValue(i, gridView3.Columns[6]).ToString(); ;
+                
+                if(check == "True")
                 {
                     gridView3.DeleteRow(i);
                 }
 
+                
+
             }
-          
+
+
+
+
         }
 
-       
+
     }
 }

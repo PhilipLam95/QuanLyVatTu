@@ -77,12 +77,12 @@
             this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.rTboxDiachiNCC = new System.Windows.Forms.RichTextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -91,6 +91,7 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tboxDonvi = new System.Windows.Forms.TextBox();
@@ -138,6 +139,7 @@
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.panel7.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -235,6 +237,7 @@
             this.colMAVT});
             this.gridView2.GridControl = this.sP_DS_CHITIET_DONDATHANGGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView2.OptionsFind.AlwaysVisible = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
@@ -330,7 +333,10 @@
             this.colTRTHAI});
             this.gridView1.GridControl = this.sP_DS_DONDATHANGGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colMADDH
             // 
@@ -554,9 +560,9 @@
             this.panel9.Controls.Add(this.groupBox4);
             this.panel9.Controls.Add(this.btnDonHang);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(559, 0);
+            this.panel9.Location = new System.Drawing.Point(523, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(149, 396);
+            this.panel9.Size = new System.Drawing.Size(185, 396);
             this.panel9.TabIndex = 2;
             // 
             // btnXoa
@@ -564,7 +570,7 @@
             this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(6, 293);
+            this.btnXoa.Location = new System.Drawing.Point(29, 303);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(111, 41);
             this.btnXoa.TabIndex = 15;
@@ -577,7 +583,7 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox4.Location = new System.Drawing.Point(0, 0);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(149, 199);
+            this.groupBox4.Size = new System.Drawing.Size(185, 199);
             this.groupBox4.TabIndex = 14;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin nhà cung cấp";
@@ -587,21 +593,33 @@
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.rTboxDiachiNCC);
             this.panel10.Controls.Add(this.label15);
             this.panel10.Controls.Add(this.label14);
             this.panel10.Controls.Add(this.label13);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Controls.Add(this.label10);
-            this.panel10.Controls.Add(this.label12);
             this.panel10.Controls.Add(this.label7);
             this.panel10.Controls.Add(this.label8);
             this.panel10.Controls.Add(this.label9);
             this.panel10.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel10.Location = new System.Drawing.Point(3, 19);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(143, 174);
+            this.panel10.Size = new System.Drawing.Size(182, 174);
             this.panel10.TabIndex = 14;
             this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
+            // 
+            // rTboxDiachiNCC
+            // 
+            this.rTboxDiachiNCC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.rTboxDiachiNCC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rTboxDiachiNCC.Enabled = false;
+            this.rTboxDiachiNCC.ForeColor = System.Drawing.Color.Blue;
+            this.rTboxDiachiNCC.Location = new System.Drawing.Point(8, 85);
+            this.rTboxDiachiNCC.Name = "rTboxDiachiNCC";
+            this.rTboxDiachiNCC.Size = new System.Drawing.Size(166, 44);
+            this.rTboxDiachiNCC.TabIndex = 14;
+            this.rTboxDiachiNCC.Text = "";
             // 
             // label15
             // 
@@ -609,7 +627,7 @@
             this.label15.ForeColor = System.Drawing.Color.Red;
             this.label15.Image = ((System.Drawing.Image)(resources.GetObject("label15.Image")));
             this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label15.Location = new System.Drawing.Point(18, 13);
+            this.label15.Location = new System.Drawing.Point(2, 13);
             this.label15.Name = "label15";
             this.label15.Padding = new System.Windows.Forms.Padding(0, 7, 0, 5);
             this.label15.Size = new System.Drawing.Size(28, 25);
@@ -622,7 +640,7 @@
             this.label14.ForeColor = System.Drawing.Color.Red;
             this.label14.Image = ((System.Drawing.Image)(resources.GetObject("label14.Image")));
             this.label14.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label14.Location = new System.Drawing.Point(21, 62);
+            this.label14.Location = new System.Drawing.Point(2, 62);
             this.label14.Name = "label14";
             this.label14.Padding = new System.Windows.Forms.Padding(0, 7, 0, 5);
             this.label14.Size = new System.Drawing.Size(28, 25);
@@ -635,7 +653,7 @@
             this.label13.ForeColor = System.Drawing.Color.Red;
             this.label13.Image = ((System.Drawing.Image)(resources.GetObject("label13.Image")));
             this.label13.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label13.Location = new System.Drawing.Point(21, 118);
+            this.label13.Location = new System.Drawing.Point(5, 129);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 3);
             this.label13.Size = new System.Drawing.Size(28, 21);
@@ -646,9 +664,10 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(49, 126);
+            this.label11.Location = new System.Drawing.Point(33, 129);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 13);
+            this.label11.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
+            this.label11.Size = new System.Drawing.Size(70, 17);
             this.label11.TabIndex = 4;
             this.label11.Text = "Số điên thoại";
             // 
@@ -656,28 +675,18 @@
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.Blue;
-            this.label10.Location = new System.Drawing.Point(52, 148);
+            this.label10.Location = new System.Drawing.Point(28, 150);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(57, 13);
             this.label10.TabIndex = 3;
             this.label10.Text = "SDT_NCC";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.ForeColor = System.Drawing.Color.Blue;
-            this.label12.Location = new System.Drawing.Point(21, 93);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 13);
-            this.label12.TabIndex = 5;
-            this.label12.Text = "DIACHI_NCC";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Red;
             this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label7.Location = new System.Drawing.Point(44, 15);
+            this.label7.Location = new System.Drawing.Point(28, 15);
             this.label7.Name = "label7";
             this.label7.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
             this.label7.Size = new System.Drawing.Size(75, 23);
@@ -689,7 +698,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label8.ForeColor = System.Drawing.Color.Blue;
-            this.label8.Location = new System.Drawing.Point(49, 38);
+            this.label8.Location = new System.Drawing.Point(21, 34);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 15);
             this.label8.TabIndex = 1;
@@ -699,7 +708,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(52, 69);
+            this.label9.Location = new System.Drawing.Point(28, 69);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 2;
@@ -710,7 +719,7 @@
             this.btnDonHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDonHang.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnDonHang.Image = ((System.Drawing.Image)(resources.GetObject("btnDonHang.Image")));
-            this.btnDonHang.Location = new System.Drawing.Point(6, 246);
+            this.btnDonHang.Location = new System.Drawing.Point(29, 244);
             this.btnDonHang.Name = "btnDonHang";
             this.btnDonHang.Size = new System.Drawing.Size(111, 41);
             this.btnDonHang.TabIndex = 1;
@@ -724,7 +733,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(559, 396);
+            this.panel6.Size = new System.Drawing.Size(523, 396);
             this.panel6.TabIndex = 0;
             // 
             // panel8
@@ -733,7 +742,7 @@
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(0, 150);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(559, 246);
+            this.panel8.Size = new System.Drawing.Size(523, 246);
             this.panel8.TabIndex = 1;
             // 
             // gridControl1
@@ -742,7 +751,9 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView3;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(559, 246);
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
+            this.gridControl1.Size = new System.Drawing.Size(523, 246);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -754,13 +765,19 @@
             this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AllowFocused = false;
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.groupBox2);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(559, 150);
+            this.panel7.Size = new System.Drawing.Size(523, 150);
             this.panel7.TabIndex = 0;
             // 
             // groupBox2
@@ -780,7 +797,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(559, 150);
+            this.groupBox2.Size = new System.Drawing.Size(523, 150);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết lập đơn đặt hàng";
@@ -788,16 +805,16 @@
             // tboxDonvi
             // 
             this.tboxDonvi.Enabled = false;
-            this.tboxDonvi.Location = new System.Drawing.Point(479, 65);
+            this.tboxDonvi.Location = new System.Drawing.Point(458, 80);
             this.tboxDonvi.Name = "tboxDonvi";
-            this.tboxDonvi.Size = new System.Drawing.Size(71, 20);
+            this.tboxDonvi.Size = new System.Drawing.Size(46, 20);
             this.tboxDonvi.TabIndex = 13;
             this.tboxDonvi.Tag = "Đơn vị";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(429, 68);
+            this.label6.Location = new System.Drawing.Point(408, 82);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 12;
@@ -815,6 +832,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.Location = new System.Drawing.Point(261, 86);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 13);
@@ -890,11 +908,11 @@
             // 
             this.labelDDH.AutoSize = true;
             this.labelDDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelDDH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.labelDDH.Location = new System.Drawing.Point(158, 16);
             this.labelDDH.Name = "labelDDH";
-            this.labelDDH.Size = new System.Drawing.Size(57, 20);
+            this.labelDDH.Size = new System.Drawing.Size(0, 20);
             this.labelDDH.TabIndex = 0;
-            this.labelDDH.Text = "label1";
             // 
             // panel4
             // 
@@ -925,6 +943,7 @@
             // 
             // cBoxNhaCC
             // 
+            this.cBoxNhaCC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxNhaCC.FormattingEnabled = true;
             this.cBoxNhaCC.Location = new System.Drawing.Point(381, 11);
             this.cBoxNhaCC.Name = "cBoxNhaCC";
@@ -945,6 +964,7 @@
             // tENKHOComboBox
             // 
             this.tENKHOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOBindingSource, "TENKHO", true));
+            this.tENKHOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tENKHOComboBox.FormattingEnabled = true;
             this.tENKHOComboBox.Location = new System.Drawing.Point(183, 12);
             this.tENKHOComboBox.Name = "tENKHOComboBox";
@@ -955,7 +975,10 @@
             // 
             // mAKHOComboBox
             // 
+            this.mAKHOComboBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.mAKHOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOBindingSource, "MAKHO", true));
+            this.mAKHOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mAKHOComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.mAKHOComboBox.FormattingEnabled = true;
             this.mAKHOComboBox.Location = new System.Drawing.Point(58, 12);
             this.mAKHOComboBox.Name = "mAKHOComboBox";
@@ -999,6 +1022,7 @@
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1077,7 +1101,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -1087,5 +1110,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private DevExpress.XtraEditors.SimpleButton btnXoa;
+        private System.Windows.Forms.RichTextBox rTboxDiachiNCC;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
     }
 }

@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace QLYVATTU
 {
     public partial class FrmMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -100,6 +101,17 @@ namespace QLYVATTU
          }
 
 
+        public bool CheckNullValueTextEdit(DevExpress.XtraEditors.TextEdit TextEdit)
+        {
+            if (TextEdit.Text == "")
+            {
+                MessageBox.Show("Giá trị " + TextEdit.Tag + " không được để trống");
+                return false;
+            }
+            return true;
+        }
+
+
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
         private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//FORM LOAI HÀNG
         {
@@ -158,13 +170,36 @@ namespace QLYVATTU
             }
         }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//form Don dat hàng
         {
-            Form frm = this.CheckExists(typeof(VIEW.MatHang));
+            Form frm = this.CheckExists(typeof(VIEW.DonDatHang));
             if (frm != null) frm.Activate();
             else
             {
                 VIEW.DonDatHang f = new VIEW.DonDatHang() { MdiParent = this, Text = "Đơn Đặt Hàng " };
+                f.Show();
+            }
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//form nhập hàng
+        {
+            Form frm = this.CheckExists(typeof(VIEW.PhieuNhap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.PhieuNhap f = new VIEW.PhieuNhap() { MdiParent = this, Text = "Phiếu Nhâp " };
+                f.Show();
+            }
+        }
+
+
+        private void btnBaoCaoHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(REPORT.BaoCaoHang));
+            if (frm != null) frm.Activate();
+            else
+            {
+                REPORT.BaoCaoHang f = new REPORT.BaoCaoHang() { MdiParent = this, Text = "Báo Cáo Hàng " };
                 f.Show();
             }
         }
@@ -193,7 +228,7 @@ namespace QLYVATTU
 
         public void HienThiBaoCao()
         {
-            rbpBaoCao.Visible = true;
+            
         }
 
         public void HienThiTrangChu()
@@ -217,7 +252,6 @@ namespace QLYVATTU
             btnDoiMatKhau.Enabled = false;
             // btnDangXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnDangXuat.Visible = false;
-            rbpBaoCao.Visible = false;
             rbQLNhanvien.Visible = false;
             rbpNghiepVu.Visible = false;
             label1.Visible = false;

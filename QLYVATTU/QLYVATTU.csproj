@@ -67,6 +67,7 @@
     <Compile Include="CMD\cmd_DonDatHang.cs" />
     <Compile Include="CMD\cmd_Kho.cs" />
     <Compile Include="CMD\cmd_Nhacungcap.cs" />
+    <Compile Include="CMD\cmd_PhieuNhap.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,7 +79,14 @@
     <Compile Include="MODEL\Connection.cs" />
     <Compile Include="MODEL\DonDH.cs" />
     <Compile Include="MODEL\HoaDon.cs" />
+    <Compile Include="MODEL\MDPhieuNhap.cs" />
     <Compile Include="MODEL\VatTu.cs" />
+    <Compile Include="REPORT\BaoCaoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORT\BaoCaoHang.Designer.cs">
+      <DependentUpon>BaoCaoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\DonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +128,12 @@
       <DependentUpon>MatHang.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="VIEW\PhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PhieuNhap.Designer.cs">
+      <DependentUpon>PhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\PhieuXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +159,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="REPORT\BaoCaoHang.resx">
+      <DependentUpon>BaoCaoHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +174,9 @@
     <EmbeddedResource Include="VIEW\MatHang.resx">
       <DependentUpon>MatHang.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PhieuNhap.resx">
+      <DependentUpon>PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\PhieuXuat.resx">
       <DependentUpon>PhieuXuat.cs</DependentUpon>

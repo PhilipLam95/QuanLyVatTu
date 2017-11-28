@@ -58,6 +58,8 @@
             this.btnDangXuat = new DevExpress.XtraEditors.SimpleButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnBaoCaoHang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -79,9 +81,10 @@
             this.barButtonItem5,
             this.btnTaoTK,
             this.barButtonItem7,
-            this.btnDoiMatKhau});
+            this.btnDoiMatKhau,
+            this.btnBaoCaoHang});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbHome,
@@ -156,6 +159,7 @@
             this.barButtonItem3.Id = 8;
             this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
             this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -264,6 +268,8 @@
             // 
             // rbpBaoCao
             // 
+            this.rbpBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
             this.rbpBaoCao.Name = "rbpBaoCao";
             this.rbpBaoCao.Text = "Báo Cáo";
             this.rbpBaoCao.Visible = false;
@@ -307,6 +313,19 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "label1";
             this.label1.Visible = false;
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnBaoCaoHang);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Báo Cáo Hàng Nhập";
+            // 
+            // btnBaoCaoHang
+            // 
+            this.btnBaoCaoHang.Caption = "Báo Cáo Hàng Nhập";
+            this.btnBaoCaoHang.Id = 17;
+            this.btnBaoCaoHang.Name = "btnBaoCaoHang";
+            this.btnBaoCaoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoHang_ItemClick);
             // 
             // FrmMain
             // 
@@ -364,6 +383,8 @@
         private DevExpress.XtraEditors.SimpleButton btnDangXuat;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraBars.BarButtonItem btnBaoCaoHang;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
     }
 }
 
