@@ -206,27 +206,25 @@ namespace QLYVATTU.VIEW
         {
             try
             {
-                MessageBox.Show("dsadsa");
                 Console.WriteLine(gridViewChiTietPhieuNhap.RowCount);
                 bool maddh = f.CheckNullValueTextEdit(madhTbox);
                 bool mavt = f.CheckNullValueTextEdit(MavtTbox);
                 bool soluongnhap = f.CheckNullValue(SoluongTbox);
                 bool dongia = f.CheckNullValue(DongiaTbox);
 
-                if (maddh && mavt && soluongnhap && dongia) // check null value
+                if (maddh && mavt && soluongnhap && dongia)
                 {
                     int soluong = Int32.Parse(SoluongTbox.Text.ToString());
                     int tong_gianhap = Convert.ToInt32(DongiaTbox.Text.ToString());
                     bool check_soluongnhap = CheckSoluongNhap(soluong);
                     bool check_dongia = CheckGiaNhap(tong_gianhap);
-                    if (check_soluongnhap)// check so luong nhap so voi so luong trong don hang`
+                    if (check_soluongnhap)
                     {
                         if (check_dongia)
                         {
-
+                            MessageBox.Show(gridViewChiTietPhieuNhap.RowCount.ToString());
                             if (gridViewChiTietPhieuNhap.RowCount == 0)
                             {
-                                
                                 chitietPN.Rows.Add(madhTbox.Text, MavtTbox.Text, TenVTTbox.Text, soluong, DongiaTbox.Text, DonviTbox.Text);
                                 gridControl1.DataSource = chitietPN;
                                 gridControl1.DataBindings.Clear();
@@ -234,57 +232,29 @@ namespace QLYVATTU.VIEW
                             }
                             else
                             {
-                                for (int j = 0; j < gridViewChiTietPhieuNhap.RowCount; j++)
-                                {
-                                    if (MavtTbox.Text.ToString() == (gridViewChiTietPhieuNhap.GetRowCellValue(j, gridViewChiTietPhieuNhap.Columns[1]).ToString()))
-                                    {
-                                            int soluong_truocdo_trongPN = Int32.Parse(gridViewChiTietPhieuNhap.GetRowCellValue(j, gridViewChiTietPhieuNhap.Columns[3]).ToString());// số lượng trước đó trong CT phiếu nhập
-                                            int soluong_lan2_cuaPN_theoVT = soluong + soluong_truocdo_trongPN;
-                                            bool check_nhaplan2_theoma = CheckSoluongNhapLan2TheoMa(soluong_lan2_cuaPN_theoVT);
-                                            if (check_nhaplan2_theoma)
-                                            {
-                                                gridViewChiTietPhieuNhap.DeleteRow(j);
-                                                chitietPN.Rows.Add(madhTbox.Text, MavtTbox.Text, TenVTTbox.Text, soluong_lan2_cuaPN_theoVT, DongiaTbox.Text, DonviTbox.Text);
-                                                gridControl1.DataSource = chitietPN;
-                                                gridControl1.DataBindings.Clear();
-                                            }
-                                        break;
-                                    }
-                                    else
-                                    {
-                                        if (j == (gridViewChiTietPhieuNhap.RowCount - 1))
-                                        {
-                                            chitietPN.Rows.Add(madhTbox.Text, MavtTbox.Text, TenVTTbox.Text, soluong, DongiaTbox.Text, DonviTbox.Text);
-                                            gridControl1.DataSource = chitietPN;
-                                            gridControl1.DataBindings.Clear();
-                                            break;
-                                        }
-                                        
-                                    }
-
-
-                                }
+                                MessageBox.Show("dsadsa");
+                                
                             }
                         }
                     }
                 }
             }
-            catch
-            {
-                MessageBox.Show("co loi");
-            }
 
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Có lỗi" + ex);
+            }
         }
 
 
         private bool CheckSoluongNhapLan2TheoMa(int soluong_lan2_cuaPN_theoVT)
         {
-            MessageBox.Show(soluong_lan2_cuaPN_theoVT.ToString());
             string mavt = MavtTbox.Text.ToString();
             for (int i = 0; i < gridView2.RowCount; i++)
             {
-
-                if (mavt == gridView2.GetRowCellValue(i, gridView2.Columns[2]).ToString())
+                string mavt_tronggridview2 = gridView2.GetRowCellValue(i, gridView2.Columns[2]).ToString();
+                if (mavt == mavt_tronggridview2)
                 {
                     if (soluong_lan2_cuaPN_theoVT > Int32.Parse(gridView2.GetRowCellValue(i, gridView2.Columns[1]).ToString()))
                     {
@@ -294,13 +264,6 @@ namespace QLYVATTU.VIEW
                     else
                     {
                         return true;
-                    }
-                }
-                else
-                {
-                    if (i == (gridView2.RowCount - 1))
-                    {
-                        break;
                     }
                 }
 
@@ -328,6 +291,7 @@ namespace QLYVATTU.VIEW
             DongiaTbox.Text = "";
             NgaylapDateEdit.Text = "";
             btnChiTietPn.Enabled = false;
+<<<<<<< HEAD
 
 <<<<<<< HEAD
             for(int i =0; i<gridViewChiTietPhieuNhap.RowCount+2;i++)
@@ -340,7 +304,15 @@ namespace QLYVATTU.VIEW
             gridViewChiTietPhieuNhap.Columns.Clear();
             chitietPN.Clear();
 >>>>>>> parent of 7415157... dsa
+=======
+>>>>>>> parent of 40f26e8... phung oc cho
             clearDataTableChitietpn();
+
+            //for (int i = 0; i <= gridviewchitietphieunhap.rowcount + 1; i++)
+            //{
+            //    gridviewchitietphieunhap.deleterow(i);
+            //}
+            List<cmd_PhieuNhap> cnnphieunhap = new List<cmd_PhieuNhap>();
 
 
 
