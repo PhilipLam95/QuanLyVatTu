@@ -36,7 +36,6 @@ namespace QLYVATTU.VIEW
             gridViewChiTietPhieuNhapData();
             loadDonHang_ChuaNhap();
             load_DS_PhieuNhap();
-            loadMaPN_TuDong();
 
         }
 
@@ -93,10 +92,6 @@ namespace QLYVATTU.VIEW
             pnhap = phieunhap.getChiTietDonDatHangTheoMa(param);
             sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.DataSource = pnhap;
             sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.DataMember = pnhap.TableName;
-            if(label1.Text != "")
-            {
-                loadMaPN_TuDong();
-            }
         }
 
         private void FocusedRowGetData()
@@ -136,16 +131,16 @@ namespace QLYVATTU.VIEW
 
         }
 
-        //private void btnBatDau_Click(object sender, EventArgs e)
-        //{
-        //    groupBox2.Visible = true;
-        //    loadMaPN_TuDong();
-        //    btnHuy.Visible = true;
-        //    btnBatDau.Visible = false;
-        //    btnChiTietPn.Enabled = true;
+        private void btnBatDau_Click(object sender, EventArgs e)
+        {
+            groupBox2.Visible = true;
+            loadMaPN_TuDong();
+            btnHuy.Visible = true;
+            btnBatDau.Visible = false;
+            btnChiTietPn.Enabled = true;
 
 
-        //}
+        }
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -312,15 +307,15 @@ namespace QLYVATTU.VIEW
             }
             return true;
         }
-        //private void btnHuy_Click(object sender, EventArgs e)
-        //{
-        //    btnBatDau.Visible = true;
-        //    btnHuy.Visible = false;
-        //    EventHandleForBtnHuy();
-        //    groupBox2.Visible = false;
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            btnBatDau.Visible = true;
+            btnHuy.Visible = false;
+            EventHandleForBtnHuy();
+            groupBox2.Visible = false;
 
 
-        //}
+        }
 
         private void EventHandleForBtnHuy()
         {
@@ -334,13 +329,20 @@ namespace QLYVATTU.VIEW
             NgaylapDateEdit.Text = "";
             btnChiTietPn.Enabled = false;
 
+<<<<<<< HEAD
             for(int i =0; i<gridViewChiTietPhieuNhap.RowCount+2;i++)
             {
                 gridViewChiTietPhieuNhap.DeleteRow(i);
                
             }
 
+=======
+            gridViewChiTietPhieuNhap.Columns.Clear();
+            chitietPN.Clear();
+>>>>>>> parent of 7415157... dsa
             clearDataTableChitietpn();
+
+
 
         }
 

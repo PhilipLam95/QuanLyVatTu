@@ -60,6 +60,10 @@
             this.madhTbox = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
+=======
+            this.btnHuy = new DevExpress.XtraEditors.SimpleButton();
+>>>>>>> parent of 7415157... dsa
             this.btnBatDau = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sP_DS_DONDATHANG_CHUANHAPGridControl = new DevExpress.XtraGrid.GridControl();
@@ -86,16 +90,20 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.sP_DS_PHIEUNHAPGridControl = new DevExpress.XtraGrid.GridControl();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.sP_DS_PHIEUNHAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_DS_PHIEUNHAPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAPN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMADDH2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYLAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
+<<<<<<< HEAD
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.qL_VATTUDataSet1 = new QLYVATTU.QL_VATTUDataSet();
             this.mAKHOTextEdit = new DevExpress.XtraEditors.TextEdit();
+=======
+>>>>>>> parent of 7415157... dsa
             mADDHLabel = new System.Windows.Forms.Label();
             nGAYLAPLabel = new System.Windows.Forms.Label();
             mAVTLabel = new System.Windows.Forms.Label();
@@ -133,8 +141,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAKHOTextEdit.Properties)).BeginInit();
@@ -257,7 +265,11 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 154);
             this.panel4.Name = "panel4";
+<<<<<<< HEAD
             this.panel4.Size = new System.Drawing.Size(731, 141);
+=======
+            this.panel4.Size = new System.Drawing.Size(731, 173);
+>>>>>>> parent of 7415157... dsa
             this.panel4.TabIndex = 1;
             // 
             // simpleButton1
@@ -275,7 +287,11 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridViewChiTietPhieuNhap;
             this.gridControl1.Name = "gridControl1";
+<<<<<<< HEAD
             this.gridControl1.Size = new System.Drawing.Size(608, 141);
+=======
+            this.gridControl1.Size = new System.Drawing.Size(608, 173);
+>>>>>>> parent of 7415157... dsa
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewChiTietPhieuNhap});
@@ -440,6 +456,10 @@
             // 
             // panel5
             // 
+<<<<<<< HEAD
+=======
+            this.panel5.Controls.Add(this.btnHuy);
+>>>>>>> parent of 7415157... dsa
             this.panel5.Controls.Add(this.btnBatDau);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 269);
@@ -447,12 +467,41 @@
             this.panel5.Size = new System.Drawing.Size(737, 36);
             this.panel5.TabIndex = 2;
             // 
+<<<<<<< HEAD
             // btnBatDau
             // 
             this.btnBatDau.Location = new System.Drawing.Point(0, 0);
             this.btnBatDau.Name = "btnBatDau";
             this.btnBatDau.Size = new System.Drawing.Size(75, 23);
             this.btnBatDau.TabIndex = 1;
+=======
+            // btnHuy
+            // 
+            this.btnHuy.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.btnHuy.Appearance.Options.UseForeColor = true;
+            this.btnHuy.Image = ((System.Drawing.Image)(resources.GetObject("btnHuy.Image")));
+            this.btnHuy.Location = new System.Drawing.Point(423, 0);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(78, 30);
+            this.btnHuy.TabIndex = 1;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Visible = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnBatDau
+            // 
+            this.btnBatDau.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnBatDau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBatDau.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBatDau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btnBatDau.Location = new System.Drawing.Point(213, 0);
+            this.btnBatDau.Name = "btnBatDau";
+            this.btnBatDau.Size = new System.Drawing.Size(140, 30);
+            this.btnBatDau.TabIndex = 0;
+            this.btnBatDau.Text = "Bắt đầu lập phiếu nhập";
+            this.btnBatDau.UseVisualStyleBackColor = false;
+            this.btnBatDau.Click += new System.EventHandler(this.btnBatDau_Click);
+>>>>>>> parent of 7415157... dsa
             // 
             // groupBox1
             // 
@@ -695,6 +744,17 @@
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(477, 289);
             // 
+            // tabNavigationPage2
+            // 
+            this.tabNavigationPage2.Caption = "Danh sách chi tiết Phiếu nhập";
+            this.tabNavigationPage2.Name = "tabNavigationPage2";
+            this.tabNavigationPage2.Size = new System.Drawing.Size(477, 289);
+            // 
+            // sP_DS_PHIEUNHAPBindingSource
+            // 
+            this.sP_DS_PHIEUNHAPBindingSource.DataMember = "SP_DS_PHIEUNHAP";
+            this.sP_DS_PHIEUNHAPBindingSource.DataSource = this.qL_VATTUDataSet;
+            // 
             // sP_DS_PHIEUNHAPGridControl
             // 
             this.sP_DS_PHIEUNHAPGridControl.DataSource = this.sP_DS_PHIEUNHAPBindingSource;
@@ -707,10 +767,13 @@
             this.sP_DS_PHIEUNHAPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+<<<<<<< HEAD
             // sP_DS_PHIEUNHAPBindingSource
             // 
             this.sP_DS_PHIEUNHAPBindingSource.DataMember = "SP_DS_PHIEUNHAP";
             // 
+=======
+>>>>>>> parent of 7415157... dsa
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -752,6 +815,7 @@
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 3;
             // 
+<<<<<<< HEAD
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Danh sách chi tiết Phiếu nhập";
@@ -779,6 +843,8 @@
             this.mAKHOTextEdit.Size = new System.Drawing.Size(100, 20);
             this.mAKHOTextEdit.TabIndex = 20;
             // 
+=======
+>>>>>>> parent of 7415157... dsa
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -819,8 +885,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAKHOTextEdit.Properties)).EndInit();
@@ -872,6 +938,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnBatDau;
         private System.Windows.Forms.Panel panel6;
+        private DevExpress.XtraEditors.SimpleButton btnHuy;
         private DevExpress.XtraEditors.TextEdit mKhoTbox;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Panel panel7;

@@ -136,9 +136,12 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.Genera
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
+<<<<<<< HEAD
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.resx
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.cs
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.Designer.cs
 >>>>>>> de35ca1d7738ca811fd787fbf07942a58a8df794
 >>>>>>> 0f6227217c1f3240a1b45272825e5fc4bd8d12b2
+=======
+>>>>>>> parent of 7415157... dsa
