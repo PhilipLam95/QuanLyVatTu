@@ -30,7 +30,7 @@ namespace QLYVATTU
             LoadSetting();
             VIEW.DangNhap f = new VIEW.DangNhap() { MdiParent = this, Text = "Đăng nhập" };
             f.Show();
-            
+
         }
 
         private void LoadSetting() // cài đặt begin
@@ -79,27 +79,26 @@ namespace QLYVATTU
 
         }
 
-<<<<<<< HEAD
         //Check Null Value TextBox()
-         public bool CheckNullValue(TextBox textbox)
-         {
-             if (textbox.Text == "")
+        public bool CheckNullValue(TextBox textbox)
+        {
+            if (textbox.Text == "")
             {
                 MessageBox.Show("Giá trị " + textbox.Tag + " không được để trống");
-                 return false;
-             }
+                return false;
+            }
             return true;
         }
 
         public bool CheckNullValueCBox(ComboBox combobox)
         {
-             if (combobox.Text == "")
-             {
-                 MessageBox.Show("Giá trị " + combobox.Tag + " không được để trống");
-               return false;
+            if (combobox.Text == "")
+            {
+                MessageBox.Show("Giá trị " + combobox.Tag + " không được để trống");
+                return false;
             }
-             return true;
-         }
+            return true;
+        }
 
 
         public bool CheckNullValueTextEdit(DevExpress.XtraEditors.TextEdit TextEdit)
@@ -113,8 +112,6 @@ namespace QLYVATTU
         }
 
 
-=======
->>>>>>> parent of 9ad658a... DonDatHang 26-1
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
         private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//FORM LOAI HÀNG
         {
@@ -198,13 +195,13 @@ namespace QLYVATTU
 
         private void btnBaoCaoHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form frm = this.CheckExists(typeof(REPORT.BaoCaoHang));
-            if (frm != null) frm.Activate();
-            else
-            {
-                REPORT.BaoCaoHang f = new REPORT.BaoCaoHang() { MdiParent = this, Text = "Báo Cáo Hàng " };
-                f.Show();
-            }
+            //Form frm = this.CheckExists(typeof(REPORT.BaoCaoHang));
+            //if (frm != null) frm.Activate();
+            //else
+            //{
+            //    REPORT.BaoCaoHang f = new REPORT.BaoCaoHang() { MdiParent = this, Text = "Báo Cáo Hàng " };
+            //    f.Show();
+            //}
         }
 
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
@@ -216,7 +213,7 @@ namespace QLYVATTU
         }
 
 
-        
+
 
 
         public void HienThiQuanLyNhanVien()
@@ -231,7 +228,7 @@ namespace QLYVATTU
 
         public void HienThiBaoCao()
         {
-            
+
         }
 
         public void HienThiTrangChu()
@@ -288,7 +285,7 @@ namespace QLYVATTU
             }
         }
 
-       
+
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
@@ -301,9 +298,9 @@ namespace QLYVATTU
             f.Show();
         }
 
-        int x =450, y = 85, a = 1;
+        int x = 450, y = 85, a = 1;
 
-       
+
 
         Random random = new Random();
 
@@ -313,12 +310,12 @@ namespace QLYVATTU
             {
                 x += a;
                 label1.Location = new Point(x, y);
-                if(x >= 800)
+                if (x >= 800)
                 {
                     a = -1;
                     label1.ForeColor = Color.FromArgb(random.Next(0, 225), random.Next(0, 225), random.Next(0, 225));
                 }
-                if(x <450)
+                if (x < 450)
                 {
                     a = 1;
                     label1.ForeColor = Color.FromArgb(random.Next(0, 225), random.Next(0, 225), random.Next(0, 225));
