@@ -27,6 +27,10 @@ namespace QLYVATTU.VIEW
 
         private void PhieuNhap_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qL_VATTUDataSet1.CHITIETKHO' table. You can move, or remove it, as needed.
+            this.cHITIETKHOTableAdapter.Fill(this.qL_VATTUDataSet1.CHITIETKHO);
+            // TODO: This line of code loads data into the 'qL_VATTUDataSet1.CHITIETKHO' table. You can move, or remove it, as needed.
+            this.cHITIETKHOTableAdapter.Fill(this.qL_VATTUDataSet1.CHITIETKHO);
             // TODO: This line of code loads data into the 'qL_VATTUDataSet.SP_DS_PHIEUNHAP' table. You can move, or remove it, as needed.
             //this.sP_DS_PHIEUNHAPTableAdapter.Fill(this.qL_VATTUDataSet.SP_DS_PHIEUNHAP);
             gridViewChiTietPhieuNhapData();
@@ -330,7 +334,7 @@ namespace QLYVATTU.VIEW
             NgaylapDateEdit.Text = "";
             btnChiTietPn.Enabled = false;
 
-            for(int i =0; i<(gridViewChiTietPhieuNhap.RowCount+2);i++)
+            for(int i =0; i<gridViewChiTietPhieuNhap.RowCount+2;i++)
             {
                 gridViewChiTietPhieuNhap.DeleteRow(i);
                
