@@ -124,3 +124,4 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.Genera
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
