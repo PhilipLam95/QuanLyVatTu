@@ -65,9 +65,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CMD\cmd_DonDatHang.cs" />
+<<<<<<< HEAD
     <Compile Include="CMD\cmd_Kho.cs" />
     <Compile Include="CMD\cmd_Nhacungcap.cs" />
     <Compile Include="CMD\cmd_PhieuNhap.cs" />
+=======
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,8 +81,11 @@
     <Compile Include="MODEL\ChiNhanh.cs" />
     <Compile Include="MODEL\Connection.cs" />
     <Compile Include="MODEL\DonDH.cs" />
+<<<<<<< HEAD
     <Compile Include="MODEL\HoaDon.cs" />
     <Compile Include="MODEL\MDPhieuNhap.cs" />
+=======
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
     <Compile Include="MODEL\VatTu.cs" />
     <Compile Include="REPORT\BaoCaoHang.cs">
       <SubType>Form</SubType>
@@ -93,6 +99,7 @@
     <Compile Include="VIEW\DonDatHang.Designer.cs">
       <DependentUpon>DonDatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\HoaDon.cs" />
     <Compile Include="MODEL\KhachHang.cs" />
     <Compile Include="MODEL\NhanVien.cs" />
     <Compile Include="Program.cs" />
@@ -208,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="Img\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

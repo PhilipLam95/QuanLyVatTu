@@ -22,21 +22,16 @@ namespace QLYVATTU.VIEW
         {
             InitializeComponent();
         }
+        
 
-
-        FrmMain f = Program.fmain; // gọi form chính để lấy function trong form
         private DataTable vt;
-        private static DataTable ddh;
-        private DataTable kho;
-        private DataTable nhacungcap;
+        private DataTable ddh;
         private SqlDataReader maDDH;
         private BindingList<cmd_DonDatHang> _DonDH;
         DataTable chitietDDH = new DataTable();
-        List<cmd_Kho> cnnkho = new List<cmd_Kho>();
-        List<cmd_Nhacungcap> cnnNhacungcap = new List<cmd_Nhacungcap>();
-
         private void gridVIEWData()
         {
+<<<<<<< HEAD
 
             chitietDDH.Columns.Add("Mã Đơn Đặt Hàng", typeof(string));
             chitietDDH.Columns.Add("Mã Vât Tư", typeof(string));
@@ -46,46 +41,36 @@ namespace QLYVATTU.VIEW
             chitietDDH.Columns.Add("Mã kho", typeof(string));
             chitietDDH.Columns.Add("Xóa", typeof(bool));
             chitietDDH.Columns[6].DefaultValue = false;
+=======
+            chitietDDH.Columns.Add("MaDDH", typeof(string));
+            chitietDDH.Columns.Add("MaVT", typeof(string));
+            chitietDDH.Columns.Add("TenVT", typeof(string));
+            chitietDDH.Columns.Add("Soluong", typeof(int));
+            chitietDDH.Columns.Add("NhaCC", typeof(string));
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
         }
 
-        private void load_nhacungcap()
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            DonDH dondh = new DonDH();
-            nhacungcap = dondh.getNhacungcap();
-            foreach (DataRow dr in nhacungcap.Rows)
-            {
-                cmd_Nhacungcap cnhacungcap = new cmd_Nhacungcap()
-                {
-                    MaNCC = dr[0].ToString(),
-                    TenNCC = dr[1].ToString(),
-                    Diachi_NCC = dr[2].ToString(),
-                    SDT_NCC = dr[3].ToString(),
 
-                };
-                cnnNhacungcap.Add(cnhacungcap);
-            }
+        }
+
+        private void DonDatHang_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'qL_VATTUDataSet.SP_DS_DONDATHANG' table. You can move, or remove it, as needed.
+            // this.sP_DS_DONDATHANGTableAdapter.Fill(this.qL_VATTUDataSet.SP_DS_DONDATHANG);
+        
+                gridVIEWData();
+                gridControl1.DataSource = chitietDDH;
+                gridControl1.DataBindings.Clear();
+               
             
+
+            loadVattu();
+            loadDDH();
         }
 
-        private void load_kho()
-        {
-
-            DonDH dondh = new DonDH();
-            kho = dondh.getKho();
-            foreach (DataRow dr in kho.Rows)
-            {
-                cmd_Kho ckho = new cmd_Kho()
-                {
-                    MaKho = dr[0].ToString(),
-                    TenKho = dr[1].ToString(),
-                    MaCN = dr[2].ToString(),
-
-                };
-                cnnkho.Add(ckho);
-            }
-
-        }
 
         private void loadVattu()
         {
@@ -104,6 +89,7 @@ namespace QLYVATTU.VIEW
 
         }
 
+<<<<<<< HEAD
         private void loadChiTiet_DDH()
         {
             DonDH dondh = new DonDH();
@@ -168,11 +154,35 @@ namespace QLYVATTU.VIEW
         private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
         {
             
-        }
+=======
+        private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.Column.FieldName == "TRTHAI")
+            {
+                if (Convert.ToInt32(e.Value)== 0 )
+                {
 
+                    e.DisplayText = "Đang xử lý";
+
+                }
+                if (Convert.ToInt32(e.Value) == 1)
+                {
+                    e.DisplayText = "Hàng về";
+                }
+                if (Convert.ToInt32(e.Value) == 2)
+                {
+                    e.DisplayText = "Đã nhập hàng";
+                }
+
+
+            }
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
+        }
+        
         private void btnThem_Click(object sender, EventArgs e)
         {
 
+<<<<<<< HEAD
             try
             {
 
@@ -228,6 +238,12 @@ namespace QLYVATTU.VIEW
 
             }
 
+=======
+            chitietDDH.Rows.Add(labelDDH.Text, tBoxMavattu.Text, tBoxTenvattu.Text, tBoxSoluong.Text, tBoxNhacc.Text);
+            gridControl1.DataSource = chitietDDH;
+            gridControl1.DataBindings.Clear();
+            string[] a = labelDDH.Text; 
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
 
 
         }
@@ -237,8 +253,13 @@ namespace QLYVATTU.VIEW
             DataRow red = gridViewVatTu.GetFocusedDataRow();
             tBoxMavattu.Text = red["MAVT"].ToString();
             tBoxTenvattu.Text = red["TENVT"].ToString();
+<<<<<<< HEAD
             tBoxSoluongKho.Text = red["SOLUONGTON"].ToString();
             tboxDonvi.Text = red["DONVI"].ToString();
+=======
+            //MessageBox.Show(tBoxMavattu.Text);
+            
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
         }
 
         private void gridViewVatTu_Click(object sender, EventArgs e)
@@ -251,9 +272,9 @@ namespace QLYVATTU.VIEW
 
         }
 
-
         private void btnThietLapDDH_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             bool makho = f.CheckNullValueCBox(mAKHOComboBox);
             bool tenkho = f.CheckNullValueCBox(tENKHOComboBox);
             bool nhacc = f.CheckNullValueCBox(cBoxNhaCC);
@@ -397,15 +418,20 @@ namespace QLYVATTU.VIEW
                
                 
             }
+=======
+            panel6.Visible = true;
+            string[] param = { Access.MACN };
+            DonDH dondh = new DonDH();
+            maDDH = dondh.getMaDDH();
+            maDDH.Read();
+            labelDDH.Text = maDDH["MADDH"].ToString();
+            maDDH.Close();
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
 
-          
-        }
 
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
+<<<<<<< HEAD
         private void btnXoa_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < gridView3.RowCount; i++)
@@ -427,5 +453,9 @@ namespace QLYVATTU.VIEW
         }
 
 
+=======
+
+        }
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
     }
 }

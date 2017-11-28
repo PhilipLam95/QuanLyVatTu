@@ -79,6 +79,7 @@ namespace QLYVATTU
 
         }
 
+<<<<<<< HEAD
         //Check Null Value TextBox()
          public bool CheckNullValue(TextBox textbox)
          {
@@ -112,6 +113,8 @@ namespace QLYVATTU
         }
 
 
+=======
+>>>>>>> parent of 9ad658a... DonDatHang 26-1
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
         private void btnLoaiHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//FORM LOAI HÀNG
         {
