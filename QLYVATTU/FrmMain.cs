@@ -59,7 +59,25 @@ namespace QLYVATTU
             }
 
         }
+        public bool CheckNullValue(TextBox textbox)
+        {
+            if (textbox.Text == "")
+            {
+                MessageBox.Show("Giá trị " + textbox.Tag + " không được để trống");
+                return false;
+            }
+            return true;
+        }
 
+        public bool CheckNullValueCBox(ComboBox combobox)
+        {
+            if (combobox.Text == "")
+            {
+                MessageBox.Show("Giá trị " + combobox.Tag + " không được để trống");
+                return false;
+            }
+            return true;
+        }
         //check form 
         private Form CheckExists(Type ftype)
         {
