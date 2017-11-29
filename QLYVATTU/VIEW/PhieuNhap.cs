@@ -32,6 +32,7 @@ namespace QLYVATTU.VIEW
             gridViewChiTietPhieuNhapData();
             loadDonHang_ChuaNhap();
             load_DS_PhieuNhap();
+            loadMaPN_TuDong();
 
         }
 
@@ -88,6 +89,10 @@ namespace QLYVATTU.VIEW
             pnhap = phieunhap.getChiTietDonDatHangTheoMa(param);
             sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.DataSource = pnhap;
             sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.DataMember = pnhap.TableName;
+            if (label1.Text != "")
+            {
+                loadMaPN_TuDong();
+            }
         }
 
         private void FocusedRowGetData()
@@ -127,16 +132,16 @@ namespace QLYVATTU.VIEW
 
         }
 
-        private void btnBatDau_Click(object sender, EventArgs e)
-        {
-            groupBox2.Visible = true;
-            loadMaPN_TuDong();
-            btnHuy.Visible = true;
-            btnBatDau.Visible = false;
-            btnChiTietPn.Enabled = true;
+        //private void btnBatDau_Click(object sender, EventArgs e)
+        //{
+        //    groupBox2.Visible = true;
+        //    loadMaPN_TuDong();
+        //    btnHuy.Visible = true;
+        //    btnBatDau.Visible = false;
+        //    btnChiTietPn.Enabled = true;
 
 
-        }
+        //}
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
@@ -303,15 +308,7 @@ namespace QLYVATTU.VIEW
             }
             return true;
         }
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            btnBatDau.Visible = true;
-            btnHuy.Visible = false;
-            EventHandleForBtnHuy();
-            groupBox2.Visible = false;
 
-
-        }
 
         private void EventHandleForBtnHuy()
         {
@@ -325,23 +322,57 @@ namespace QLYVATTU.VIEW
             NgaylapDateEdit.Text = "";
             btnChiTietPn.Enabled = false;
 
-            gridViewChiTietPhieuNhap.Columns.Clear();
-            chitietPN.Clear();
-            clearDataTableChitietpn();
-
-
+            int i = 0;
+            while(i < gridViewChiTietPhieuNhap.RowCount)
+            {
+                gridViewChiTietPhieuNhap.DeleteRow(i);
+            }
+            return;
 
         }
 
-        private void clearDataTableChitietpn()
+
+        private void btnLapPhieuNhap_Click(object sender, EventArgs e)
         {
-            DataTable chitietPN = new DataTable();
-            chitietPN.Columns.Add("Mã Đơn Hàng", typeof(string));
-            chitietPN.Columns.Add("Mã vật tư", typeof(string));
-            chitietPN.Columns.Add("Tên vật tư", typeof(string));
-            chitietPN.Columns.Add("Số lượng", typeof(int));
-            chitietPN.Columns.Add("Đơn giá", typeof(string));
-            chitietPN.Columns.Add("Đơn vị", typeof(string));
+            try
+            {
+
+                int numberRow = gridViewChiTietPhieuNhap.RowCount;
+                if (numberRow == 0)
+                {
+                    MessageBox.Show("Nhập chị tiết Phiếu Nhập của đơn hàng");
+                    return;
+                }
+                for (int i = 0; i < numberRow; i++)
+                {
+
+                    string mapn = label1.Text.ToString();
+                    string maddh = gridViewChiTietPhieuNhap.GetRowCellValue(i, gridViewChiTietPhieuNhap.Columns[0]).ToString();
+                    string mavt = gridViewChiTietPhieuNhap.GetRowCellValue(i, gridViewChiTietPhieuNhap.Columns[1]).ToString();
+                    string soluongnhap = gridViewChiTietPhieuNhap.GetRowCellValue(i, gridViewChiTietPhieuNhap.Columns[3]).ToString();
+                    string maNV = Access.MANV.ToString();
+                    string dongia_nhap = gridViewChiTietPhieuNhap.GetRowCellValue(i, gridViewChiTietPhieuNhap.Columns[4]).ToString();
+                    string[] param = { mapn, maddh, mavt, maNV, soluongnhap, dongia_nhap };
+                    MDPhieuNhap pnhap = new MDPhieuNhap();
+                    int x = pnhap.CreatePhieuNhap(param);
+                    if (x == 0 && i == (numberRow - 1))
+                    {
+                        MessageBox.Show("Thêm  Phiếu nhập : " + label1.Text + " thành công");
+                        loadDonHang_ChuaNhap();
+                        load_DS_PhieuNhap();
+                        EventHandleForBtnHuy();
+                    }
+                   
+                    
+                }
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Them DDH that bai");
+            }
+            EventHandleForBtnHuy();
         }
     }
 }
