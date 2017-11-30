@@ -47,13 +47,13 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridViewChiTietPhieuNhap = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.DongiaTbox = new System.Windows.Forms.TextBox();
             this.mKhoTbox = new DevExpress.XtraEditors.TextEdit();
             this.btnChiTietPn = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.SoluongTbox = new System.Windows.Forms.TextBox();
             this.DonviTbox = new DevExpress.XtraEditors.TextEdit();
             this.TenVTTbox = new DevExpress.XtraEditors.TextEdit();
-            this.DongiaTbox = new System.Windows.Forms.TextBox();
             this.MavtTbox = new DevExpress.XtraEditors.TextEdit();
             this.NgaylapDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.madhTbox = new DevExpress.XtraEditors.TextEdit();
@@ -92,6 +92,15 @@
             this.colNGAYLAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl = new DevExpress.XtraGrid.GridControl();
+            this.sP_DS_CHITIET_PHIEUNHAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAPN1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONGIA1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOLUONG1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNGAYLAP1 = new DevExpress.XtraGrid.Columns.GridColumn();
             mADDHLabel = new System.Windows.Forms.Label();
             nGAYLAPLabel = new System.Windows.Forms.Label();
             mAVTLabel = new System.Windows.Forms.Label();
@@ -131,6 +140,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_CHITIET_PHIEUNHAPGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_CHITIET_PHIEUNHAPBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // mADDHLabel
@@ -172,7 +185,7 @@
             // sOLUONGLabel
             // 
             sOLUONGLabel.AutoSize = true;
-            sOLUONGLabel.ForeColor = System.Drawing.Color.Red;
+            sOLUONGLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             sOLUONGLabel.Location = new System.Drawing.Point(252, 57);
             sOLUONGLabel.Name = "sOLUONGLabel";
             sOLUONGLabel.Size = new System.Drawing.Size(79, 13);
@@ -182,7 +195,7 @@
             // dONGIALabel
             // 
             dONGIALabel.AutoSize = true;
-            dONGIALabel.ForeColor = System.Drawing.Color.Red;
+            dONGIALabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dONGIALabel.Location = new System.Drawing.Point(530, 57);
             dONGIALabel.Name = "dONGIALabel";
             dONGIALabel.Size = new System.Drawing.Size(47, 13);
@@ -228,11 +241,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox2.ForeColor = System.Drawing.Color.Red;
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(734, 334);
@@ -243,6 +257,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel4.Controls.Add(this.btnLapPhieuNhap);
             this.panel4.Controls.Add(this.gridControl1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -253,8 +268,14 @@
             // 
             // btnLapPhieuNhap
             // 
+            this.btnLapPhieuNhap.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnLapPhieuNhap.Appearance.Options.UseBackColor = true;
+            this.btnLapPhieuNhap.AppearanceHovered.BackColor = System.Drawing.Color.Yellow;
+            this.btnLapPhieuNhap.AppearanceHovered.Options.UseBackColor = true;
+            this.btnLapPhieuNhap.AppearancePressed.BackColor = System.Drawing.Color.Cyan;
+            this.btnLapPhieuNhap.AppearancePressed.Options.UseBackColor = true;
             this.btnLapPhieuNhap.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
-            this.btnLapPhieuNhap.Location = new System.Drawing.Point(627, 53);
+            this.btnLapPhieuNhap.Location = new System.Drawing.Point(627, 56);
             this.btnLapPhieuNhap.Name = "btnLapPhieuNhap";
             this.btnLapPhieuNhap.Size = new System.Drawing.Size(88, 28);
             this.btnLapPhieuNhap.TabIndex = 1;
@@ -277,9 +298,14 @@
             this.gridViewChiTietPhieuNhap.GridControl = this.gridControl1;
             this.gridViewChiTietPhieuNhap.Name = "gridViewChiTietPhieuNhap";
             this.gridViewChiTietPhieuNhap.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridViewChiTietPhieuNhap.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewChiTietPhieuNhap_RowClick);
+            this.gridViewChiTietPhieuNhap.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridViewChiTietPhieuNhap_RowUpdated);
+            this.gridViewChiTietPhieuNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.gridViewChiTietPhieuNhap_KeyPress);
+            this.gridViewChiTietPhieuNhap.Click += new System.EventHandler(this.gridViewChiTietPhieuNhap_Click);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.DongiaTbox);
             this.panel3.Controls.Add(this.mKhoTbox);
             this.panel3.Controls.Add(label3);
             this.panel3.Controls.Add(this.btnChiTietPn);
@@ -291,7 +317,6 @@
             this.panel3.Controls.Add(this.DonviTbox);
             this.panel3.Controls.Add(this.TenVTTbox);
             this.panel3.Controls.Add(dONGIALabel);
-            this.panel3.Controls.Add(this.DongiaTbox);
             this.panel3.Controls.Add(mAVTLabel);
             this.panel3.Controls.Add(this.MavtTbox);
             this.panel3.Controls.Add(nGAYLAPLabel);
@@ -300,12 +325,22 @@
             this.panel3.Controls.Add(this.madhTbox);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.panel3.ForeColor = System.Drawing.Color.White;
             this.panel3.Location = new System.Drawing.Point(3, 16);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(728, 106);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // DongiaTbox
+            // 
+            this.DongiaTbox.Location = new System.Drawing.Point(583, 54);
+            this.DongiaTbox.MaxLength = 13;
+            this.DongiaTbox.Name = "DongiaTbox";
+            this.DongiaTbox.Size = new System.Drawing.Size(100, 20);
+            this.DongiaTbox.TabIndex = 19;
+            this.DongiaTbox.Tag = "Đơn giá";
+            this.DongiaTbox.TextChanged += new System.EventHandler(this.DongiaTbox_TextChanged_1);
             // 
             // mKhoTbox
             // 
@@ -333,7 +368,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(685, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
@@ -348,6 +383,7 @@
             this.SoluongTbox.Size = new System.Drawing.Size(63, 20);
             this.SoluongTbox.TabIndex = 10;
             this.SoluongTbox.Tag = "Số lượng nhập";
+            this.SoluongTbox.TextChanged += new System.EventHandler(this.SoluongTbox_TextChanged);
             // 
             // DonviTbox
             // 
@@ -368,15 +404,6 @@
             this.TenVTTbox.Properties.Appearance.Options.UseForeColor = true;
             this.TenVTTbox.Size = new System.Drawing.Size(201, 20);
             this.TenVTTbox.TabIndex = 8;
-            // 
-            // DongiaTbox
-            // 
-            this.DongiaTbox.ForeColor = System.Drawing.Color.Blue;
-            this.DongiaTbox.Location = new System.Drawing.Point(583, 54);
-            this.DongiaTbox.Name = "DongiaTbox";
-            this.DongiaTbox.Size = new System.Drawing.Size(96, 20);
-            this.DongiaTbox.TabIndex = 12;
-            this.DongiaTbox.Tag = "Đơn giá";
             // 
             // MavtTbox
             // 
@@ -429,6 +456,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.groupBox1.Controls.Add(this.sP_DS_DONDATHANG_CHUANHAPGridControl);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -535,6 +563,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.groupBox3.Controls.Add(this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
@@ -576,8 +605,11 @@
             this.colDONGIA});
             this.gridView2.GridControl = this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView2.OptionsFind.AlwaysVisible = true;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDONGIA, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView2.Click += new System.EventHandler(this.gridView2_Click);
             // 
             // colMADDH1
@@ -587,7 +619,7 @@
             this.colMADDH1.Name = "colMADDH1";
             this.colMADDH1.Visible = true;
             this.colMADDH1.VisibleIndex = 0;
-            this.colMADDH1.Width = 100;
+            this.colMADDH1.Width = 99;
             // 
             // colSOLUONG
             // 
@@ -596,7 +628,7 @@
             this.colSOLUONG.Name = "colSOLUONG";
             this.colSOLUONG.Visible = true;
             this.colSOLUONG.VisibleIndex = 3;
-            this.colSOLUONG.Width = 129;
+            this.colSOLUONG.Width = 108;
             // 
             // colMAVT
             // 
@@ -605,7 +637,7 @@
             this.colMAVT.Name = "colMAVT";
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 1;
-            this.colMAVT.Width = 100;
+            this.colMAVT.Width = 84;
             // 
             // colTENVT
             // 
@@ -614,7 +646,7 @@
             this.colTENVT.Name = "colTENVT";
             this.colTENVT.Visible = true;
             this.colTENVT.VisibleIndex = 2;
-            this.colTENVT.Width = 100;
+            this.colTENVT.Width = 191;
             // 
             // colMAKHO1
             // 
@@ -623,7 +655,7 @@
             this.colMAKHO1.Name = "colMAKHO1";
             this.colMAKHO1.Visible = true;
             this.colMAKHO1.VisibleIndex = 6;
-            this.colMAKHO1.Width = 71;
+            this.colMAKHO1.Width = 55;
             // 
             // colDONVI
             // 
@@ -632,19 +664,22 @@
             this.colDONVI.Name = "colDONVI";
             this.colDONVI.Visible = true;
             this.colDONVI.VisibleIndex = 4;
-            this.colDONVI.Width = 90;
+            this.colDONVI.Width = 46;
             // 
             // colDONGIA
             // 
             this.colDONGIA.Caption = "Gía bán khách hàng";
+            this.colDONGIA.DisplayFormat.FormatString = "{0:#.###,##}";
+            this.colDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colDONGIA.FieldName = "DONGIA";
             this.colDONGIA.Name = "colDONGIA";
             this.colDONGIA.Visible = true;
             this.colDONGIA.VisibleIndex = 5;
-            this.colDONGIA.Width = 114;
+            this.colDONGIA.Width = 121;
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel7.Controls.Add(this.tabPane1);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(734, 269);
@@ -654,6 +689,8 @@
             // 
             // tabPane1
             // 
+            this.tabPane1.Appearance.BackColor = System.Drawing.Color.Red;
+            this.tabPane1.Appearance.Options.UseBackColor = true;
             this.tabPane1.Controls.Add(this.tabNavigationPage1);
             this.tabPane1.Controls.Add(this.tabNavigationPage2);
             this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -704,6 +741,7 @@
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // colMAPN
             // 
@@ -736,8 +774,88 @@
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Danh sách chi tiết Phiếu nhập";
+            this.tabNavigationPage2.Controls.Add(this.sP_DS_CHITIET_PHIEUNHAPGridControl);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(477, 289);
+            this.tabNavigationPage2.Size = new System.Drawing.Size(480, 289);
+            // 
+            // sP_DS_CHITIET_PHIEUNHAPGridControl
+            // 
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.DataSource = this.sP_DS_CHITIET_PHIEUNHAPBindingSource;
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.Location = new System.Drawing.Point(0, 0);
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.MainView = this.gridView3;
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.Name = "sP_DS_CHITIET_PHIEUNHAPGridControl";
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.Size = new System.Drawing.Size(480, 289);
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.TabIndex = 0;
+            this.sP_DS_CHITIET_PHIEUNHAPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // sP_DS_CHITIET_PHIEUNHAPBindingSource
+            // 
+            this.sP_DS_CHITIET_PHIEUNHAPBindingSource.DataMember = "SP_DS_CHITIET_PHIEUNHAP";
+            this.sP_DS_CHITIET_PHIEUNHAPBindingSource.DataSource = this.qL_VATTUDataSet;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAPN1,
+            this.colMAVT1,
+            this.colDONGIA1,
+            this.colSOLUONG1,
+            this.colTENVT1,
+            this.colNGAYLAP1});
+            this.gridView3.GridControl = this.sP_DS_CHITIET_PHIEUNHAPGridControl;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView3.OptionsFind.AlwaysVisible = true;
+            // 
+            // colMAPN1
+            // 
+            this.colMAPN1.Caption = "Mã Phiếu nhập";
+            this.colMAPN1.FieldName = "MAPN";
+            this.colMAPN1.Name = "colMAPN1";
+            this.colMAPN1.Visible = true;
+            this.colMAPN1.VisibleIndex = 0;
+            // 
+            // colMAVT1
+            // 
+            this.colMAVT1.Caption = "Mã vật tư";
+            this.colMAVT1.FieldName = "MAVT";
+            this.colMAVT1.Name = "colMAVT1";
+            this.colMAVT1.Visible = true;
+            this.colMAVT1.VisibleIndex = 1;
+            // 
+            // colDONGIA1
+            // 
+            this.colDONGIA1.Caption = "Đơn giá";
+            this.colDONGIA1.FieldName = "DONGIA";
+            this.colDONGIA1.Name = "colDONGIA1";
+            this.colDONGIA1.Visible = true;
+            this.colDONGIA1.VisibleIndex = 4;
+            // 
+            // colSOLUONG1
+            // 
+            this.colSOLUONG1.Caption = "Số lượng";
+            this.colSOLUONG1.FieldName = "SOLUONG";
+            this.colSOLUONG1.Name = "colSOLUONG1";
+            this.colSOLUONG1.Visible = true;
+            this.colSOLUONG1.VisibleIndex = 3;
+            // 
+            // colTENVT1
+            // 
+            this.colTENVT1.Caption = "Tên vật tư";
+            this.colTENVT1.FieldName = "TENVT";
+            this.colTENVT1.Name = "colTENVT1";
+            this.colTENVT1.Visible = true;
+            this.colTENVT1.VisibleIndex = 2;
+            // 
+            // colNGAYLAP1
+            // 
+            this.colNGAYLAP1.Caption = "Ngày lập";
+            this.colNGAYLAP1.FieldName = "NGAYLAP";
+            this.colNGAYLAP1.Name = "colNGAYLAP1";
+            this.colNGAYLAP1.Visible = true;
+            this.colNGAYLAP1.VisibleIndex = 5;
             // 
             // PhieuNhap
             // 
@@ -782,6 +900,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_PHIEUNHAPBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            this.tabNavigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_CHITIET_PHIEUNHAPGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_CHITIET_PHIEUNHAPBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -822,7 +944,6 @@
         private DevExpress.XtraEditors.TextEdit madhTbox;
         private DevExpress.XtraEditors.TextEdit MavtTbox;
         private DevExpress.XtraEditors.TextEdit DonviTbox;
-        private System.Windows.Forms.TextBox DongiaTbox;
         private System.Windows.Forms.TextBox SoluongTbox;
         private DevExpress.XtraEditors.TextEdit TenVTTbox;
         private DevExpress.XtraEditors.SimpleButton btnChiTietPn;
@@ -841,5 +962,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMADDH2;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYLAP;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
+        private System.Windows.Forms.TextBox DongiaTbox;
+        private System.Windows.Forms.BindingSource sP_DS_CHITIET_PHIEUNHAPBindingSource;
+        private DevExpress.XtraGrid.GridControl sP_DS_CHITIET_PHIEUNHAPGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAPN1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAVT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENVT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colNGAYLAP1;
     }
 }

@@ -18,6 +18,7 @@ namespace QLYVATTU
         //goi view
 
         public static FrmMain INSTANCE;
+        
         public FrmMain()
         {
             InitializeComponent();
@@ -64,6 +65,13 @@ namespace QLYVATTU
 
         }
 
+
+
+
+        // ----------------------------------------------Timer refresh data-------------------------------------------------------
+
+        
+        // -------------------------------------------------------------------------------------------------------------------------
         //check form 
         public Form CheckExists(Type ftype)
         {
@@ -72,6 +80,11 @@ namespace QLYVATTU
                 if (f.GetType() == ftype)
                     return f;
             return null;
+        }
+
+        public static void CheckFormNotInMdi(Type ftype)
+        {
+           
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
@@ -110,6 +123,18 @@ namespace QLYVATTU
             }
             return true;
         }
+        
+
+        public bool CheckNullValueMasedTextBox(MaskedTextBox maskedTextBox)
+        {
+            if (string.IsNullOrEmpty(maskedTextBox.Mask))
+            {
+                MessageBox.Show("Giá trị " + maskedTextBox.Tag + " không được để trống");
+                return false;
+            }
+            return true;
+        }
+       
 
 
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
@@ -184,13 +209,22 @@ namespace QLYVATTU
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)//form nhập hàng
         {
             Form frm = this.CheckExists(typeof(VIEW.PhieuNhap));
-            if (frm != null) frm.Activate();
+            if (frm != null)
+            {
+                frm.Activate();
+              
+            }
             else
             {
                 VIEW.PhieuNhap f = new VIEW.PhieuNhap() { MdiParent = this, Text = "Phiếu Nhâp " };
                 f.Show();
+
+
+
             }
         }
+
+        
 
 
         private void btnBaoCaoHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -300,7 +334,10 @@ namespace QLYVATTU
 
         int x = 450, y = 85, a = 1;
 
-
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
         Random random = new Random();
 

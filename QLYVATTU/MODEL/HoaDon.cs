@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace QLYVATTU.MODEL
         public static String SP_DANHSACHPHIEUXUAT = "SP_DANHSACHPHIEUXUAT";
         public static String SP_DS_KHO = "SP_DS_KHO";
         public static String SP_LOAD_CT_KHO = "SP_LOAD_CT_KHO";
+        public static String SP_LAYMA_PHIEUXUAT = "SP_LAYMA_PHIEUXUAT";
 
         public DataTable getHoaDon() // lay hoa don (phieu xuat)
         {
@@ -31,6 +33,11 @@ namespace QLYVATTU.MODEL
             DataTable chiTietKho = Access.ExecuteQuery(SP_LOAD_CT_KHO, name, param, 1);
             return chiTietKho;
         }
-
+        //lay ma hoa don
+        public SqlDataReader getMaPX()
+        {
+            SqlDataReader maHD = Access.ExecSqlDataReader(SP_LAYMA_PHIEUXUAT, null);
+            return maHD;
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace QLYVATTU
     static class Program
     {
         public static FrmMain fmain;
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

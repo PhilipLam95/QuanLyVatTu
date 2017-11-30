@@ -44,6 +44,7 @@
             this.btnTaoTK = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBaoCaoHang = new DevExpress.XtraBars.BarButtonItem();
             this.rbHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -53,13 +54,13 @@
             this.rbpNghiepVu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDangXuat = new DevExpress.XtraEditors.SimpleButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnBaoCaoHang = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCloseApp = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -205,6 +206,13 @@
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDoiMatKhau_ItemClick);
             // 
+            // btnBaoCaoHang
+            // 
+            this.btnBaoCaoHang.Caption = "Báo Cáo Hàng Nhập";
+            this.btnBaoCaoHang.Id = 17;
+            this.btnBaoCaoHang.Name = "btnBaoCaoHang";
+            this.btnBaoCaoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoHang_ItemClick);
+            // 
             // rbHome
             // 
             this.rbHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -274,6 +282,12 @@
             this.rbpBaoCao.Text = "Báo Cáo";
             this.rbpBaoCao.Visible = false;
             // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnBaoCaoHang);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Báo Cáo Hàng Nhập";
+            // 
             // xtraTabbedMdiManager1
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
@@ -287,10 +301,18 @@
             // btnDangXuat
             // 
             this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.Appearance.Options.UseBackColor = true;
+            this.btnDangXuat.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.AppearanceHovered.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDangXuat.AppearanceHovered.BorderColor = System.Drawing.Color.Blue;
+            this.btnDangXuat.AppearanceHovered.Options.UseBackColor = true;
+            this.btnDangXuat.AppearanceHovered.Options.UseBorderColor = true;
+            this.btnDangXuat.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
             this.btnDangXuat.Location = new System.Drawing.Point(756, 69);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(121, 46);
+            this.btnDangXuat.Size = new System.Drawing.Size(121, 41);
             this.btnDangXuat.TabIndex = 2;
             this.btnDangXuat.Text = "ĐĂNG XUẤT";
             this.btnDangXuat.Visible = false;
@@ -314,18 +336,24 @@
             this.label1.Text = "label1";
             this.label1.Visible = false;
             // 
-            // ribbonPageGroup1
+            // btnCloseApp
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnBaoCaoHang);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Báo Cáo Hàng Nhập";
-            // 
-            // btnBaoCaoHang
-            // 
-            this.btnBaoCaoHang.Caption = "Báo Cáo Hàng Nhập";
-            this.btnBaoCaoHang.Id = 17;
-            this.btnBaoCaoHang.Name = "btnBaoCaoHang";
-            this.btnBaoCaoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoHang_ItemClick);
+            this.btnCloseApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(82)))), ((int)(((byte)(73)))));
+            this.btnCloseApp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCloseApp.BackgroundImage")));
+            this.btnCloseApp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCloseApp.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnCloseApp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnCloseApp.FlatAppearance.BorderSize = 100;
+            this.btnCloseApp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnCloseApp.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCloseApp.ForeColor = System.Drawing.Color.Red;
+            this.btnCloseApp.Location = new System.Drawing.Point(855, 0);
+            this.btnCloseApp.Name = "btnCloseApp";
+            this.btnCloseApp.Size = new System.Drawing.Size(34, 29);
+            this.btnCloseApp.TabIndex = 6;
+            this.btnCloseApp.UseVisualStyleBackColor = false;
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
             // FrmMain
             // 
@@ -334,6 +362,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(889, 419);
+            this.Controls.Add(this.btnCloseApp);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangXuat);
             this.Controls.Add(this.ribbonControl1);
@@ -385,6 +414,7 @@
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraBars.BarButtonItem btnBaoCaoHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private System.Windows.Forms.Button btnCloseApp;
     }
 }
 

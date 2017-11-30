@@ -442,6 +442,7 @@
             this.gridViewVatTu.OptionsBehavior.Editable = false;
             this.gridViewVatTu.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridViewVatTu.OptionsFind.AlwaysVisible = true;
+            this.gridViewVatTu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridViewVatTu_KeyDown);
             this.gridViewVatTu.Click += new System.EventHandler(this.gridViewVatTu_Click);
             // 
             // colMavattu
@@ -963,7 +964,6 @@
             // 
             // tENKHOComboBox
             // 
-            this.tENKHOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOBindingSource, "TENKHO", true));
             this.tENKHOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tENKHOComboBox.FormattingEnabled = true;
             this.tENKHOComboBox.Location = new System.Drawing.Point(183, 12);
@@ -976,7 +976,6 @@
             // mAKHOComboBox
             // 
             this.mAKHOComboBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.mAKHOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOBindingSource, "MAKHO", true));
             this.mAKHOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mAKHOComboBox.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.mAKHOComboBox.FormattingEnabled = true;
@@ -1068,12 +1067,10 @@
         private System.Windows.Forms.Label labelDDH;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
-        private System.Windows.Forms.BindingSource kHOBindingSource;
         private System.Windows.Forms.ComboBox tENKHOComboBox;
         private System.Windows.Forms.ComboBox mAKHOComboBox;
         private DevExpress.XtraEditors.SimpleButton btnDonHang;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox mAKHOComboBox1;
         private System.Windows.Forms.TextBox tboxDonvi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox tBoxSoluong;
@@ -1112,5 +1109,7 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private System.Windows.Forms.RichTextBox rTboxDiachiNCC;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private System.Windows.Forms.ComboBox mAKHOComboBox1;
+        private System.Windows.Forms.BindingSource kHOBindingSource;
     }
 }

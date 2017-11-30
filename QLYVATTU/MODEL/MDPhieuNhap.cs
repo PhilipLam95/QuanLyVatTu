@@ -16,6 +16,7 @@ namespace QLYVATTU.MODEL
         public static string SP_LAYPHIEUNHAP_TUDONG = "SP_LAYPHIEUNHAP_TUDONG";
         public static string SP_DS_PHIEUNHAP = "SP_DS_PHIEUNHAP";
         public static string SP_TAO_PHIEUNHAP = "SP_TAO_PHIEUNHAP";
+        public static string SP_DS_CHITIET_PHIEUNHAP = "SP_DS_CHITIET_PHIEUNHAP";
 
 
         public DataTable getDS_DonDatHang_ChuaNhap()
@@ -29,6 +30,15 @@ namespace QLYVATTU.MODEL
             DataTable dondh = Access.ExecuteQuery(SP_DS_CHITIET_DONDATHANG_THEOMA, name, param, 1);
             return dondh;
         }
+
+        public DataTable getChiTietPhieuNhap(string[] param)
+        {
+
+            string[] name = { "@MAPN" };
+            DataTable pn = Access.ExecuteQuery(SP_DS_CHITIET_PHIEUNHAP, name, param, 1);
+            return pn;
+        }
+
 
         public SqlDataReader getMaPhieuNhap_TuDong()
         {
