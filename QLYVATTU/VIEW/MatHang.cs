@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLYVATTU.MODEL;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace QLYVATTU.VIEW
 {
@@ -22,7 +23,8 @@ namespace QLYVATTU.VIEW
 
         private void MatHang_Load(object sender, EventArgs e)
         {
-          
+        
+
             loadvattu();
         }
 
@@ -37,9 +39,6 @@ namespace QLYVATTU.VIEW
             lvt = loaivattu.getLoaiVatTu();
             sP_DS_LOAIVTGridControl.DataSource = lvt;
             sP_DS_LOAIVTGridControl.DataMember = lvt.TableName;
-
-
-
 
         }
 
@@ -57,6 +56,39 @@ namespace QLYVATTU.VIEW
                 VIEW.DonDatHang f = new VIEW.DonDatHang() { MdiParent = Program.fmain, Text = "Đơn Đặt Hàng" };
                 f.Show();
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThemLoai_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            var gridView1 = sender as GridView;
+            if (gridView1.FocusedColumn != gridView1.Columns["TENVT"] && 
+                gridView1.FocusedColumn != gridView1.Columns["MALOAI"] &&
+                gridView1.FocusedColumn != gridView1.Columns["TENLOAI"] &&
+                gridView1.FocusedColumn != gridView1.Columns["DONGIA"] &&
+                gridView1.FocusedColumn != gridView1.Columns["DONVI"] ||
+               gridView1.FocusedRowHandle == DevExpress.XtraGrid.GridControl.NewItemRowHandle)
+                return;
+            e.Cancel = true;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace QLYVATTU.MODEL
         public static String SP_DS_VATTU = "SP_DS_VATTU";
 
         public static String SP_DS_LOAIVT = "SP_DS_LOAIVT";
+        public static string SP_DS_VATTU_TRONGKHO = "SP_DS_VATTU_TRONGKHO";
 
         public DataTable getVatTu() // lay nhan vien
         {
@@ -24,6 +25,13 @@ namespace QLYVATTU.MODEL
         {
             DataTable loaivattu = Access.ExecuteQuery(SP_DS_LOAIVT, null);
             return loaivattu;
+        }
+
+        public DataTable getVatTuTrongKho(string[] param)
+        {
+            string[] name = { "@MAKHO" };
+            DataTable vattu = Access.ExecuteQuery(SP_DS_VATTU_TRONGKHO, name, param, 1);
+            return vattu;
         }
     }
 }

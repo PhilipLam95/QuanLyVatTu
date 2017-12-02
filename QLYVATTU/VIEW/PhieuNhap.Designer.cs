@@ -37,8 +37,8 @@
             System.Windows.Forms.Label dONGIALabel;
             System.Windows.Forms.Label dONVILabel;
             System.Windows.Forms.Label label3;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhap));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhap));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,6 +47,8 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridViewChiTietPhieuNhap = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tEditGiaBanKH = new DevExpress.XtraEditors.TextEdit();
+            this.label4 = new System.Windows.Forms.Label();
             this.DongiaTbox = new System.Windows.Forms.TextBox();
             this.mKhoTbox = new DevExpress.XtraEditors.TextEdit();
             this.btnChiTietPn = new DevExpress.XtraEditors.SimpleButton();
@@ -101,6 +103,8 @@
             this.colSOLUONG1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGAYLAP1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnXoa = new DevExpress.XtraEditors.SimpleButton();
             mADDHLabel = new System.Windows.Forms.Label();
             nGAYLAPLabel = new System.Windows.Forms.Label();
             mAVTLabel = new System.Windows.Forms.Label();
@@ -116,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewChiTietPhieuNhap)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tEditGiaBanKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mKhoTbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonviTbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TenVTTbox.Properties)).BeginInit();
@@ -176,7 +181,7 @@
             // tENVTLabel
             // 
             tENVTLabel.AutoSize = true;
-            tENVTLabel.Location = new System.Drawing.Point(417, 28);
+            tENVTLabel.Location = new System.Drawing.Point(434, 28);
             tENVTLabel.Name = "tENVTLabel";
             tENVTLabel.Size = new System.Drawing.Size(59, 13);
             tENVTLabel.TabIndex = 7;
@@ -196,7 +201,7 @@
             // 
             dONGIALabel.AutoSize = true;
             dONGIALabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dONGIALabel.Location = new System.Drawing.Point(530, 57);
+            dONGIALabel.Location = new System.Drawing.Point(251, 86);
             dONGIALabel.Name = "dONGIALabel";
             dONGIALabel.Size = new System.Drawing.Size(47, 13);
             dONGIALabel.TabIndex = 11;
@@ -205,7 +210,7 @@
             // dONVILabel
             // 
             dONVILabel.AutoSize = true;
-            dONVILabel.Location = new System.Drawing.Point(431, 57);
+            dONVILabel.Location = new System.Drawing.Point(448, 57);
             dONVILabel.Name = "dONVILabel";
             dONVILabel.Size = new System.Drawing.Size(41, 13);
             dONVILabel.TabIndex = 13;
@@ -214,7 +219,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(426, 83);
+            label3.Location = new System.Drawing.Point(601, 57);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(46, 13);
             label3.TabIndex = 17;
@@ -258,6 +263,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Controls.Add(this.btnLapPhieuNhap);
             this.panel4.Controls.Add(this.gridControl1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -305,6 +311,9 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.tEditGiaBanKH);
+            this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.DongiaTbox);
             this.panel3.Controls.Add(this.mKhoTbox);
             this.panel3.Controls.Add(label3);
@@ -332,9 +341,31 @@
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // tEditGiaBanKH
+            // 
+            this.tEditGiaBanKH.EditValue = "";
+            this.tEditGiaBanKH.Enabled = false;
+            this.tEditGiaBanKH.Location = new System.Drawing.Point(596, 83);
+            this.tEditGiaBanKH.Name = "tEditGiaBanKH";
+            this.tEditGiaBanKH.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
+            this.tEditGiaBanKH.Properties.Appearance.Options.UseForeColor = true;
+            this.tEditGiaBanKH.Size = new System.Drawing.Size(100, 20);
+            this.tEditGiaBanKH.TabIndex = 21;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(437, 87);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Gía bán khách hàng/ 1 đơn vị";
+            // 
             // DongiaTbox
             // 
-            this.DongiaTbox.Location = new System.Drawing.Point(583, 54);
+            this.DongiaTbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.DongiaTbox.ForeColor = System.Drawing.Color.Red;
+            this.DongiaTbox.Location = new System.Drawing.Point(300, 80);
             this.DongiaTbox.MaxLength = 13;
             this.DongiaTbox.Name = "DongiaTbox";
             this.DongiaTbox.Size = new System.Drawing.Size(100, 20);
@@ -345,7 +376,7 @@
             // mKhoTbox
             // 
             this.mKhoTbox.Enabled = false;
-            this.mKhoTbox.Location = new System.Drawing.Point(478, 80);
+            this.mKhoTbox.Location = new System.Drawing.Point(653, 54);
             this.mKhoTbox.Name = "mKhoTbox";
             this.mKhoTbox.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.mKhoTbox.Properties.Appearance.Options.UseForeColor = true;
@@ -358,7 +389,7 @@
             this.btnChiTietPn.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnChiTietPn.Enabled = false;
             this.btnChiTietPn.Image = ((System.Drawing.Image)(resources.GetObject("btnChiTietPn.Image")));
-            this.btnChiTietPn.Location = new System.Drawing.Point(255, 77);
+            this.btnChiTietPn.Location = new System.Drawing.Point(97, 80);
             this.btnChiTietPn.Name = "btnChiTietPn";
             this.btnChiTietPn.Size = new System.Drawing.Size(144, 26);
             this.btnChiTietPn.TabIndex = 16;
@@ -369,7 +400,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(685, 60);
+            this.label2.Location = new System.Drawing.Point(698, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 15;
@@ -377,7 +408,8 @@
             // 
             // SoluongTbox
             // 
-            this.SoluongTbox.ForeColor = System.Drawing.Color.Blue;
+            this.SoluongTbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.SoluongTbox.ForeColor = System.Drawing.Color.Red;
             this.SoluongTbox.Location = new System.Drawing.Point(337, 54);
             this.SoluongTbox.Name = "SoluongTbox";
             this.SoluongTbox.Size = new System.Drawing.Size(63, 20);
@@ -388,7 +420,7 @@
             // DonviTbox
             // 
             this.DonviTbox.Enabled = false;
-            this.DonviTbox.Location = new System.Drawing.Point(478, 54);
+            this.DonviTbox.Location = new System.Drawing.Point(495, 54);
             this.DonviTbox.Name = "DonviTbox";
             this.DonviTbox.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.DonviTbox.Properties.Appearance.Options.UseForeColor = true;
@@ -398,7 +430,7 @@
             // TenVTTbox
             // 
             this.TenVTTbox.Enabled = false;
-            this.TenVTTbox.Location = new System.Drawing.Point(478, 25);
+            this.TenVTTbox.Location = new System.Drawing.Point(495, 25);
             this.TenVTTbox.Name = "TenVTTbox";
             this.TenVTTbox.Properties.Appearance.ForeColor = System.Drawing.Color.Blue;
             this.TenVTTbox.Properties.Appearance.Options.UseForeColor = true;
@@ -669,8 +701,6 @@
             // colDONGIA
             // 
             this.colDONGIA.Caption = "Gía bán khách hàng";
-            this.colDONGIA.DisplayFormat.FormatString = "{0:#.###,##}";
-            this.colDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.colDONGIA.FieldName = "DONGIA";
             this.colDONGIA.Name = "colDONGIA";
             this.colDONGIA.Visible = true;
@@ -857,6 +887,35 @@
             this.colNGAYLAP1.Visible = true;
             this.colNGAYLAP1.VisibleIndex = 5;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(406, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "VND";
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Appearance.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.Appearance.Options.UseBackColor = true;
+            this.btnXoa.AppearanceHovered.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoa.AppearanceHovered.BackColor2 = System.Drawing.Color.DarkRed;
+            this.btnXoa.AppearanceHovered.Options.UseBackColor = true;
+            this.btnXoa.AppearancePressed.BackColor = System.Drawing.Color.Cyan;
+            this.btnXoa.AppearancePressed.Options.UseBackColor = true;
+            this.btnXoa.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btnXoa.DialogResult = System.Windows.Forms.DialogResult.Yes;
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.Location = new System.Drawing.Point(649, 108);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(47, 35);
+            this.btnXoa.TabIndex = 2;
+            this.btnXoa.ToolTipTitle = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
             // PhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -876,6 +935,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridViewChiTietPhieuNhap)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tEditGiaBanKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mKhoTbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DonviTbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TenVTTbox.Properties)).EndInit();
@@ -972,5 +1032,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG1;
         private DevExpress.XtraGrid.Columns.GridColumn colTENVT1;
         private DevExpress.XtraGrid.Columns.GridColumn colNGAYLAP1;
+        private DevExpress.XtraEditors.TextEdit tEditGiaBanKH;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.SimpleButton btnXoa;
     }
 }

@@ -42,7 +42,7 @@ namespace QLYVATTU.VIEW
             load_Chitiet_PN();
 
             Timer timer = new Timer();
-            timer.Interval = (10 * 1000); // 10 secs
+            timer.Interval = (10 * 600); // 6 secs
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
 
@@ -69,6 +69,8 @@ namespace QLYVATTU.VIEW
             chitietPN.Columns.Add("Số lượng", typeof(int));
             chitietPN.Columns.Add("Đơn giá", typeof(decimal));
             chitietPN.Columns.Add("Đơn vị", typeof(string));
+            chitietPN.Columns.Add("Xóa", typeof(bool));
+            chitietPN.Columns[6].DefaultValue = false;
 
         }
 
@@ -148,6 +150,8 @@ namespace QLYVATTU.VIEW
                 DonviTbox.Text = read["DONVI"].ToString();
                 mKhoTbox.Text = read["MAKHO"].ToString();
                 SoluongTbox.Text = read["SOLUONG"].ToString();
+                tEditGiaBanKH.Text =  read["DONGIA"].ToString();
+                DongiaTbox.Text = "";
 
             }
 
@@ -212,7 +216,7 @@ namespace QLYVATTU.VIEW
         private bool CheckSoluongNhap(int soluong)
         {
             
-            string mavt = MavtTbox.Text.ToString();
+            string mavt = MavtTbox.Text.ToString();// mat vat tu trong text box
             string tenvt = TenVTTbox.Text.ToString();
             for (int i = 0; i < gridView2.RowCount; i++)
             {
@@ -386,7 +390,9 @@ namespace QLYVATTU.VIEW
             mKhoTbox.Text = "";
             DongiaTbox.Text = "";
             NgaylapDateEdit.Text = "";
+            tEditGiaBanKH.Text = "";
             btnChiTietPn.Enabled = false;
+            sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.DataSource = null;
 
             int i = 0;
             while(i < gridViewChiTietPhieuNhap.RowCount)
@@ -596,6 +602,23 @@ namespace QLYVATTU.VIEW
                 ctpn.Sender(ma_pn);
             }
             
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            int y = gridViewChiTietPhieuNhap.RowCount;
+            for (int i = 0; i < y; i++)
+            {
+                bool check = (bool)gridViewChiTietPhieuNhap.GetRowCellValue(i, gridViewChiTietPhieuNhap.Columns[6]); ;
+
+                if (check)
+                {
+                    gridViewChiTietPhieuNhap.DeleteRow(i);
+                    y--;
+                    i = -1;
+
+                }
+            }
         }
     }
 }

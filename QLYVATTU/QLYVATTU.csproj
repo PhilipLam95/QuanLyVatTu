@@ -87,6 +87,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_VATTUDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\BackUp-Restore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\BackUp-Restore.Designer.cs">
+      <DependentUpon>BackUp-Restore.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\CT_PhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VIEW\BackUp-Restore.resx">
+      <DependentUpon>BackUp-Restore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CT_PhieuNhap.resx">
       <DependentUpon>CT_PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>

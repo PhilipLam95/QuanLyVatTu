@@ -61,6 +61,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnCloseApp = new System.Windows.Forms.Button();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -83,9 +84,10 @@
             this.btnTaoTK,
             this.barButtonItem7,
             this.btnDoiMatKhau,
-            this.btnBaoCaoHang});
+            this.btnBaoCaoHang,
+            this.barButtonItem6});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 18;
+            this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbHome,
@@ -232,6 +234,7 @@
             // 
             this.rbpHeThong.ItemLinks.Add(this.btnLoaiHang);
             this.rbpHeThong.ItemLinks.Add(this.btnHang);
+            this.rbpHeThong.ItemLinks.Add(this.barButtonItem6);
             this.rbpHeThong.Name = "rbpHeThong";
             this.rbpHeThong.Text = "HỆ THỐNG";
             // 
@@ -355,6 +358,14 @@
             this.btnCloseApp.UseVisualStyleBackColor = false;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Back Up-Restore";
+            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
+            this.barButtonItem6.Id = 18;
+            this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
+            this.barButtonItem6.Name = "barButtonItem6";
+            // 
             // FrmMain
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
@@ -415,6 +426,7 @@
         private DevExpress.XtraBars.BarButtonItem btnBaoCaoHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private System.Windows.Forms.Button btnCloseApp;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
     }
 }
 

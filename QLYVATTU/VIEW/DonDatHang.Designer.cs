@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mAKHOLabel;
             System.Windows.Forms.Label tENKHOLabel;
-            System.Windows.Forms.Label mAKHOLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DonDatHang));
             this.sP_DS_VATTUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
@@ -58,8 +57,8 @@
             this.colMANCC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTRTHAI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.mAKHOComboBox1 = new System.Windows.Forms.ComboBox();
-            this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
+            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.sP_DS_VATTUGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridViewVatTu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMavattu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,8 +67,19 @@
             this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDONVI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENLOAI = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.sP_DS_VATTU_TRONGKHOGridControl = new DevExpress.XtraGrid.GridControl();
+            this.sP_DS_VATTU_TRONGKHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMAVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENVT1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMALOAI1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTENLOAI1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONGIA1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONVI1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONGTON = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnThietLapDDH = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -94,6 +104,7 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.panel7 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.tboxDonvi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tBoxSoluong = new System.Windows.Forms.TextBox();
@@ -114,7 +125,6 @@
             this.mAKHOComboBox = new System.Windows.Forms.ComboBox();
             mAKHOLabel = new System.Windows.Forms.Label();
             tENKHOLabel = new System.Windows.Forms.Label();
-            mAKHOLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_VATTUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_DONDATHANGBindingSource)).BeginInit();
@@ -127,9 +137,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_DONDATHANGGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
+            this.tabPane1.SuspendLayout();
+            this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_VATTUGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewVatTu)).BeginInit();
+            this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_VATTU_TRONGKHOGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_VATTU_TRONGKHOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -162,15 +179,6 @@
             tENKHOLabel.Size = new System.Drawing.Size(50, 13);
             tENKHOLabel.TabIndex = 12;
             tENKHOLabel.Text = "Tên kho:";
-            // 
-            // mAKHOLabel1
-            // 
-            mAKHOLabel1.AutoSize = true;
-            mAKHOLabel1.Location = new System.Drawing.Point(105, 57);
-            mAKHOLabel1.Name = "mAKHOLabel1";
-            mAKHOLabel1.Size = new System.Drawing.Size(49, 13);
-            mAKHOLabel1.TabIndex = 10;
-            mAKHOLabel1.Text = "MAKHO:";
             // 
             // sP_DS_VATTUBindingSource
             // 
@@ -389,28 +397,35 @@
             // panel3
             // 
             this.panel3.AutoScroll = true;
-            this.panel3.Controls.Add(mAKHOLabel1);
-            this.panel3.Controls.Add(this.mAKHOComboBox1);
-            this.panel3.Controls.Add(this.sP_DS_VATTUGridControl);
+            this.panel3.Controls.Add(this.tabPane1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 189);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(646, 440);
             this.panel3.TabIndex = 1;
             // 
-            // mAKHOComboBox1
+            // tabPane1
             // 
-            this.mAKHOComboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHOBindingSource, "MAKHO", true));
-            this.mAKHOComboBox1.FormattingEnabled = true;
-            this.mAKHOComboBox1.Location = new System.Drawing.Point(160, 54);
-            this.mAKHOComboBox1.Name = "mAKHOComboBox1";
-            this.mAKHOComboBox1.Size = new System.Drawing.Size(99, 21);
-            this.mAKHOComboBox1.TabIndex = 11;
+            this.tabPane1.Controls.Add(this.tabNavigationPage1);
+            this.tabPane1.Controls.Add(this.tabNavigationPage2);
+            this.tabPane1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPane1.Location = new System.Drawing.Point(0, 0);
+            this.tabPane1.Name = "tabPane1";
+            this.tabPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.tabNavigationPage1,
+            this.tabNavigationPage2});
+            this.tabPane1.RegularSize = new System.Drawing.Size(646, 440);
+            this.tabPane1.SelectedPage = this.tabNavigationPage2;
+            this.tabPane1.Size = new System.Drawing.Size(646, 440);
+            this.tabPane1.TabIndex = 0;
+            this.tabPane1.Text = "tabPane1";
             // 
-            // kHOBindingSource
+            // tabNavigationPage1
             // 
-            this.kHOBindingSource.DataMember = "KHO";
-            this.kHOBindingSource.DataSource = this.qL_VATTUDataSet;
+            this.tabNavigationPage1.Caption = "Danh sách vật tư ";
+            this.tabNavigationPage1.Controls.Add(this.sP_DS_VATTUGridControl);
+            this.tabNavigationPage1.Name = "tabNavigationPage1";
+            this.tabNavigationPage1.Size = new System.Drawing.Size(628, 395);
             // 
             // sP_DS_VATTUGridControl
             // 
@@ -419,7 +434,7 @@
             this.sP_DS_VATTUGridControl.Location = new System.Drawing.Point(0, 0);
             this.sP_DS_VATTUGridControl.MainView = this.gridViewVatTu;
             this.sP_DS_VATTUGridControl.Name = "sP_DS_VATTUGridControl";
-            this.sP_DS_VATTUGridControl.Size = new System.Drawing.Size(646, 440);
+            this.sP_DS_VATTUGridControl.Size = new System.Drawing.Size(628, 395);
             this.sP_DS_VATTUGridControl.TabIndex = 0;
             this.sP_DS_VATTUGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewVatTu});
@@ -432,9 +447,7 @@
             this.colMALOAI,
             this.colDONGIA,
             this.colDONVI,
-            this.colTENLOAI,
-            this.colMAKHO,
-            this.colSOLUONGTON});
+            this.colTENLOAI});
             this.gridViewVatTu.GridControl = this.sP_DS_VATTUGridControl;
             this.gridViewVatTu.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "TENLOAI", null, "(Count={0})")});
@@ -493,21 +506,109 @@
             this.colTENLOAI.Visible = true;
             this.colTENLOAI.VisibleIndex = 3;
             // 
-            // colMAKHO
+            // tabNavigationPage2
             // 
-            this.colMAKHO.Caption = "Mã kho";
-            this.colMAKHO.FieldName = "MAKHO";
-            this.colMAKHO.Name = "colMAKHO";
-            this.colMAKHO.Visible = true;
-            this.colMAKHO.VisibleIndex = 6;
+            this.tabNavigationPage2.AccessibleName = "Danh sách vật tư";
+            this.tabNavigationPage2.Caption = "Danh sách vật tư theo kho";
+            this.tabNavigationPage2.Controls.Add(this.sP_DS_VATTU_TRONGKHOGridControl);
+            this.tabNavigationPage2.Name = "tabNavigationPage2";
+            this.tabNavigationPage2.Size = new System.Drawing.Size(628, 395);
+            // 
+            // sP_DS_VATTU_TRONGKHOGridControl
+            // 
+            this.sP_DS_VATTU_TRONGKHOGridControl.DataSource = this.sP_DS_VATTU_TRONGKHOBindingSource;
+            this.sP_DS_VATTU_TRONGKHOGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sP_DS_VATTU_TRONGKHOGridControl.Location = new System.Drawing.Point(0, 0);
+            this.sP_DS_VATTU_TRONGKHOGridControl.MainView = this.gridView4;
+            this.sP_DS_VATTU_TRONGKHOGridControl.Name = "sP_DS_VATTU_TRONGKHOGridControl";
+            this.sP_DS_VATTU_TRONGKHOGridControl.Size = new System.Drawing.Size(628, 395);
+            this.sP_DS_VATTU_TRONGKHOGridControl.TabIndex = 0;
+            this.sP_DS_VATTU_TRONGKHOGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // sP_DS_VATTU_TRONGKHOBindingSource
+            // 
+            this.sP_DS_VATTU_TRONGKHOBindingSource.DataMember = "SP_DS_VATTU_TRONGKHO";
+            this.sP_DS_VATTU_TRONGKHOBindingSource.DataSource = this.qL_VATTUDataSet;
+            // 
+            // gridView4
+            // 
+            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMAVT1,
+            this.colTENVT1,
+            this.colMALOAI1,
+            this.colTENLOAI1,
+            this.colDONGIA1,
+            this.colDONVI1,
+            this.colSOLUONGTON,
+            this.colMAKHO});
+            this.gridView4.GridControl = this.sP_DS_VATTU_TRONGKHOGridControl;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
+            this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView4.OptionsFind.AlwaysVisible = true;
+            this.gridView4.Click += new System.EventHandler(this.gridView4_Click);
+            // 
+            // colMAVT1
+            // 
+            this.colMAVT1.FieldName = "MAVT";
+            this.colMAVT1.Name = "colMAVT1";
+            this.colMAVT1.Visible = true;
+            this.colMAVT1.VisibleIndex = 0;
+            // 
+            // colTENVT1
+            // 
+            this.colTENVT1.FieldName = "TENVT";
+            this.colTENVT1.Name = "colTENVT1";
+            this.colTENVT1.Visible = true;
+            this.colTENVT1.VisibleIndex = 1;
+            // 
+            // colMALOAI1
+            // 
+            this.colMALOAI1.FieldName = "MALOAI";
+            this.colMALOAI1.Name = "colMALOAI1";
+            this.colMALOAI1.Visible = true;
+            this.colMALOAI1.VisibleIndex = 2;
+            // 
+            // colTENLOAI1
+            // 
+            this.colTENLOAI1.FieldName = "TENLOAI";
+            this.colTENLOAI1.Name = "colTENLOAI1";
+            this.colTENLOAI1.Visible = true;
+            this.colTENLOAI1.VisibleIndex = 3;
+            // 
+            // colDONGIA1
+            // 
+            this.colDONGIA1.FieldName = "DONGIA";
+            this.colDONGIA1.Name = "colDONGIA1";
+            this.colDONGIA1.Visible = true;
+            this.colDONGIA1.VisibleIndex = 4;
+            // 
+            // colDONVI1
+            // 
+            this.colDONVI1.FieldName = "DONVI";
+            this.colDONVI1.Name = "colDONVI1";
+            this.colDONVI1.Visible = true;
+            this.colDONVI1.VisibleIndex = 5;
             // 
             // colSOLUONGTON
             // 
-            this.colSOLUONGTON.Caption = "Số lượng trong kho";
             this.colSOLUONGTON.FieldName = "SOLUONGTON";
             this.colSOLUONGTON.Name = "colSOLUONGTON";
             this.colSOLUONGTON.Visible = true;
-            this.colSOLUONGTON.VisibleIndex = 7;
+            this.colSOLUONGTON.VisibleIndex = 6;
+            // 
+            // colMAKHO
+            // 
+            this.colMAKHO.FieldName = "MAKHO";
+            this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.Visible = true;
+            this.colMAKHO.VisibleIndex = 7;
+            // 
+            // kHOBindingSource
+            // 
+            this.kHOBindingSource.DataMember = "KHO";
+            this.kHOBindingSource.DataSource = this.qL_VATTUDataSet;
             // 
             // btnThietLapDDH
             // 
@@ -783,6 +884,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.tboxDonvi);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.tBoxSoluong);
@@ -802,6 +904,15 @@
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thiết lập đơn đặt hàng";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(274, 52);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 13);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "makho:";
             // 
             // tboxDonvi
             // 
@@ -853,9 +964,9 @@
             // tBoxSoluongKho
             // 
             this.tBoxSoluongKho.Enabled = false;
-            this.tBoxSoluongKho.Location = new System.Drawing.Point(318, 49);
+            this.tBoxSoluongKho.Location = new System.Drawing.Point(322, 45);
             this.tBoxSoluongKho.Name = "tBoxSoluongKho";
-            this.tBoxSoluongKho.Size = new System.Drawing.Size(83, 20);
+            this.tBoxSoluongKho.Size = new System.Drawing.Size(110, 20);
             this.tBoxSoluongKho.TabIndex = 6;
             this.tBoxSoluongKho.Tag = "Số lượng trong kho";
             this.tBoxSoluongKho.TextChanged += new System.EventHandler(this.tBoxSoluong_TextChanged);
@@ -863,11 +974,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 52);
+            this.label3.Location = new System.Drawing.Point(180, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Số lượng trong kho :";
+            this.label3.Text = "Số lượng trong kho ";
             // 
             // tBoxTenvattu
             // 
@@ -1007,10 +1118,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_DONDATHANGGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
+            this.tabPane1.ResumeLayout(false);
+            this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_VATTUGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewVatTu)).EndInit();
+            this.tabNavigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_VATTU_TRONGKHOGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sP_DS_VATTU_TRONGKHOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -1048,8 +1165,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
         private DevExpress.XtraGrid.Columns.GridColumn colDONVI;
         private DevExpress.XtraGrid.Columns.GridColumn colTENLOAI;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONGTON;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
@@ -1109,7 +1224,21 @@
         private DevExpress.XtraEditors.SimpleButton btnXoa;
         private System.Windows.Forms.RichTextBox rTboxDiachiNCC;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private System.Windows.Forms.ComboBox mAKHOComboBox1;
         private System.Windows.Forms.BindingSource kHOBindingSource;
+        private DevExpress.XtraBars.Navigation.TabPane tabPane1;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private System.Windows.Forms.BindingSource sP_DS_VATTU_TRONGKHOBindingSource;
+        private DevExpress.XtraGrid.GridControl sP_DS_VATTU_TRONGKHOGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAVT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENVT1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMALOAI1;
+        private DevExpress.XtraGrid.Columns.GridColumn colTENLOAI1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA1;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONVI1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONGTON;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
+        private System.Windows.Forms.Label label12;
     }
 }
