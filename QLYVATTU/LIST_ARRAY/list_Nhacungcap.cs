@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLYVATTU.CMD
+namespace QLYVATTU.LIST_ARRAY
 {
-    class cmd_Nhacungcap
+    class list_Nhacungcap
     {
         public string MaNCC { get; set; }
         public string TenNCC { get; set; }

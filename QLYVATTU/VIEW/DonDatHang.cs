@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLYVATTU.MODEL;
-using QLYVATTU.CMD;
+using QLYVATTU.LIST_ARRAY;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 
@@ -30,10 +30,10 @@ namespace QLYVATTU.VIEW
         private DataTable kho;
         private DataTable nhacungcap;
         private SqlDataReader maDDH;
-        private BindingList<cmd_DonDatHang> _DonDH;
+        private BindingList<list_DonDatHang> _DonDH;
         DataTable chitietDDH = new DataTable();
-        List<cmd_Kho> cnnkho = new List<cmd_Kho>();
-        List<cmd_Nhacungcap> cnnNhacungcap = new List<cmd_Nhacungcap>();
+        List<list_Kho> cnnkho = new List<list_Kho>();
+        List<list_Nhacungcap> cnnNhacungcap = new List<list_Nhacungcap>();
         // ADDD CoLumns vao datatable chitietDDH----------------------------------------------------------------------------------------------------------
         private void gridVIEWData()
         {
@@ -59,7 +59,7 @@ namespace QLYVATTU.VIEW
             nhacungcap = dondh.getNhacungcap();  // goi function trong MODEL DonDH
             foreach (DataRow dr in nhacungcap.Rows) //doc tung gia tri vao Datarow
             {
-                cmd_Nhacungcap cnhacungcap = new cmd_Nhacungcap() // dua vao array
+                list_Nhacungcap cnhacungcap = new list_Nhacungcap() // dua vao array
                 {
                     MaNCC = dr[0].ToString(),
                     TenNCC = dr[1].ToString(),
@@ -79,7 +79,7 @@ namespace QLYVATTU.VIEW
             kho = dondh.getKho();
             foreach (DataRow dr in kho.Rows)
             {
-                cmd_Kho ckho = new cmd_Kho() // dua gia tri datarow vao array cua ckkho
+                list_Kho ckho = new list_Kho() // dua gia tri datarow vao array cua ckkho
                 {
                     MaKho = dr[0].ToString(),
                     TenKho = dr[1].ToString(),
@@ -137,7 +137,7 @@ namespace QLYVATTU.VIEW
             
 
             load_kho();
-            foreach (cmd_Kho ckho in cnnkho)
+            foreach (list_Kho ckho in cnnkho)
             {
                 mAKHOComboBox.Items.Add(ckho.MaKho);
                 tENKHOComboBox.Items.Add(ckho.TenKho);
@@ -152,7 +152,7 @@ namespace QLYVATTU.VIEW
             String[] array = cnnNhacungcap.Select(I => Convert.ToString(cnnNhacungcap)).ToArray();
             Console.WriteLine(array);
 
-            foreach (cmd_Nhacungcap cnhacungcap in cnnNhacungcap.ToList())
+            foreach (list_Nhacungcap cnhacungcap in cnnNhacungcap.ToList())
             {
 
                 cBoxNhaCC.Items.Add(cnhacungcap.MaNCC);
@@ -397,7 +397,7 @@ namespace QLYVATTU.VIEW
 
         private void mAKHOComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (cmd_Kho ckho in cnnkho)
+            foreach (list_Kho ckho in cnnkho)
             {
 
                 if (mAKHOComboBox.Text == ckho.MaKho)
@@ -409,7 +409,7 @@ namespace QLYVATTU.VIEW
 
         private void tENKHOComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (cmd_Kho ckho in cnnkho)
+            foreach (list_Kho ckho in cnnkho)
             {
                 if (tENKHOComboBox.Text == ckho.TenKho)
                 {
@@ -462,7 +462,7 @@ namespace QLYVATTU.VIEW
 
         private void cBoxNhaCC_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (cmd_Nhacungcap cnhacungcap in cnnNhacungcap)
+            foreach (list_Nhacungcap cnhacungcap in cnnNhacungcap)
             {
                 for (int i = 0; i < cnnNhacungcap.Count; i++)
                 {

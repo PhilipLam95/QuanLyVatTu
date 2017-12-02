@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLYVATTU.CMD
+namespace QLYVATTU.LIST_ARRAY
 {
-    class cmd_Kho
+    class list_Kho
     {
         public string MaKho { get; set; }
         public string TenKho { get; set; }

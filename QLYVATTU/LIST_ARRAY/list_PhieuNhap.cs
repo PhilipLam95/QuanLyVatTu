@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLYVATTU.CMD
+namespace QLYVATTU.LIST_ARRAY
 {
-    class cmd_PhieuNhap
+    class list_PhieuNhap
     {
         public string MaDDH { get; set; }
         public string MaVT { get; set; }

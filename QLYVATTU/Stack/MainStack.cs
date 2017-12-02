@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLYVATTU.CMD
+namespace QLYVATTU.Stack
 {
-    abstract class cmd_RefreshData
+    interface MainStack
     {
-                
     }
 }

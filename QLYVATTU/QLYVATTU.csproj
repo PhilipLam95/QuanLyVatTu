@@ -64,17 +64,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CMD\cmd_DonDatHang.cs" />
-    <Compile Include="CMD\cmd_Kho.cs" />
-    <Compile Include="CMD\cmd_Nhacungcap.cs" />
-    <Compile Include="CMD\cmd_PhieuNhap.cs" />
-    <Compile Include="CMD\cmd_RefreshData.cs" />
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="LIST_ARRAY\list_DonDatHang.cs" />
+    <Compile Include="LIST_ARRAY\list_Kho.cs" />
+    <Compile Include="LIST_ARRAY\list_Nhacungcap.cs" />
+    <Compile Include="LIST_ARRAY\list_PhieuNhap.cs" />
     <Compile Include="MODEL\Access.cs" />
     <Compile Include="MODEL\ChiNhanh.cs" />
     <Compile Include="MODEL\Connection.cs" />
@@ -87,6 +86,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_VATTUDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Stack\MainStack.cs" />
     <Compile Include="VIEW\BackUp-Restore.cs">
       <SubType>Form</SubType>
     </Compile>

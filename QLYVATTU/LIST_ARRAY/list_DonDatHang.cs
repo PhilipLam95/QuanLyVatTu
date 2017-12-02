@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QLYVATTU.CMD
+namespace QLYVATTU.LIST_ARRAY
 {
-    class cmd_DonDatHang
+    class list_DonDatHang
     {
 
         public string MaDDH { get; set; }
         public string MaVT { get; set; }
-        public string  TenVT { get; set; }
+        public string TenVT { get; set; }
         public int soluong { get; set; }
         public string TenNhacc { get; set; }
 

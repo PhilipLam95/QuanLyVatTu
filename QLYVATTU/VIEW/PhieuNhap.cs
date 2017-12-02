@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLYVATTU.MODEL;
 using System.Data.SqlClient;
-using QLYVATTU.CMD;
+using QLYVATTU.LIST_ARRAY;
 
 namespace QLYVATTU.VIEW
 {
@@ -25,7 +25,7 @@ namespace QLYVATTU.VIEW
         private static DataTable pnhap;
         private static SqlDataReader maphieu;
         DataTable chitietPN = new DataTable();
-        List<cmd_PhieuNhap> cnnphieunhap = new List<cmd_PhieuNhap>();
+        List<list_PhieuNhap> cnnphieunhap = new List<list_PhieuNhap>();
 
         private void PhieuNhap_Load(object sender, EventArgs e)
         {
