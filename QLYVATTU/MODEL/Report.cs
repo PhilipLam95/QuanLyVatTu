@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+
+namespace QLYVATTU.MODEL
+{
+    class Report
+    {
+        public static String SP_CHITIETHANGNHAP = "SP_CHITIETHANGNHAP";
+        public static String SP_CHITIETHANGXUAT = "SP_CHITIETHANGXUAT";
+        public static String SP_TONGCHI = "SP_TONGCHI";
+        public static String SP_TONGTHU = "SP_TONGTHU";
+        public static String SP_TONGHOPNHAPXUAT = "SP_TONGHOPNHAPXUAT";
+        public static String SP_HOATDONGNHANVIEN = "SP_HOATDONGNHANVIEN";
+
+        public DataTable ChiTietHangNhap(string[] param)
+        {
+            string[] name = { "@DateFrom", "@DateTo","@MACN" };
+            DataTable hangnhap = Access.ExecuteQuery(SP_CHITIETHANGNHAP, name, param, 3);
+            return hangnhap;
+        }
+
+        public DataTable ChiTietHangXuat(string[] param)
+        {
+            string[] name = { "@DateFrom", "@DateTo","@MACN" };
+            DataTable hangxuat = Access.ExecuteQuery(SP_CHITIETHANGXUAT, name, param, 3);
+            return hangxuat;
+        }
+
+        public DataTable TongChi(string[] param)
+        {
+            string[] name = { "@DateFrom", "@DateTo", "@MACN" };
+            DataTable tongchi = Access.ExecuteQuery(SP_TONGCHI, name, param, 3);
+            return tongchi;
+        }
+
+        public DataTable TongThu(string[] param)
+        {
+            string[] name = { "@DateFrom", "@DateTo", "@MACN" };
+            DataTable tongthu = Access.ExecuteQuery(SP_TONGTHU, name, param, 3);
+            return tongthu;
+        }
+
+        public DataTable ThongKeNhapXuat(string[] param)
+        {
+            string[] name = { "@DateFrom", "@DateTo", "@MACN" };
+            DataTable tonghop = Access.ExecuteQuery(SP_TONGHOPNHAPXUAT, name, param, 3);
+            return tonghop;
+        }
+
+        public DataTable HoatDongNhanVien(string[] param)
+        {
+            string[] name = { "@MaNV", "@DateFrom", "@DateTo", "@MACN" };
+            DataTable nv = Access.ExecuteQuery(SP_HOATDONGNHANVIEN, name, param, 4);
+            return nv;
+        }
+    }
+}

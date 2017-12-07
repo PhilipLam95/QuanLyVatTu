@@ -25,7 +25,7 @@ namespace QLYVATTU.VIEW
         private static DataTable pnhap;
         private static SqlDataReader maphieu;
         DataTable chitietPN = new DataTable();
-        List<list_PhieuNhap> cnnphieunhap = new List<list_PhieuNhap>();
+        List<ListPhieuNhap> cnnphieunhap = new List<ListPhieuNhap>();
 
         private void PhieuNhap_Load(object sender, EventArgs e)
         {

@@ -229,13 +229,13 @@ namespace QLYVATTU
 
         private void btnBaoCaoHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //Form frm = this.CheckExists(typeof(REPORT.BaoCaoHang));
-            //if (frm != null) frm.Activate();
-            //else
-            //{
-            //    REPORT.BaoCaoHang f = new REPORT.BaoCaoHang() { MdiParent = this, Text = "Báo Cáo Hàng " };
-            //    f.Show();
-            //}
+            Form frm = this.CheckExists(typeof(VIEW.ChiTietHangNhap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.ChiTietHangNhap f = new VIEW.ChiTietHangNhap() { MdiParent = this, Text = "Báo Cáo Hàng " };
+                f.Show();
+            }
         }
 
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
@@ -250,20 +250,9 @@ namespace QLYVATTU
 
 
 
-        public void HienThiQuanLyNhanVien()
-        {
-            rbQLNhanvien.Visible = true;
-        }
+        
 
-        public void HienThiKhoHang()
-        {
-            rbpNghiepVu.Visible = true;
-        }
-
-        public void HienThiBaoCao()
-        {
-
-        }
+        
 
         public void HienThiTrangChu()
         {
@@ -276,6 +265,25 @@ namespace QLYVATTU
             btnDangXuat.Visible = true;
         }
 
+        private void HienThiQuanLyNhanVien()
+        {
+            rbQLNhanvien.Visible = true;
+            btnNhanVien.Enabled = true;
+            btnTaoTK.Enabled = true;
+        }
+
+        private void HienThiKhoHang()
+        {
+            barButtonItem1.Enabled = true; // button lap don dat hang
+            barButtonItem3.Enabled = true; // button phieu nhap
+            barButtonItem4.Enabled = true; // button phieu xuat
+            rbpNghiepVu.Visible = true;
+        }
+
+        private void HienThiBaoCao()
+        {
+            rbpBaoCao.Visible = true;
+        }
 
         public void ReturnDefault()
         {
@@ -292,6 +300,13 @@ namespace QLYVATTU
         }
 
 
+        public void HienThiQuyen_User()
+        {
+            btnDoiMatKhau.Enabled = true;
+            HienThiKhoHang();
+            HienThiTrangChu();
+        }
+
         public void HienThiQuyen_ChiNhanh()
         {
             label1.Visible = true;
@@ -299,6 +314,9 @@ namespace QLYVATTU
             HienThiTrangChu();
             HienThiQuanLyNhanVien();
             HienThiKhoHang();
+            HienThiBaoCao();
+            //HienThiQuanLyNhanVien();
+            //HienThiKhoHang();
             if (ActiveMdiChild != null)
             {
                 ActiveMdiChild.Hide();
@@ -309,10 +327,18 @@ namespace QLYVATTU
         {
             label1.Visible = true;
             label1.Text = "Xin chào " + Access.HOTEN;
-            HienThiTrangChu();
+            btnDoiMatKhau.Enabled = true;
+            btnMatHang.Enabled = true;
+            btnNhaCC.Enabled = true;
+            btnKhachHang.Enabled = true;
+            rbpBaoCao.Visible = true;
+            rbQLNhanvien.Visible = true;
+            btnMatHang.Enabled = true;
+            btnDangXuat.Visible = true;
+            btnTaoTK.Enabled = true;
             HienThiBaoCao();
-            HienThiQuanLyNhanVien();
-            HienThiKhoHang();
+            //HienThiQuanLyNhanVien();
+            //HienThiKhoHang();
             if (ActiveMdiChild != null)
             {
                 ActiveMdiChild.Hide();
@@ -337,6 +363,30 @@ namespace QLYVATTU
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(VIEW.DSNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.DSNhanVien f = new VIEW.DSNhanVien() { MdiParent = this, Text = "Xem Danh Sách Nhân Viên" };
+                f.Show();
+            }
+
+
+        }
+
+        private void btnHDNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(VIEW.HoatDongNhanVien));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.HoatDongNhanVien f = new VIEW.HoatDongNhanVien() { MdiParent = this, Text = "Xem Danh Sách Nhân Viên" };
+                f.Show();
+            }
         }
 
         Random random = new Random();

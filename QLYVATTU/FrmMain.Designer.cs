@@ -40,11 +40,12 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnTaoTK = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.btnDoiMatKhau = new DevExpress.XtraBars.BarButtonItem();
             this.btnBaoCaoHang = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBackUpRestore = new DevExpress.XtraBars.BarButtonItem();
             this.rbHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbpTaiKhoan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbpHeThong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -61,7 +62,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnCloseApp = new System.Windows.Forms.Button();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.btnHDNhanVien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -80,14 +82,15 @@
             this.barButtonItem1,
             this.barButtonItem3,
             this.barButtonItem4,
-            this.barButtonItem5,
+            this.btnNhanVien,
             this.btnTaoTK,
             this.barButtonItem7,
             this.btnDoiMatKhau,
             this.btnBaoCaoHang,
-            this.barButtonItem6});
+            this.btnBackUpRestore,
+            this.btnHDNhanVien});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 19;
+            this.ribbonControl1.MaxItemId = 20;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbHome,
@@ -173,17 +176,20 @@
             this.barButtonItem4.Name = "barButtonItem4";
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
-            // barButtonItem5
+            // btnNhanVien
             // 
-            this.barButtonItem5.Caption = "NHÂN VIÊN";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 10;
-            this.barButtonItem5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.LargeGlyph")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.btnNhanVien.Caption = "NHÂN VIÊN";
+            this.btnNhanVien.Enabled = false;
+            this.btnNhanVien.Glyph = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.Glyph")));
+            this.btnNhanVien.Id = 10;
+            this.btnNhanVien.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNhanVien.LargeGlyph")));
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhanVien_ItemClick);
             // 
             // btnTaoTK
             // 
             this.btnTaoTK.Caption = "QUẢN LÝ TÀI KHOẢN";
+            this.btnTaoTK.Enabled = false;
             this.btnTaoTK.Glyph = ((System.Drawing.Image)(resources.GetObject("btnTaoTK.Glyph")));
             this.btnTaoTK.Id = 11;
             this.btnTaoTK.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnTaoTK.LargeGlyph")));
@@ -215,6 +221,15 @@
             this.btnBaoCaoHang.Name = "btnBaoCaoHang";
             this.btnBaoCaoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBaoCaoHang_ItemClick);
             // 
+            // btnBackUpRestore
+            // 
+            this.btnBackUpRestore.Caption = "SAO LƯU- PHỤC HỒI";
+            this.btnBackUpRestore.Enabled = false;
+            this.btnBackUpRestore.Glyph = ((System.Drawing.Image)(resources.GetObject("btnBackUpRestore.Glyph")));
+            this.btnBackUpRestore.Id = 18;
+            this.btnBackUpRestore.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnBackUpRestore.LargeGlyph")));
+            this.btnBackUpRestore.Name = "btnBackUpRestore";
+            // 
             // rbHome
             // 
             this.rbHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -234,7 +249,7 @@
             // 
             this.rbpHeThong.ItemLinks.Add(this.btnLoaiHang);
             this.rbpHeThong.ItemLinks.Add(this.btnHang);
-            this.rbpHeThong.ItemLinks.Add(this.barButtonItem6);
+            this.rbpHeThong.ItemLinks.Add(this.btnBackUpRestore);
             this.rbpHeThong.Name = "rbpHeThong";
             this.rbpHeThong.Text = "HỆ THỐNG";
             // 
@@ -255,9 +270,8 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnNhanVien);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnTaoTK);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem7);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "QUẢN LÝ";
             // 
@@ -280,7 +294,8 @@
             // rbpBaoCao
             // 
             this.rbpBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.rbpBaoCao.Name = "rbpBaoCao";
             this.rbpBaoCao.Text = "Báo Cáo";
             this.rbpBaoCao.Visible = false;
@@ -358,13 +373,18 @@
             this.btnCloseApp.UseVisualStyleBackColor = false;
             this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
-            // barButtonItem6
+            // ribbonPageGroup2
             // 
-            this.barButtonItem6.Caption = "Back Up-Restore";
-            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
-            this.barButtonItem6.Id = 18;
-            this.barButtonItem6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.LargeGlyph")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnHDNhanVien);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // btnHDNhanVien
+            // 
+            this.btnHDNhanVien.Caption = "Hoạt Động Nhân Viên";
+            this.btnHDNhanVien.Id = 19;
+            this.btnHDNhanVien.Name = "btnHDNhanVien";
+            this.btnHDNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHDNhanVien_ItemClick);
             // 
             // FrmMain
             // 
@@ -414,7 +434,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem btnNhanVien;
         private DevExpress.XtraBars.BarButtonItem btnTaoTK;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbQLNhanvien;
@@ -426,7 +446,9 @@
         private DevExpress.XtraBars.BarButtonItem btnBaoCaoHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private System.Windows.Forms.Button btnCloseApp;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem btnBackUpRestore;
+        private DevExpress.XtraBars.BarButtonItem btnHDNhanVien;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
 

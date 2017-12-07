@@ -35,13 +35,29 @@ namespace QLYVATTU.VIEW
 
         private void TaoTaiKhoan_Load(object sender, EventArgs e)
         {
+            load_DS_NhanVien();
+            //int gioitinh = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]));
+            Check_role_congty();
+
+            Timer timer = new Timer();
+            timer.Interval = (10 * 600); // 6 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            load_DS_NhanVien();
+        }
+
+
+        private void load_DS_NhanVien()
+        {
             NhanVien nhanvien = new NhanVien();
             nv = nhanvien.getNhanVien();
             sP_LAY_NHANVIENGridControl.DataSource = nv;
             sP_LAY_NHANVIENGridControl.DataMember = nv.TableName;
-            //int gioitinh = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]));
-            Check_role_congty();
-
         }
 
 
@@ -161,6 +177,11 @@ namespace QLYVATTU.VIEW
             if(x == 0)
             {
                 MessageBox.Show("Tạo tài khoản thành công");
+                load_DS_NhanVien();
+            }
+            else
+            {
+                MessageBox.Show("Tạo tài khoản lỗi");
             }
 
 

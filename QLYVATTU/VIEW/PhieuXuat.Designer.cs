@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label tENKHOLabel;
             System.Windows.Forms.Label hotenTbox;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label label6;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuXuat));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
             this.pnKHG = new System.Windows.Forms.Panel();
@@ -46,13 +46,13 @@
             this.cb_DSKho = new System.Windows.Forms.ComboBox();
             this.btHuyKH = new System.Windows.Forms.Button();
             this.btTaoKH = new System.Windows.Forms.Button();
-            this.btTaoPX = new System.Windows.Forms.Button();
             this.tbSDT = new System.Windows.Forms.TextBox();
             this.tbDiaChi = new System.Windows.Forms.TextBox();
             this.tbTenKH = new System.Windows.Forms.TextBox();
             this.pnKH = new System.Windows.Forms.Panel();
             this.pnTTKH = new System.Windows.Forms.Panel();
             this.gbCTPX = new System.Windows.Forms.GroupBox();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.gvChiTietHD = new DevExpress.XtraGrid.GridControl();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pnphieuxuat = new System.Windows.Forms.Panel();
@@ -65,10 +65,11 @@
             this.gvVatTu = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gbHoanThanh = new System.Windows.Forms.GroupBox();
+            this.lbTien = new System.Windows.Forms.Label();
+            this.lbTinhTien = new System.Windows.Forms.Label();
             this.btHuyPX = new System.Windows.Forms.Button();
             this.btLapPX = new System.Windows.Forms.Button();
             this.gbVTChon = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.btThemPX = new System.Windows.Forms.Button();
             this.lbDonViTinh = new System.Windows.Forms.Label();
             this.tbSLVT = new System.Windows.Forms.TextBox();
@@ -143,7 +144,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             tENKHOLabel.AutoSize = true;
             tENKHOLabel.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            tENKHOLabel.Location = new System.Drawing.Point(15, 132);
+            tENKHOLabel.Location = new System.Drawing.Point(162, 135);
             tENKHOLabel.Name = "tENKHOLabel";
             tENKHOLabel.Size = new System.Drawing.Size(86, 15);
             tENKHOLabel.TabIndex = 2;
@@ -193,7 +194,7 @@
             this.pnKHG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnKHG.Location = new System.Drawing.Point(3, 18);
             this.pnKHG.Name = "pnKHG";
-            this.pnKHG.Size = new System.Drawing.Size(459, 162);
+            this.pnKHG.Size = new System.Drawing.Size(473, 162);
             this.pnKHG.TabIndex = 3;
             // 
             // gvKH
@@ -202,7 +203,7 @@
             this.gvKH.Location = new System.Drawing.Point(0, 0);
             this.gvKH.MainView = this.gridView2;
             this.gvKH.Name = "gvKH";
-            this.gvKH.Size = new System.Drawing.Size(459, 162);
+            this.gvKH.Size = new System.Drawing.Size(473, 162);
             this.gvKH.TabIndex = 0;
             this.gvKH.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -225,7 +226,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(465, 183);
+            this.groupBox2.Size = new System.Drawing.Size(479, 183);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm Khách hàng";
@@ -237,7 +238,6 @@
             this.gbKH.Controls.Add(this.cb_DSKho);
             this.gbKH.Controls.Add(this.btHuyKH);
             this.gbKH.Controls.Add(this.btTaoKH);
-            this.gbKH.Controls.Add(this.btTaoPX);
             this.gbKH.Controls.Add(this.tbSDT);
             this.gbKH.Controls.Add(label2);
             this.gbKH.Controls.Add(this.tbDiaChi);
@@ -250,7 +250,7 @@
             this.gbKH.ForeColor = System.Drawing.SystemColors.ControlText;
             this.gbKH.Location = new System.Drawing.Point(0, 0);
             this.gbKH.Name = "gbKH";
-            this.gbKH.Size = new System.Drawing.Size(670, 175);
+            this.gbKH.Size = new System.Drawing.Size(656, 175);
             this.gbKH.TabIndex = 3;
             this.gbKH.TabStop = false;
             this.gbKH.Text = "Khách Hàng Và Kho Xuất";
@@ -269,7 +269,7 @@
             this.cb_DSKho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.cb_DSKho.FormattingEnabled = true;
-            this.cb_DSKho.Location = new System.Drawing.Point(110, 129);
+            this.cb_DSKho.Location = new System.Drawing.Point(269, 132);
             this.cb_DSKho.Name = "cb_DSKho";
             this.cb_DSKho.Size = new System.Drawing.Size(183, 23);
             this.cb_DSKho.TabIndex = 9;
@@ -282,9 +282,9 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.btHuyKH.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btHuyKH.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btHuyKH.Location = new System.Drawing.Point(458, 129);
+            this.btHuyKH.Location = new System.Drawing.Point(458, 81);
             this.btHuyKH.Name = "btHuyKH";
-            this.btHuyKH.Size = new System.Drawing.Size(72, 26);
+            this.btHuyKH.Size = new System.Drawing.Size(79, 36);
             this.btHuyKH.TabIndex = 8;
             this.btHuyKH.Text = "Hủy";
             this.btHuyKH.UseVisualStyleBackColor = true;
@@ -297,27 +297,13 @@
             this.btTaoKH.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btTaoKH.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btTaoKH.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btTaoKH.Location = new System.Drawing.Point(247, 81);
+            this.btTaoKH.Location = new System.Drawing.Point(218, 81);
             this.btTaoKH.Name = "btTaoKH";
             this.btTaoKH.Size = new System.Drawing.Size(161, 36);
             this.btTaoKH.TabIndex = 8;
             this.btTaoKH.Text = "Tạo Một Khách Hàng Mới";
             this.btTaoKH.UseVisualStyleBackColor = false;
             this.btTaoKH.Click += new System.EventHandler(this.btTaoKH_Click);
-            // 
-            // btTaoPX
-            // 
-            this.btTaoPX.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btTaoPX.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btTaoPX.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btTaoPX.Location = new System.Drawing.Point(331, 129);
-            this.btTaoPX.Name = "btTaoPX";
-            this.btTaoPX.Size = new System.Drawing.Size(72, 26);
-            this.btTaoPX.TabIndex = 8;
-            this.btTaoPX.Text = "OK";
-            this.btTaoPX.UseVisualStyleBackColor = true;
-            this.btTaoPX.Click += new System.EventHandler(this.btTaoPX_Click);
             // 
             // tbSDT
             // 
@@ -327,7 +313,7 @@
             this.tbSDT.Location = new System.Drawing.Point(458, 22);
             this.tbSDT.MaxLength = 11;
             this.tbSDT.Name = "tbSDT";
-            this.tbSDT.Size = new System.Drawing.Size(197, 22);
+            this.tbSDT.Size = new System.Drawing.Size(183, 22);
             this.tbSDT.TabIndex = 7;
             // 
             // tbDiaChi
@@ -338,7 +324,7 @@
             this.tbDiaChi.Location = new System.Drawing.Point(110, 53);
             this.tbDiaChi.MaxLength = 100;
             this.tbDiaChi.Name = "tbDiaChi";
-            this.tbDiaChi.Size = new System.Drawing.Size(545, 22);
+            this.tbDiaChi.Size = new System.Drawing.Size(531, 22);
             this.tbDiaChi.TabIndex = 5;
             // 
             // tbTenKH
@@ -357,7 +343,7 @@
             this.pnKH.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnKH.Location = new System.Drawing.Point(0, 0);
             this.pnKH.Name = "pnKH";
-            this.pnKH.Size = new System.Drawing.Size(465, 183);
+            this.pnKH.Size = new System.Drawing.Size(479, 183);
             this.pnKH.TabIndex = 4;
             // 
             // pnTTKH
@@ -368,21 +354,33 @@
             this.pnTTKH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnTTKH.Location = new System.Drawing.Point(0, 220);
             this.pnTTKH.Name = "pnTTKH";
-            this.pnTTKH.Size = new System.Drawing.Size(687, 274);
+            this.pnTTKH.Size = new System.Drawing.Size(673, 309);
             this.pnTTKH.TabIndex = 5;
             // 
             // gbCTPX
             // 
+            this.gbCTPX.Controls.Add(this.simpleButton1);
             this.gbCTPX.Controls.Add(this.gvChiTietHD);
             this.gbCTPX.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbCTPX.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbCTPX.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.gbCTPX.Location = new System.Drawing.Point(0, 175);
             this.gbCTPX.Name = "gbCTPX";
-            this.gbCTPX.Size = new System.Drawing.Size(670, 165);
+            this.gbCTPX.Size = new System.Drawing.Size(656, 165);
             this.gbCTPX.TabIndex = 4;
             this.gbCTPX.TabStop = false;
             this.gbCTPX.Text = "Vật Tư Trong Phiếu Xuất";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(537, 21);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(104, 21);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "Xóa Khỏi Phiếu";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // gvChiTietHD
             // 
@@ -390,7 +388,7 @@
             this.gvChiTietHD.Location = new System.Drawing.Point(3, 18);
             this.gvChiTietHD.MainView = this.gridView3;
             this.gvChiTietHD.Name = "gvChiTietHD";
-            this.gvChiTietHD.Size = new System.Drawing.Size(664, 144);
+            this.gvChiTietHD.Size = new System.Drawing.Size(650, 144);
             this.gvChiTietHD.TabIndex = 0;
             this.gvChiTietHD.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3});
@@ -399,8 +397,9 @@
             // 
             this.gridView3.GridControl = this.gvChiTietHD;
             this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.Editable = false;
             this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView3.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.SaveSLOld_RowClick);
+            this.gridView3.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.UpDateSL_RowUpdated);
             // 
             // pnphieuxuat
             // 
@@ -408,7 +407,7 @@
             this.pnphieuxuat.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnphieuxuat.Location = new System.Drawing.Point(0, 0);
             this.pnphieuxuat.Name = "pnphieuxuat";
-            this.pnphieuxuat.Size = new System.Drawing.Size(687, 220);
+            this.pnphieuxuat.Size = new System.Drawing.Size(673, 220);
             this.pnphieuxuat.TabIndex = 0;
             // 
             // gvDSPX
@@ -420,7 +419,7 @@
             this.gvDSPX.Location = new System.Drawing.Point(0, 0);
             this.gvDSPX.MainView = this.gridView1;
             this.gvDSPX.Name = "gvDSPX";
-            this.gvDSPX.Size = new System.Drawing.Size(687, 220);
+            this.gvDSPX.Size = new System.Drawing.Size(673, 220);
             this.gvDSPX.TabIndex = 0;
             this.gvDSPX.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -432,6 +431,7 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // contaner
             // 
@@ -441,7 +441,7 @@
             this.contaner.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contaner.Location = new System.Drawing.Point(0, 0);
             this.contaner.Name = "contaner";
-            this.contaner.Size = new System.Drawing.Size(1152, 494);
+            this.contaner.Size = new System.Drawing.Size(1152, 529);
             this.contaner.TabIndex = 6;
             // 
             // pnRight
@@ -450,9 +450,9 @@
             this.pnRight.Controls.Add(this.pnVatTu);
             this.pnRight.Controls.Add(this.pnKH);
             this.pnRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnRight.Location = new System.Drawing.Point(687, 0);
+            this.pnRight.Location = new System.Drawing.Point(673, 0);
             this.pnRight.Name = "pnRight";
-            this.pnRight.Size = new System.Drawing.Size(465, 494);
+            this.pnRight.Size = new System.Drawing.Size(479, 529);
             this.pnRight.TabIndex = 6;
             // 
             // pnVatTu
@@ -464,7 +464,7 @@
             this.pnVatTu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnVatTu.Location = new System.Drawing.Point(0, 183);
             this.pnVatTu.Name = "pnVatTu";
-            this.pnVatTu.Size = new System.Drawing.Size(465, 311);
+            this.pnVatTu.Size = new System.Drawing.Size(479, 346);
             this.pnVatTu.TabIndex = 5;
             // 
             // gbVatTu
@@ -474,7 +474,7 @@
             this.gbVatTu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gbVatTu.Location = new System.Drawing.Point(0, 0);
             this.gbVatTu.Name = "gbVatTu";
-            this.gbVatTu.Size = new System.Drawing.Size(465, 183);
+            this.gbVatTu.Size = new System.Drawing.Size(479, 183);
             this.gbVatTu.TabIndex = 0;
             this.gbVatTu.TabStop = false;
             this.gbVatTu.Text = "Tiềm Kiếm Vật Tư";
@@ -485,7 +485,7 @@
             this.gvVatTu.Location = new System.Drawing.Point(3, 18);
             this.gvVatTu.MainView = this.gridView4;
             this.gvVatTu.Name = "gvVatTu";
-            this.gvVatTu.Size = new System.Drawing.Size(459, 162);
+            this.gvVatTu.Size = new System.Drawing.Size(473, 162);
             this.gvVatTu.TabIndex = 4;
             this.gvVatTu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4});
@@ -506,33 +506,55 @@
             this.gbHoanThanh.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbHoanThanh.Controls.Add(this.lbTien);
+            this.gbHoanThanh.Controls.Add(this.lbTinhTien);
             this.gbHoanThanh.Controls.Add(this.btHuyPX);
             this.gbHoanThanh.Controls.Add(this.btLapPX);
             this.gbHoanThanh.Location = new System.Drawing.Point(3, 247);
             this.gbHoanThanh.Name = "gbHoanThanh";
-            this.gbHoanThanh.Size = new System.Drawing.Size(459, 61);
+            this.gbHoanThanh.Size = new System.Drawing.Size(473, 96);
             this.gbHoanThanh.TabIndex = 3;
             this.gbHoanThanh.TabStop = false;
             this.gbHoanThanh.Text = "Hoàn Thành Phiếu";
+            this.gbHoanThanh.Enter += new System.EventHandler(this.gbHoanThanh_Enter);
+            // 
+            // lbTien
+            // 
+            this.lbTien.AutoSize = true;
+            this.lbTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTien.Location = new System.Drawing.Point(307, 24);
+            this.lbTien.Name = "lbTien";
+            this.lbTien.Size = new System.Drawing.Size(17, 19);
+            this.lbTien.TabIndex = 4;
+            this.lbTien.Text = "0";
+            // 
+            // lbTinhTien
+            // 
+            this.lbTinhTien.AutoSize = true;
+            this.lbTinhTien.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbTinhTien.Location = new System.Drawing.Point(197, 24);
+            this.lbTinhTien.Name = "lbTinhTien";
+            this.lbTinhTien.Size = new System.Drawing.Size(82, 19);
+            this.lbTinhTien.TabIndex = 4;
+            this.lbTinhTien.Text = "Tổng Tiền:";
             // 
             // btHuyPX
             // 
-            this.btHuyPX.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btHuyPX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btHuyPX.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btHuyPX.Location = new System.Drawing.Point(276, 19);
+            this.btHuyPX.Location = new System.Drawing.Point(329, 59);
             this.btHuyPX.Name = "btHuyPX";
             this.btHuyPX.Size = new System.Drawing.Size(102, 32);
             this.btHuyPX.TabIndex = 3;
             this.btHuyPX.Text = "Hủy Phiếu Xuất";
             this.btHuyPX.UseVisualStyleBackColor = true;
+            this.btHuyPX.Click += new System.EventHandler(this.btHuyPX_Click);
             // 
             // btLapPX
             // 
-            this.btLapPX.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btLapPX.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btLapPX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btLapPX.Location = new System.Drawing.Point(112, 20);
+            this.btLapPX.Location = new System.Drawing.Point(169, 59);
             this.btLapPX.Name = "btLapPX";
             this.btLapPX.Size = new System.Drawing.Size(110, 31);
             this.btLapPX.TabIndex = 3;
@@ -545,7 +567,6 @@
             this.gbVTChon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbVTChon.Controls.Add(this.button4);
             this.gbVTChon.Controls.Add(this.btThemPX);
             this.gbVTChon.Controls.Add(this.lbDonViTinh);
             this.gbVTChon.Controls.Add(this.tbSLVT);
@@ -554,21 +575,10 @@
             this.gbVTChon.Controls.Add(label5);
             this.gbVTChon.Location = new System.Drawing.Point(3, 186);
             this.gbVTChon.Name = "gbVTChon";
-            this.gbVTChon.Size = new System.Drawing.Size(456, 55);
+            this.gbVTChon.Size = new System.Drawing.Size(470, 55);
             this.gbVTChon.TabIndex = 2;
             this.gbVTChon.TabStop = false;
             this.gbVTChon.Text = "Vật Tư Chọn";
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button4.Location = new System.Drawing.Point(502, 18);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Xóa Khỏi Phiếu";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // btThemPX
             // 
@@ -590,9 +600,8 @@
             this.lbDonViTinh.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lbDonViTinh.Location = new System.Drawing.Point(344, 21);
             this.lbDonViTinh.Name = "lbDonViTinh";
-            this.lbDonViTinh.Size = new System.Drawing.Size(37, 15);
+            this.lbDonViTinh.Size = new System.Drawing.Size(0, 15);
             this.lbDonViTinh.TabIndex = 2;
-            this.lbDonViTinh.Text = "aaaaa";
             // 
             // tbSLVT
             // 
@@ -616,7 +625,7 @@
             this.pnleft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnleft.Location = new System.Drawing.Point(0, 0);
             this.pnleft.Name = "pnleft";
-            this.pnleft.Size = new System.Drawing.Size(687, 494);
+            this.pnleft.Size = new System.Drawing.Size(673, 529);
             this.pnleft.TabIndex = 5;
             // 
             // colMAVT1
@@ -648,7 +657,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 494);
+            this.ClientSize = new System.Drawing.Size(1152, 529);
             this.Controls.Add(this.contaner);
             this.Name = "PhieuXuat";
             this.Text = "PhieuXuat";
@@ -675,6 +684,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvVatTu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.gbHoanThanh.ResumeLayout(false);
+            this.gbHoanThanh.PerformLayout();
             this.gbVTChon.ResumeLayout(false);
             this.gbVTChon.PerformLayout();
             this.pnleft.ResumeLayout(false);
@@ -688,7 +698,6 @@
         private System.Windows.Forms.Panel pnKHG;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btHuyKH;
-        private System.Windows.Forms.Button btTaoPX;
         private System.Windows.Forms.TextBox tbSDT;
         private System.Windows.Forms.TextBox tbDiaChi;
         private System.Windows.Forms.TextBox tbTenKH;
@@ -719,7 +728,6 @@
         private DevExpress.XtraGrid.GridControl gvVatTu;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
         private System.Windows.Forms.GroupBox gbVTChon;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btThemPX;
         private System.Windows.Forms.Label lbDonViTinh;
         private System.Windows.Forms.TextBox tbSLVT;
@@ -727,5 +735,8 @@
         private System.Windows.Forms.ComboBox cb_DSKho;
         private System.Windows.Forms.Button btTaoKH;
         private System.Windows.Forms.Label lbMaKH;
+        private System.Windows.Forms.Label lbTien;
+        private System.Windows.Forms.Label lbTinhTien;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }

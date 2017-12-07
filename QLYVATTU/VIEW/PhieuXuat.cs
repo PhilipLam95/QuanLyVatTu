@@ -21,17 +21,21 @@ namespace QLYVATTU.VIEW
         {
             InitializeComponent();
         }
-
+        CTPhieuXuat ctPX;
         private DataTable hd;
         private DataTable kh;
-        private DataTable vt;
+        //private DataTable vt;
         private DataTable kho;
         private string maKH = ""; //lưu mã khách hàng để add vào phiếu xuất
         private string maVT = ""; //lay ma vat tu khi click vao de add vao chi tiet hoa don
         private string maPX = ""; //tao phieu xuat, luu ma phieu xuat de huy phieu,
-        private int soVT; //so luong vat tu cho vao phieu xuat
+        private int soVTOld; //so luong vat tu cho vao phieu xuat
         private int soVTKho; //số vật tư còn trong kho để so sánh với số vt xuất
         private string giaVT;
+        private string maKho;
+        private string tKho;
+        decimal tongTien = 0;
+        int rowCur = 0; //lấy số dòng hiện tại trong gridview chi tiết hóa đơn
         DataTable chiTietPX = new DataTable();
 
         FrmMain f = Program.fmain;
@@ -49,7 +53,28 @@ namespace QLYVATTU.VIEW
             chiTietPX.Columns.Add("Tên Vật Tư", typeof(string));
             chiTietPX.Columns.Add("Số lượng", typeof(int));
             chiTietPX.Columns.Add("Đơn Giá", typeof(string));
-            //chiTietPX.Columns.Add("Xóa", typeof(Int32));
+            chiTietPX.Columns.Add("Xóa", typeof(bool));
+            chiTietPX.Columns[4].DefaultValue = false;
+        }
+
+        private void loadLaiPX()
+        {
+            //laod lại view khách hàng
+            KhachHang khachhang = new KhachHang();
+            kh = khachhang.getKhachHang();
+            gvKH.DataSource = kh;
+            gvKH.DataMember = kh.TableName;
+            //load lại view danh sách phiếu xuất
+            HoaDon hoadon = new HoaDon();
+            hd = hoadon.getHoaDon();
+            gvDSPX.DataSource = hd;
+            gvDSPX.DataMember = hd.TableName;
+            //load lại chi tiết kho
+            HoaDon hoaDon = new HoaDon();
+            string[] param = { tKho };
+            DataTable ctKho = hoaDon.getChiTietKho(param);
+            gvVatTu.DataSource = ctKho;
+            gvVatTu.DataMember = ctKho.TableName;
         }
 
         private void PhieuXuat_Load(object sender, EventArgs e)
@@ -58,12 +83,13 @@ namespace QLYVATTU.VIEW
             //this.sP_DS_KHOTableAdapter.Fill(this.qL_VATTUDataSet.SP_DS_KHO);
             // TODO: This line of code loads data into the 'qL_VATTUDataSet.SP_DSVT_PHIEUXUAT' table. You can move, or remove it, as needed.
             //this.sP_DSVT_PHIEUXUATTableAdapter.Fill(this.qL_VATTUDataSet.SP_DSVT_PHIEUXUAT);
-            
+
             KhachHang khachhang = new KhachHang();
             kh = khachhang.getKhachHang();
             gvKH.DataSource = kh;
             gvKH.DataMember = kh.TableName;
-          
+            //sP_TIMKIEM_KHACHHANGGridControl.DataSource = kh;  //thay datasource thàng gridview
+            //sP_TIMKIEM_KHACHHANGGridControl.DataMember = kh.TableName;
 
 
             HoaDon hoadon = new HoaDon();
@@ -83,13 +109,23 @@ namespace QLYVATTU.VIEW
             cb_DSKho.SelectedIndex = -1;
 
             gridViewChiTietPX();
-            
+
             //NHẬN SỰ KIỆN CLICK ĐỂ LẤY MÃ KHO MỚI LOAD DANH SÁCH VẬT TƯ TRONG KHO
             //VatTu vattu = new VatTu();
             //vt = vattu.getVatTu();
             //gvVatTu.DataSource = vt;
             //gvVatTu.DataMember = vt.TableName;
             lbMaKH.Hide();  //label lay ma khach hang khi lay ma tu dong hoac click chuot kh co san
+
+            Timer timer = new Timer();
+            timer.Interval = (10 * 700); // 7 secs
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            loadLaiPX();
         }
 
         private void sP_DANHSACHPHIEUXUATGridControl_Click(object sender, EventArgs e)
@@ -126,7 +162,7 @@ namespace QLYVATTU.VIEW
         {
             try
             {
-               // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
+                // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
             }
             catch (System.Exception ex)
             {
@@ -139,7 +175,7 @@ namespace QLYVATTU.VIEW
         {
             try
             {
-               // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
+                // this.sP_CHITIETHDTableAdapter.Fill(this.qL_VATTUDataSet.SP_CHITIETHD, mAPXToolStripTextBox.Text);
             }
             catch (System.Exception ex)
             {
@@ -158,11 +194,22 @@ namespace QLYVATTU.VIEW
                 DataTable ctKho = hoaDon.getChiTietKho(param);
                 gvVatTu.DataSource = ctKho;
                 gvVatTu.DataMember = ctKho.TableName;
+                //-------lay ma phieu KHO-----------//
+                SqlDataReader makho;
+                //tạo 1 mã khách hàng mới
+                makho = hoaDon.getMaKho(param);
+                makho.Read();
+                maKho = makho["MAKHO"].ToString();
+                //MessageBox.Show(maKho);
+                makho.Close();
+                tKho = tenKho;
+                //==================================//
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi Tương tác CSDL! "+ex.ToString());
+                MessageBox.Show("Lỗi Tương tác CSDL! " + ex.ToString());
             }
+            cb_DSKho.Enabled = false;
         }
 
         private void gvKH_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -247,6 +294,10 @@ namespace QLYVATTU.VIEW
                     kh = khachhang.getKhachHang();
                     gvKH.DataSource = kh;
                     gvKH.DataMember = kh.TableName;
+                    tbTenKH.Enabled = false;
+                    tbSDT.Enabled = false;
+                    tbDiaChi.Enabled = false;
+                    btTaoKH.Enabled = false;
                 }
                 else
                 {
@@ -257,8 +308,10 @@ namespace QLYVATTU.VIEW
 
         private void btThemPX_Click(object sender, EventArgs e)
         {
+            //btXoaVTPX.Enabled = true;
             ////--------xét điều kiện thêm vào chi tiết phiếu xuất----------//
-            if(IsNumber(tbSLVT.Text) == false){
+            if (IsNumber(tbSLVT.Text) == false)
+            {
                 MessageBox.Show("Số Lượng Vật Tư Xuất Phải Là Số!");
             }
             else
@@ -275,6 +328,7 @@ namespace QLYVATTU.VIEW
 
                             string maVatTu = gridView3.GetRowCellValue(i, gridView3.Columns[0]).ToString();
                             string tenVatTu = gridView3.GetRowCellValue(i, gridView3.Columns[1]).ToString();
+
                             //string soluong = gridView3.GetRowCellValue(i, gridView3.Columns[2]).ToString();
                             //string giaVatTu = gridView3.GetRowCellValue(i, gridView3.Columns[3]).ToString();
 
@@ -294,7 +348,20 @@ namespace QLYVATTU.VIEW
                                     chiTietPX.Rows.Add(maVT, tbTenVT.Text, tempSL, giaVT);
                                     gvChiTietHD.DataSource = chiTietPX;
                                     gvChiTietHD.DataBindings.Clear();
+                                    for (int j = 0; j < 4; j++)
+                                    {
+                                        gridView3.Columns[j].OptionsColumn.AllowEdit = false;
+                                        //gridView3.Columns[2].OptionsColumn.AllowEdit = true;
+                                    }
+                                    tbSLVT.Text = "";
                                     tempSL = 0;
+                                    for (int y = 0; y < gridView3.RowCount; y++)
+                                    {
+                                        tongTien = Convert.ToDecimal(tongTien + (Convert.ToDecimal(gridView3.GetRowCellValue(y, gridView3.Columns[3])) * Convert.ToDecimal(gridView3.GetRowCellValue(y, gridView3.Columns[2]))));
+                                    }
+
+                                    lbTien.Text = String.Format("{0:0,0 vnđ}", tongTien);
+                                    //lbTien.Text = tongTien.ToString();
                                     return;
                                 }
                             }
@@ -306,10 +373,23 @@ namespace QLYVATTU.VIEW
                         }
                         else
                         {
-                             chiTietPX.Rows.Add(maVT, tbTenVT.Text, tbSLVT.Text, giaVT);
-                             gvChiTietHD.DataSource = chiTietPX;
-                             gvChiTietHD.DataBindings.Clear();
-                             return;
+                            chiTietPX.Rows.Add(maVT, tbTenVT.Text, tbSLVT.Text, giaVT);
+                            gvChiTietHD.DataSource = chiTietPX;
+                            gvChiTietHD.DataBindings.Clear();
+                            for (int j = 0; j < 4; j++)
+                            {
+                                gridView3.Columns[j].OptionsColumn.AllowEdit = false;
+                                //gridView3.Columns[2].OptionsColumn.AllowEdit = true;
+                            }
+                            tbSLVT.Text = "";
+                            for (int i = 0; i < gridView3.RowCount; i++)
+                            {
+                                tongTien = Convert.ToDecimal(tongTien + (Convert.ToDecimal(gridView3.GetRowCellValue(i, gridView3.Columns[3])) * Convert.ToDecimal(gridView3.GetRowCellValue(i, gridView3.Columns[2]))));
+                            }
+                            lbTien.Text = String.Format("{0:0,0 vnđ}", tongTien);
+                            //lbTien.Text = tongTien.ToString();
+                            //MessageBox.Show(tongTien.ToString());
+                            return;
                         }
                     }
                 }
@@ -317,9 +397,9 @@ namespace QLYVATTU.VIEW
                 {
                     MessageBox.Show("Sai " + ex);
 
-                }  
+                }
             }
-               
+
         }
 
         private void btLapPX_Click(object sender, EventArgs e)
@@ -348,47 +428,50 @@ namespace QLYVATTU.VIEW
                 maHD = HoaDon.getMaPX();
                 maHD.Read();
                 maPX = maHD["MAHD"].ToString();
+                //MessageBox.Show(maPX);
                 maHD.Close();
                 //MessageBox.Show(maPX);
                 //-------hoan thanh lay ma-----------//
+                string maNV = Access.MANV.ToString();
                 try
                 {
                     int nuRow = gridView3.RowCount;
                     string maddh = maPX;
+                    int x;
                     for (int i = 0; i < nuRow; i++)
                     {
-                        //string mavt = gridView3.GetRowCellValue(i, gridView3.Columns[0]).ToString();
-                        //string soluong = gridView3.GetRowCellValue(i, gridView3.Columns[3]).ToString();
-                        //string maNV = Access.MANV.ToString();
-                        //string nhacc = gridView3.GetRowCellValue(i, gridView3.Columns[4]).ToString();
-                        //string makho = gridView3.GetRowCellValue(i, gridView3.Columns[5]).ToString();
-                        //string[] param = { maddh, mavt, soluong, maNV, makho, nhacc };
-                        //DonDH dondh = new DonDH();
-                        //int x = dondh.Create_DonHang(param);
-                        //if (x == 0 && i == (nuRow - 1))
-                        //{
-                        //    MessageBox.Show("Thêm Đơn đặt hàng " + labelDDH.Text + " thành công");
-                        //    panel5.Hide();
-                        //    tBoxMavattu.Text = "";
-                        //    tBoxTenvattu.Text = "";
-                        //    tBoxSoluong.Text = "";
-                        //    tBoxNhacc.Text = "";
-                        //    tENKHOComboBox.Text = "";
-                        //    mAKHOComboBox.Text = "";
-                        //}
+                        string mavt = gridView3.GetRowCellValue(i, gridView3.Columns[0]).ToString();
+                        string soluong = gridView3.GetRowCellValue(i, gridView3.Columns[2]).ToString();
+                        string dongia = gridView3.GetRowCellValue(i, gridView3.Columns[3]).ToString();
+                        string[] param = { maddh, maNV, maKH, maKho, mavt, soluong, dongia };
+                        HoaDon hd = new HoaDon();
+                        x = hd.taoHoaDon(param);
+                        if (x == 0 && i == (nuRow - 1))
+                        {
+                            MessageBox.Show("Đã Lập Hóa Đơn Thành Công");
+                            int y = 0;
+                            while (y < gridView3.RowCount)
+                            {
+                                gridView3.DeleteRow(y);
+                            }
+                            loadLaiPX();
+                            lbTien.Text = "";
+                            tbTenVT.Text = "";
+                            tongTien = 0;
+                            return;
+                        }
                     }
-
-
                 }
                 catch
                 {
-                    MessageBox.Show("Them DDH that bai");
+                    MessageBox.Show("Lập Hóa Đơn Thất Bại");
                 }
             }
         }
 
         private void btHuyKH_Click(object sender, EventArgs e)
         {
+            maKH = "";
             tbTenKH.Enabled = true;
             tbSDT.Enabled = true;
             tbDiaChi.Enabled = true;
@@ -397,6 +480,135 @@ namespace QLYVATTU.VIEW
             tbDiaChi.Text = "";
             btTaoKH.Enabled = true;
         }
-      
+
+        private void gbHoanThanh_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpDateSL_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
+        {
+            DataRow read = gridView3.GetFocusedDataRow();
+            string mavatu = read["Mã Vật Tư"].ToString();
+            string soLuongVT = read["Số Lượng"].ToString();
+            //MessageBox.Show(soLuongVT); //lay dung
+            if (IsNumber(soLuongVT) == false)
+            {
+                MessageBox.Show("Số Lượng Phải Là Số");
+                //gridView3.SetRowCellValue(i, gridView3.Columns[2], soVTOld);
+                //for (int y; y < gridView3.RowCount; y++)
+                //{
+                //    for (int j = 0; j < 4; j++)
+                //    {
+                //        gridView3.Columns[j].OptionsColumn.AllowEdit = false;
+                //        gridView3.Columns[2].OptionsColumn.AllowEdit = true;
+                //    }
+                //}
+            }
+            else
+            {
+                for (int i = 0; i < gridView4.RowCount; i++)
+                {
+                    if (gridView4.GetRowCellValue(i, gridView4.Columns[0]).ToString() == mavatu)
+                    {
+                        //MessageBox.Show(mavatu); //lay đúng
+                        int a = Convert.ToInt32(gridView4.GetRowCellValue(i, gridView4.Columns[4]));//so luong nhap
+                        int b = Convert.ToInt32(soLuongVT);// so luong trong kho
+                        if (b > a)
+                        {
+                            MessageBox.Show("Số Lượng Lớn Hơn Hàng Còn Trong Kho!");
+                            gridView3.SetRowCellValue(gridView3.FocusedRowHandle, gridView3.Columns[2], soVTOld); //sai chỗ i
+                            //for (int y = 0; y < gridView3.RowCount; y++)
+                            //{
+                            gridView3.Columns[2].OptionsColumn.AllowEdit = false;
+                            //gridView3.Columns[2].OptionsColumn.AllowEdit = true;
+                            //}
+                            return;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void SaveSLOld_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            DataRow vattu = gridView3.GetFocusedDataRow();
+            soVTOld = Convert.ToInt32(vattu["Số Lượng"].ToString());
+            gridView3.Columns[2].OptionsColumn.AllowEdit = true;
+            //MessageBox.Show(soVTOld.ToString());
+        }
+
+        private void btXoaVTPX_Click(object sender, EventArgs e)
+        {
+            //int i = 0;
+            //int y = gridView3.RowCount;
+            //for (i = 0; i < y; i++)
+            //{
+            //    var check = gridView3.GetRowCellValue(i, gridView3.Columns[4]).ToString();
+            //    if (check == "True")
+            //    {
+            //        gridView3.DeleteRow(i);
+            //    }
+            //    else if (check == "") continue;
+            //}
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            int y = gridView3.RowCount;
+            for (i = 0; i < y; i++)
+            {
+                bool check = (bool)gridView3.GetRowCellValue(i, gridView3.Columns[4]);
+                if (check)
+                {
+                    gridView3.DeleteRow(i);
+                    y--;
+                    i = -1;
+                }
+            }
+
+        }
+
+        private void btHuyPX_Click(object sender, EventArgs e)
+        {
+            cb_DSKho.Enabled = true;
+            btHuyKH_Click(sender, e);
+            int y = 0;
+            while (y < gridView3.RowCount)
+            {
+                gridView3.DeleteRow(y);
+            }
+            lbTien.Text = "";
+            tbTenVT.Text = "";
+            loadLaiPX();
+            return;
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            
+            DataRow red = gridView1.GetFocusedDataRow();
+            string maPX = red[0].ToString();
+
+            if (ctPX == null)
+            {
+                ctPX = new CTPhieuXuat();
+                ctPX.Sender(maPX);    //Gọi delegate
+                ctPX.Show();
+
+            }
+            else
+            {
+                ctPX.Hide();
+                ctPX = new CTPhieuXuat();
+                ctPX.Activate();
+                ctPX.Show();
+
+                ctPX.Sender(maPX);
+            }
+
+        }
     }
 }

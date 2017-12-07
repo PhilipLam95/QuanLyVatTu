@@ -114,6 +114,12 @@ namespace QLYVATTU.VIEW
                                 Program.fmain.HienThiQuyen_CongTy();
                             }
 
+                            if(Access.ROLE == "User")
+                            {
+                                MessageBox.Show("Đăng Nhập Thành Công");
+                                Program.fmain.HienThiQuyen_User();
+                            }
+
                         }
                     }
 
