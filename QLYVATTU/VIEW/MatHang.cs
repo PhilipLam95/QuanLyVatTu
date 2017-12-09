@@ -11,7 +11,7 @@ using QLYVATTU.MODEL;
 using DevExpress.XtraGrid.Views.Grid;
 using QLYVATTU.STACK;
 using QLYVATTU.LIST_ARRAY;
-
+using DevExpress.XtraReports.UI;
 
 namespace QLYVATTU.VIEW
 {
@@ -26,6 +26,7 @@ namespace QLYVATTU.VIEW
         FrmMain f = Program.fmain;
         private DataTable vt;
         private DataTable lvt;
+        private static DataTable rp;
 
         private void MatHang_Load(object sender, EventArgs e)
         {
@@ -403,6 +404,17 @@ namespace QLYVATTU.VIEW
             tBoxMaVT.Enabled = false;
             btnHuy.Enabled = false;
             btnLuu.Enabled = false;
+        }
+
+        private void btnPrint_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            VatTu rpt = new VatTu();
+            rp = rpt.getVatTu();
+
+
+            REPORT.rptDanhMucVatTu report = new REPORT.rptDanhMucVatTu();
+            report.DataSource = rp;
+            report.ShowPreviewDialog();
         }
     }
 }

@@ -92,8 +92,9 @@ namespace QLYVATTU.VIEW
 
         private void loadVattu() // load vat tu 
         {
+            string[] param = { cBoxNhaCC.Text.ToString() };
             VatTu vattu = new VatTu();
-            vt = vattu.getVatTu();
+            vt = vattu.getVatTuTheoNCC(param);
             sP_DS_VATTUGridControl.DataSource = vt;
             sP_DS_VATTUGridControl.DataMember = vt.TableName;
         }
@@ -101,7 +102,7 @@ namespace QLYVATTU.VIEW
 
         private void loadVatthTrongKho() // load vattu co ma kho va so luong trong kho
         {
-            string[] param = { mAKHOComboBox.Text.ToString() };
+            string[] param = { mAKHOComboBox.Text.ToString(),cBoxNhaCC.Text.ToString() };
             VatTu vattu = new VatTu();
             vt = vattu.getVatTuTrongKho(param);
             sP_DS_VATTU_TRONGKHOGridControl.DataSource = vt;
@@ -293,10 +294,7 @@ namespace QLYVATTU.VIEW
             label12.Text = mAKHOComboBox.Text;
         }
 
-        private void tBoxSoluong_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
 
         private void btnThietLapDDH_Click(object sender, EventArgs e) // bat dau lap don dat hang tren kho va tu nha cung cap nao`
@@ -475,6 +473,9 @@ namespace QLYVATTU.VIEW
 
 
             }
+            loadVatthTrongKho();
+            loadVattu();
+            load_soluongTrongKhoTheoCompoBox();
 
 
         }
@@ -513,6 +514,12 @@ namespace QLYVATTU.VIEW
             //}
         }
 
-        
+        private void tBoxSoluongKho_TextChanged(object sender, EventArgs e)
+        {
+            if(tBoxSoluongKho.Text.Trim() == "")
+            {
+                tBoxSoluongKho.Text = "0";
+            }
+        }
     }
 }

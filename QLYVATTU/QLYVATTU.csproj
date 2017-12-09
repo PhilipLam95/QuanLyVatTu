@@ -38,6 +38,7 @@
     <Reference Include="DevExpress.CodeParser.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v16.1" />
     <Reference Include="DevExpress.DataAccess.v16.1, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v16.1.UI, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v16.1.Core" />
@@ -73,41 +74,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dsChiTietHangNhap.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsChiTietHangNhap.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsChiTietHangXuat.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsChiTietHangXuat.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsDanhMucVatTu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsDanhMucVatTu.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsHoatDongNhanVien.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsHoatDongNhanVien.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsThongKeNhapXuat.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsThongKeNhapXuat.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsTongChi.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsTongChi.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dsTongThu.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsTongThu.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +117,12 @@
     </Compile>
     <Compile Include="REPORT\rptDanhMucVatTu.Designer.cs">
       <DependentUpon>rptDanhMucVatTu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT\rptDanhSachNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORT\rptDanhSachNhanVien.Designer.cs">
+      <DependentUpon>rptDanhSachNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="REPORT\rptHoatDongNhanVien.cs">
       <SubType>Component</SubType>
@@ -198,6 +170,12 @@
     <Compile Include="VIEW\CT_PhieuNhap.Designer.cs">
       <DependentUpon>CT_PhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEW\DanhMucKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\DanhMucKho.Designer.cs">
+      <DependentUpon>DanhMucKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\DonDatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,9 +188,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VIEW\DangNhap.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="VIEW\DangNhap.Designer.cs">
       <DependentUpon>DangNhap.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="VIEW\DoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -225,12 +205,6 @@
     </Compile>
     <Compile Include="VIEW\DSNhanVien.Designer.cs">
       <DependentUpon>DSNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VIEW\HoatDongNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\HoatDongNhanVien.Designer.cs">
-      <DependentUpon>HoatDongNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\LoaiHang.cs">
       <SubType>Form</SubType>
@@ -258,11 +232,23 @@
     <Compile Include="VIEW\PhieuXuat.Designer.cs">
       <DependentUpon>PhieuXuat.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\ChiTietHangNhap.cs">
+    <Compile Include="VIEW\REPORT_VIEW\ChiTietHangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEW\ChiTietHangNhap.Designer.cs">
+    <Compile Include="VIEW\REPORT_VIEW\ChiTietHangNhap.Designer.cs">
       <DependentUpon>ChiTietHangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\REPORT_VIEW\HoatDongNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\REPORT_VIEW\HoatDongNhanVien.Designer.cs">
+      <DependentUpon>HoatDongNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\REPORT_VIEW\Report_DS_NhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\REPORT_VIEW\Report_DS_NhanVien.Designer.cs">
+      <DependentUpon>Report_DS_NhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\TaoTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -292,6 +278,9 @@
     <EmbeddedResource Include="REPORT\rptDanhMucVatTu.resx">
       <DependentUpon>rptDanhMucVatTu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="REPORT\rptDanhSachNhanVien.resx">
+      <DependentUpon>rptDanhSachNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORT\rptHoatDongNhanVien.resx">
       <DependentUpon>rptHoatDongNhanVien.cs</DependentUpon>
     </EmbeddedResource>
@@ -312,15 +301,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DangNhap.resx">
       <DependentUpon>DangNhap.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\DanhMucKho.resx">
+      <DependentUpon>DanhMucKho.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DonDatHang.resx">
       <DependentUpon>DonDatHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\HoatDongNhanVien.resx">
-      <DependentUpon>HoatDongNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\LoaiHang.resx">
       <DependentUpon>LoaiHang.cs</DependentUpon>
@@ -335,90 +325,19 @@
     <EmbeddedResource Include="VIEW\PhieuXuat.resx">
       <DependentUpon>PhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\ChiTietHangNhap.resx">
+    <EmbeddedResource Include="VIEW\REPORT_VIEW\ChiTietHangNhap.resx">
       <DependentUpon>ChiTietHangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\REPORT_VIEW\HoatDongNhanVien.resx">
+      <DependentUpon>HoatDongNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\REPORT_VIEW\Report_DS_NhanVien.resx">
+      <DependentUpon>Report_DS_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\TaoTaiKhoan.resx">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="dsChiTietHangNhap.xsc">
-      <DependentUpon>dsChiTietHangNhap.xsd</DependentUpon>
-    </None>
-    <None Include="dsChiTietHangNhap.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsChiTietHangNhap.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsChiTietHangNhap.xss">
-      <DependentUpon>dsChiTietHangNhap.xsd</DependentUpon>
-    </None>
-    <None Include="dsChiTietHangXuat.xsc">
-      <DependentUpon>dsChiTietHangXuat.xsd</DependentUpon>
-    </None>
-    <None Include="dsChiTietHangXuat.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsChiTietHangXuat.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsChiTietHangXuat.xss">
-      <DependentUpon>dsChiTietHangXuat.xsd</DependentUpon>
-    </None>
-    <None Include="dsDanhMucVatTu.xsc">
-      <DependentUpon>dsDanhMucVatTu.xsd</DependentUpon>
-    </None>
-    <None Include="dsDanhMucVatTu.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsDanhMucVatTu.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsDanhMucVatTu.xss">
-      <DependentUpon>dsDanhMucVatTu.xsd</DependentUpon>
-    </None>
-    <None Include="dsHoatDongNhanVien.xsc">
-      <DependentUpon>dsHoatDongNhanVien.xsd</DependentUpon>
-    </None>
-    <None Include="dsHoatDongNhanVien.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsHoatDongNhanVien.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsHoatDongNhanVien.xss">
-      <DependentUpon>dsHoatDongNhanVien.xsd</DependentUpon>
-    </None>
-    <None Include="dsThongKeNhapXuat.xsc">
-      <DependentUpon>dsThongKeNhapXuat.xsd</DependentUpon>
-    </None>
-    <None Include="dsThongKeNhapXuat.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsThongKeNhapXuat.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsThongKeNhapXuat.xss">
-      <DependentUpon>dsThongKeNhapXuat.xsd</DependentUpon>
-    </None>
-    <None Include="dsTongChi.xsc">
-      <DependentUpon>dsTongChi.xsd</DependentUpon>
-    </None>
-    <None Include="dsTongChi.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTongChi.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsTongChi.xss">
-      <DependentUpon>dsTongChi.xsd</DependentUpon>
-    </None>
-    <None Include="dsTongThu.xsc">
-      <DependentUpon>dsTongThu.xsd</DependentUpon>
-    </None>
-    <None Include="dsTongThu.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsTongThu.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="dsTongThu.xss">
-      <DependentUpon>dsTongThu.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

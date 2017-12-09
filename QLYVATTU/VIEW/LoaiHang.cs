@@ -107,7 +107,7 @@ namespace QLYVATTU.VIEW
                 if (code == 0)
                 {
                     btnReload.PerformClick();
-                    MessageBox.Show("Them vat tu thanh cong");
+                    MessageBox.Show("Them loai vat tu thanh cong");
                     btnUndo.Enabled = true;
                     //MessageBox.Show("Tạo môn học thành công");
                 }
@@ -172,7 +172,7 @@ namespace QLYVATTU.VIEW
                 {
                     MessageBox.Show("Phục hồi thất bại");
                 }
-                if(_commands.Count == 0)
+                if(_commands.Count == 0 || _commands.Count  < 0)
                 {
                     btnUndo.Enabled = false;
                 }

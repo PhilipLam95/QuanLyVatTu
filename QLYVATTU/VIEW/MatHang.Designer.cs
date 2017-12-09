@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatHang));
-            this.sP_DS_LOAIVTBindingSource = new System.Windows.Forms.BindingSource();
+            this.sP_DS_LOAIVTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
             this.panel2 = new System.Windows.Forms.Panel();
             this.sP_DS_VATTUGridControl = new DevExpress.XtraGrid.GridControl();
-            this.sP_DS_VATTUBindingSource = new System.Windows.Forms.BindingSource();
+            this.sP_DS_VATTUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +56,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnThemLoai = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnXoa = new DevExpress.XtraBars.BarButtonItem();
@@ -63,7 +64,7 @@
             this.btnUndo = new DevExpress.XtraBars.BarButtonItem();
             this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
-            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.btnPrint = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -296,7 +297,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 311);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1242, 307);
+            this.panel3.Size = new System.Drawing.Size(1242, 330);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -351,15 +352,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1242, 618);
+            this.panel1.Size = new System.Drawing.Size(1242, 641);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2,
-            this.bar3});
+            this.bar2});
             this.barManager1.DockControls.Add(this.barDockControlTop);
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
@@ -371,10 +371,10 @@
             this.btnReload,
             this.btnUndo,
             this.btnLuu,
-            this.btnHuy});
+            this.btnHuy,
+            this.btnPrint});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 6;
-            this.barManager1.StatusBar = this.bar3;
+            this.barManager1.MaxItemId = 7;
             // 
             // bar2
             // 
@@ -388,7 +388,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnReload),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUndo),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnPrint)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -449,17 +450,14 @@
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
-            // bar3
+            // btnPrint
             // 
-            this.bar3.BarName = "Status bar";
-            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
-            this.bar3.DockCol = 0;
-            this.bar3.DockRow = 0;
-            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
-            this.bar3.OptionsBar.AllowQuickCustomization = false;
-            this.bar3.OptionsBar.DrawDragBorder = false;
-            this.bar3.OptionsBar.UseWholeRow = true;
-            this.bar3.Text = "Status bar";
+            this.btnPrint.Caption = "In";
+            this.btnPrint.Glyph = ((System.Drawing.Image)(resources.GetObject("btnPrint.Glyph")));
+            this.btnPrint.Id = 6;
+            this.btnPrint.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnPrint.LargeGlyph")));
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPrint_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -472,22 +470,22 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 642);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1242, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 665);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1242, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 618);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 641);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1242, 24);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 618);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 641);
             // 
             // MatHang
             // 
@@ -547,7 +545,6 @@
         private DevExpress.XtraBars.BarButtonItem btnReload;
         private DevExpress.XtraBars.BarButtonItem btnUndo;
         private DevExpress.XtraBars.BarButtonItem btnLuu;
-        private DevExpress.XtraBars.Bar bar3;
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
@@ -559,5 +556,6 @@
         private System.Windows.Forms.TextBox tBoxMaVT;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraBars.BarButtonItem btnPrint;
     }
 }

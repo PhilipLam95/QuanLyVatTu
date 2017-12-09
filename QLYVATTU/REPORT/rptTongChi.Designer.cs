@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rptTongChi));
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
@@ -40,9 +41,6 @@
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.dsTongChi1 = new QLYVATTU.dsTongChi();
-            this.sP_TONGCHITableAdapter = new QLYVATTU.dsTongChiTableAdapters.SP_TONGCHITableAdapter();
-            this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -66,9 +64,14 @@
             this.lbNgaybaocao = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
+            this.sP_TONGCHITableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_TONGCHITableAdapter();
+            this.Group = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTongChi1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -105,7 +108,7 @@
             // xrTableCell1
             // 
             this.xrTableCell1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.NGAYLAP", "{0:dd/MM/yy}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAYLAP", "{0:dd/MM/yy}")});
             this.xrTableCell1.Dpi = 100F;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.Text = "xrTableCell1";
@@ -114,7 +117,7 @@
             // xrTableCell2
             // 
             this.xrTableCell2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.TONG SL")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "TONG SL")});
             this.xrTableCell2.Dpi = 100F;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
@@ -125,7 +128,7 @@
             // xrTableCell3
             // 
             this.xrTableCell3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.TONG TIEN", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "TONG TIEN", "{0:n2}")});
             this.xrTableCell3.Dpi = 100F;
             this.xrTableCell3.Font = new System.Drawing.Font("Times New Roman", 10.25F);
             this.xrTableCell3.Name = "xrTableCell3";
@@ -151,35 +154,20 @@
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // dsTongChi1
-            // 
-            this.dsTongChi1.DataSetName = "dsTongChi";
-            this.dsTongChi1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_TONGCHITableAdapter
-            // 
-            this.sP_TONGCHITableAdapter.ClearBeforeFill = true;
-            // 
-            // calculatedField1
-            // 
-            this.calculatedField1.DataMember = "SP_TONGCHI";
-            this.calculatedField1.Expression = "GetMonth([NGAY])+GetYear([NGAY])";
-            this.calculatedField1.Name = "calculatedField1";
-            // 
             // GroupHeader1
             // 
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel1});
             this.GroupHeader1.Dpi = 100F;
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("calculatedField1", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("Group", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeader1.HeightF = 35.41668F;
             this.GroupHeader1.Name = "GroupHeader1";
             // 
             // xrLabel1
             // 
             this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.NGAYLAP", "{0:y}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAYLAP", "{0:y}")});
             this.xrLabel1.Dpi = 100F;
             this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(30.31251F, 12.41668F);
@@ -287,7 +275,7 @@
             // xrLabel5
             // 
             this.xrLabel5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.TONG TIEN")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "TONG TIEN")});
             this.xrLabel5.Dpi = 100F;
             this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold);
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(353.1249F, 25F);
@@ -304,7 +292,7 @@
             // xrLabel3
             // 
             this.xrLabel3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.TONG SL")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "TONG SL")});
             this.xrLabel3.Dpi = 100F;
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(219.7916F, 25F);
@@ -357,7 +345,7 @@
             // xrTableCell5
             // 
             this.xrTableCell5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.NGAY", "{0:dd/MM/yy}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAYLAP", "{0:dd/MM/yy}")});
             this.xrTableCell5.Dpi = 100F;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
@@ -368,7 +356,7 @@
             // xrTableCell6
             // 
             this.xrTableCell6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_TONGCHI.NGAY")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAYLAP")});
             this.xrTableCell6.Dpi = 100F;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
@@ -443,6 +431,25 @@
             this.xrLabel9.Text = "Ngày lập báo cáo: ";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "SP_TONGCHI";
+            this.bindingSource1.DataSource = this.qL_VATTUDataSet;
+            // 
+            // qL_VATTUDataSet
+            // 
+            this.qL_VATTUDataSet.DataSetName = "QL_VATTUDataSet";
+            this.qL_VATTUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_TONGCHITableAdapter
+            // 
+            this.sP_TONGCHITableAdapter.ClearBeforeFill = true;
+            // 
+            // Group
+            // 
+            this.Group.Expression = "GetMonth([NGAYLAP]) + GetYear([NGAYLAP])";
+            this.Group.Name = "Group";
+            // 
             // rptTongChi
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -454,12 +461,13 @@
             this.GroupFooter1,
             this.ReportFooter});
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
-            this.calculatedField1});
-            this.DataSource = this.dsTongChi1;
+            this.Group});
+            this.DataSource = this.bindingSource1;
             this.Version = "16.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsTongChi1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -469,9 +477,6 @@
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
-        private dsTongChi dsTongChi1;
-        private dsTongChiTableAdapters.SP_TONGCHITableAdapter sP_TONGCHITableAdapter;
-        private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
@@ -500,5 +505,9 @@
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private QL_VATTUDataSet qL_VATTUDataSet;
+        private QL_VATTUDataSetTableAdapters.SP_TONGCHITableAdapter sP_TONGCHITableAdapter;
+        private DevExpress.XtraReports.UI.CalculatedField Group;
     }
 }

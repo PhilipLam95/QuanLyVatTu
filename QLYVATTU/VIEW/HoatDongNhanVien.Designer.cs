@@ -1,4 +1,4 @@
-﻿namespace QLYVATTU.VIEW
+﻿namespace QLYVATTU.VIEW.REPORT_VIEW
 {
     partial class HoatDongNhanVien
     {

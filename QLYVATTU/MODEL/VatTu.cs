@@ -15,6 +15,8 @@ namespace QLYVATTU.MODEL
         public static String SP_DS_LOAIVT = "SP_DS_LOAIVT";
         public static string SP_DS_VATTU_TRONGKHO = "SP_DS_VATTU_TRONGKHO";
 
+        public static string SP_DS_CT_NCC = "SP_DS_CT_NCC";
+
         public DataTable getVatTu() // lay nhan vien
         {
             DataTable vattu = Access.ExecuteQuery(SP_DS_VATTU, null);
@@ -29,8 +31,15 @@ namespace QLYVATTU.MODEL
 
         public DataTable getVatTuTrongKho(string[] param)
         {
-            string[] name = { "@MAKHO" };
-            DataTable vattu = Access.ExecuteQuery(SP_DS_VATTU_TRONGKHO, name, param, 1);
+            string[] name = { "@MAKHO" , "@MANCC" };
+            DataTable vattu = Access.ExecuteQuery(SP_DS_VATTU_TRONGKHO, name, param, 2);
+            return vattu;
+        }
+
+        public DataTable getVatTuTheoNCC(string[] param)
+        {
+            string[] name = {  "@MANCC" };
+            DataTable vattu = Access.ExecuteQuery(SP_DS_CT_NCC, name, param, 1);
             return vattu;
         }
     }

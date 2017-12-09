@@ -46,6 +46,20 @@ namespace QLYVATTU.VIEW
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
 
+            cboxMaPhieuNhap.Items.Clear();
+            foreach (DataRow s in pnhap.Rows)
+            {
+                cboxMaPhieuNhap.Items.Add(s["MAPN"]);
+            }
+            if (pnhap.Rows.Count != 0)
+            {
+                cboxMaPhieuNhap.SelectedIndex = 0;
+            }
+            else
+            {
+                cboxMaPhieuNhap.Text = "";
+            }
+
 
         }
 
@@ -79,6 +93,7 @@ namespace QLYVATTU.VIEW
 
             MDPhieuNhap phieunhap = new MDPhieuNhap();
             pnhap = phieunhap.getDS_PHIEUNHAP();
+            
             sP_DS_PHIEUNHAPGridControl.DataSource = pnhap;
             sP_DS_PHIEUNHAPGridControl.DataMember = pnhap.TableName;
         }
@@ -582,25 +597,7 @@ namespace QLYVATTU.VIEW
 
         private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            DataRow red = gridView1.GetFocusedDataRow();
-             string ma_pn = red[2].ToString();
             
-            if (ctpn == null)
-            {
-                ctpn = new CT_PhieuNhap();
-                ctpn.Sender(ma_pn);    //Gọi delegate
-                ctpn.Show();
-
-            }
-            else
-            {
-                ctpn.Hide();
-                ctpn = new CT_PhieuNhap();
-                ctpn.Activate();
-                ctpn.Show();
-
-                ctpn.Sender(ma_pn);
-            }
             
         }
 
@@ -620,5 +617,44 @@ namespace QLYVATTU.VIEW
                 }
             }
         }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            DataRow red = gridView1.GetFocusedDataRow();
+            string ma_pn = red[2].ToString();
+
+            if (ctpn == null)
+            {
+                ctpn = new CT_PhieuNhap();
+                ctpn.Sender(ma_pn);    //Gọi delegate
+                ctpn.Show();
+
+            }
+            else
+            {
+                ctpn.Hide();
+                ctpn = new CT_PhieuNhap();
+                ctpn.Activate();
+                ctpn.Show();
+
+                ctpn.Sender(ma_pn);
+            }
+        }
+
+        private void cboxMaPhieuNhap_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void cboxMaPhieuNhap_SelectedValueChanged(object sender, EventArgs e)
+        {
+            DataTable ppnn = new DataTable();
+            string mapn = cboxMaPhieuNhap.Text.ToString();
+            string[] param = { mapn };
+            MDPhieuNhap phieunhap = new MDPhieuNhap();
+            ppnn = phieunhap.getChiTietPhieuNhap(param);
+            DS_CT_PNHAP.DataSource = ppnn;
+        }
     }
-}
+} 

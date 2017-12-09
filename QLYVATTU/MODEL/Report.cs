@@ -16,6 +16,9 @@ namespace QLYVATTU.MODEL
         public static String SP_TONGHOPNHAPXUAT = "SP_TONGHOPNHAPXUAT";
         public static String SP_HOATDONGNHANVIEN = "SP_HOATDONGNHANVIEN";
 
+        public static string SP_REPORT_DS_NHANVIEN = "SP_REPORT_DS_NHANVIEN";
+        public static string SP_REPORT_DS_NHANVIEN_THEOMA = "SP_REPORT_DS_NHANVIEN_THEOMA";
+
         public DataTable ChiTietHangNhap(string[] param)
         {
             string[] name = { "@DateFrom", "@DateTo","@MACN" };
@@ -55,6 +58,19 @@ namespace QLYVATTU.MODEL
         {
             string[] name = { "@MaNV", "@DateFrom", "@DateTo", "@MACN" };
             DataTable nv = Access.ExecuteQuery(SP_HOATDONGNHANVIEN, name, param, 4);
+            return nv;
+        }
+
+        public DataTable Load_REPORT_DS_NHANVIEN()
+        {
+            DataTable nv = Access.ExecuteQuery(SP_REPORT_DS_NHANVIEN, null);
+            return nv;
+        }
+
+        public DataTable Load_REPORT_DS_NHANVIEN_THEOMA(string[] param)
+        {
+            string[] name = { "@MACN" };
+            DataTable nv = Access.ExecuteQuery(SP_REPORT_DS_NHANVIEN_THEOMA, name, param, 1);
             return nv;
         }
     }

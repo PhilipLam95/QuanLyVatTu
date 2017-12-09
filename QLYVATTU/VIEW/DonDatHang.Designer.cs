@@ -415,14 +415,14 @@
             this.tabNavigationPage1,
             this.tabNavigationPage2});
             this.tabPane1.RegularSize = new System.Drawing.Size(646, 440);
-            this.tabPane1.SelectedPage = this.tabNavigationPage2;
+            this.tabPane1.SelectedPage = this.tabNavigationPage1;
             this.tabPane1.Size = new System.Drawing.Size(646, 440);
             this.tabPane1.TabIndex = 0;
             this.tabPane1.Text = "tabPane1";
             // 
             // tabNavigationPage1
             // 
-            this.tabNavigationPage1.Caption = "Danh sách vật tư ";
+            this.tabNavigationPage1.Caption = "Danh sách vật tư  theo nhà cung cấp";
             this.tabNavigationPage1.Controls.Add(this.sP_DS_VATTUGridControl);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(628, 395);
@@ -969,7 +969,7 @@
             this.tBoxSoluongKho.Size = new System.Drawing.Size(110, 20);
             this.tBoxSoluongKho.TabIndex = 6;
             this.tBoxSoluongKho.Tag = "Số lượng trong kho";
-            this.tBoxSoluongKho.TextChanged += new System.EventHandler(this.tBoxSoluong_TextChanged);
+            this.tBoxSoluongKho.TextChanged += new System.EventHandler(this.tBoxSoluongKho_TextChanged);
             // 
             // label3
             // 

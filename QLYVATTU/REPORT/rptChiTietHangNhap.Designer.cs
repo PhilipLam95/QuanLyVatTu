@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
@@ -44,11 +45,7 @@
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.chiTietHangNhap1 = new QLYVATTU.dsChiTietHangNhap();
-            this.sP_CHITIETHANGNHAPTableAdapter = new QLYVATTU.dsChiTietHangNhapTableAdapters.SP_CHITIETHANGNHAPTableAdapter();
-            this.calculatedField1 = new DevExpress.XtraReports.UI.CalculatedField();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
@@ -70,9 +67,15 @@
             this.lbNgaybaocao = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
+            this.sP_CHITIETHANGNHAPTableAdapter = new QLYVATTU.QL_VATTUDataSetTableAdapters.SP_CHITIETHANGNHAPTableAdapter();
+            this.Group = new DevExpress.XtraReports.UI.CalculatedField();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiTietHangNhap1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -111,7 +114,7 @@
             // xrTableCell1
             // 
             this.xrTableCell1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.NGAY", "{0:dd/MM/yy}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAY", "{0:dd/MM/yy}")});
             this.xrTableCell1.Dpi = 100F;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.Text = "xrTableCell1";
@@ -120,27 +123,29 @@
             // xrTableCell2
             // 
             this.xrTableCell2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.MAPN")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "MAPN")});
             this.xrTableCell2.Dpi = 100F;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.Text = "xrTableCell2";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
-            this.xrTableCell2.Weight = 0.4249999569484092D;
+            this.xrTableCell2.Weight = 0.68541652915588891D;
             // 
             // xrTableCell3
             // 
             this.xrTableCell3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.HOTEN")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "HOTEN")});
             this.xrTableCell3.Dpi = 100F;
             this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.StylePriority.UseTextAlignment = false;
             this.xrTableCell3.Text = "xrTableCell3";
-            this.xrTableCell3.Weight = 1.6687498305184203D;
+            this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrTableCell3.Weight = 1.4083332583109405D;
             // 
             // xrTableCell4
             // 
             this.xrTableCell4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.TENVT")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "TENVT")});
             this.xrTableCell4.Dpi = 100F;
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseTextAlignment = false;
@@ -151,7 +156,7 @@
             // xrTableCell5
             // 
             this.xrTableCell5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.SOLUONG")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SOLUONG")});
             this.xrTableCell5.Dpi = 100F;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.StylePriority.UseTextAlignment = false;
@@ -162,7 +167,7 @@
             // xrTableCell6
             // 
             this.xrTableCell6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.DONGIA", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "DONGIA", "{0:n2}")});
             this.xrTableCell6.Dpi = 100F;
             this.xrTableCell6.Name = "xrTableCell6";
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
@@ -173,7 +178,7 @@
             // xrTableCell7
             // 
             this.xrTableCell7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.THANHTIEN", "{0:n2}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "THANHTIEN", "{0:n2}")});
             this.xrTableCell7.Dpi = 100F;
             this.xrTableCell7.Name = "xrTableCell7";
             this.xrTableCell7.StylePriority.UseTextAlignment = false;
@@ -197,21 +202,6 @@
             this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // chiTietHangNhap1
-            // 
-            this.chiTietHangNhap1.DataSetName = "ChiTietHangNhap";
-            this.chiTietHangNhap1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_CHITIETHANGNHAPTableAdapter
-            // 
-            this.sP_CHITIETHANGNHAPTableAdapter.ClearBeforeFill = true;
-            // 
-            // calculatedField1
-            // 
-            this.calculatedField1.DataMember = "SP_CHITIETHANGNHAP";
-            this.calculatedField1.Expression = "GetMonth([NGAY])+GetYear([NGAY])";
-            this.calculatedField1.Name = "calculatedField1";
-            // 
             // GroupHeader1
             // 
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -219,23 +209,10 @@
             this.GroupHeader1.Dpi = 100F;
             this.GroupHeader1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("calculatedField1", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("Group", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeader1.HeightF = 40.625F;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.StylePriority.UseFont = false;
-            // 
-            // xrLabel1
-            // 
-            this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.NGAY", "{0:y}")});
-            this.xrLabel1.Dpi = 100F;
-            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 11.79168F);
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(159.375F, 23F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.Text = "xrLabel1";
             // 
             // GroupFooter1
             // 
@@ -251,7 +228,7 @@
             // xrLabel5
             // 
             this.xrLabel5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.THANHTIEN")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "THANHTIEN")});
             this.xrLabel5.Dpi = 100F;
             this.xrLabel5.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold);
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(541.2499F, 25F);
@@ -268,7 +245,7 @@
             // xrLabel3
             // 
             this.xrLabel3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.SOLUONG")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SOLUONG")});
             this.xrLabel3.Dpi = 100F;
             this.xrLabel3.Font = new System.Drawing.Font("Times New Roman", 10.5F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(396.4583F, 24.91668F);
@@ -322,7 +299,7 @@
             // xrTableCell9
             // 
             this.xrTableCell9.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.NGAY", "{0:dd/MM/yy}")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAY", "{0:dd/MM/yy}")});
             this.xrTableCell9.Dpi = 100F;
             this.xrTableCell9.Name = "xrTableCell9";
             this.xrTableCell9.Text = "xrTableCell9";
@@ -331,7 +308,7 @@
             // xrTableCell10
             // 
             this.xrTableCell10.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "SP_CHITIETHANGNHAP.MAPN")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "MAPN")});
             this.xrTableCell10.Dpi = 100F;
             this.xrTableCell10.Name = "xrTableCell10";
             xrSummary3.FormatString = "({0} detail records)";
@@ -488,6 +465,38 @@
             this.xrLabel9.Text = "Ngày lập báo cáo: ";
             this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // xrLabel1
+            // 
+            this.xrLabel1.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "NGAY", "{0:y}")});
+            this.xrLabel1.Dpi = 100F;
+            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 11.79168F);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(159.375F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.Text = "xrLabel1";
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "SP_CHITIETHANGNHAP";
+            this.bindingSource1.DataSource = this.qL_VATTUDataSet;
+            // 
+            // qL_VATTUDataSet
+            // 
+            this.qL_VATTUDataSet.DataSetName = "QL_VATTUDataSet";
+            this.qL_VATTUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_CHITIETHANGNHAPTableAdapter
+            // 
+            this.sP_CHITIETHANGNHAPTableAdapter.ClearBeforeFill = true;
+            // 
+            // Group
+            // 
+            this.Group.Expression = "GetMonth([NGAY])+GetYear([NGAY])";
+            this.Group.Name = "Group";
+            // 
             // rptChiTietHangNhap
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -499,12 +508,13 @@
             this.ReportHeader,
             this.ReportFooter});
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
-            this.calculatedField1});
-            this.DataSource = this.chiTietHangNhap1;
+            this.Group});
+            this.DataSource = this.bindingSource1;
             this.Version = "16.1";
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chiTietHangNhap1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -514,11 +524,7 @@
         private DevExpress.XtraReports.UI.DetailBand Detail;
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
-        private dsChiTietHangNhap chiTietHangNhap1;
-        private dsChiTietHangNhapTableAdapters.SP_CHITIETHANGNHAPTableAdapter sP_CHITIETHANGNHAPTableAdapter;
-        private DevExpress.XtraReports.UI.CalculatedField calculatedField1;
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
-        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.GroupFooterBand GroupFooter1;
         private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
         private DevExpress.XtraReports.UI.XRTable xrTable1;
@@ -549,5 +555,10 @@
         private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel15;
         private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private System.Windows.Forms.BindingSource bindingSource1;
+        private QL_VATTUDataSet qL_VATTUDataSet;
+        private QL_VATTUDataSetTableAdapters.SP_CHITIETHANGNHAPTableAdapter sP_CHITIETHANGNHAPTableAdapter;
+        private DevExpress.XtraReports.UI.CalculatedField Group;
     }
 }

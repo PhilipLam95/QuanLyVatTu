@@ -12,7 +12,7 @@ using QLYVATTU.MODEL;
 using DevExpress.XtraReports.UI;
 using QLYVATTU.LIST_ARRAY;
 
-namespace QLYVATTU.VIEW
+namespace QLYVATTU.VIEW.REPORT_VIEW
 {
     public partial class HoatDongNhanVien : DevExpress.XtraEditors.XtraForm
     {

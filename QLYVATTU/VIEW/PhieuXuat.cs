@@ -74,7 +74,7 @@ namespace QLYVATTU.VIEW
             string[] param = { tKho };
             DataTable ctKho = hoaDon.getChiTietKho(param);
             gvVatTu.DataSource = ctKho;
-            gvVatTu.DataMember = ctKho.TableName;
+            //gvVatTu.DataMember = ctKho.TableName;
         }
 
         private void PhieuXuat_Load(object sender, EventArgs e)
