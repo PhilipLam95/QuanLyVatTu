@@ -92,6 +92,7 @@
     <Compile Include="MODEL\Connection.cs" />
     <Compile Include="MODEL\DonDH.cs" />
     <Compile Include="MODEL\HoaDon.cs" />
+    <Compile Include="MODEL\MDNhaCungCap.cs" />
     <Compile Include="MODEL\MDPhieuNhap.cs" />
     <Compile Include="MODEL\Report.cs" />
     <Compile Include="MODEL\VatTu.cs" />
@@ -220,6 +221,12 @@
       <DependentUpon>MatHang.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="VIEW\NhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="VIEW\PhieuNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +256,12 @@
     </Compile>
     <Compile Include="VIEW\REPORT_VIEW\Report_DS_NhanVien.Designer.cs">
       <DependentUpon>Report_DS_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\REPORT_VIEW\Report_DS_VatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\REPORT_VIEW\Report_DS_VatTu.Designer.cs">
+      <DependentUpon>Report_DS_VatTu.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\TaoTaiKhoan.cs">
       <SubType>Form</SubType>
@@ -319,6 +332,9 @@
       <DependentUpon>MatHang.cs</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VIEW\PhieuNhap.resx">
       <DependentUpon>PhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\REPORT_VIEW\Report_DS_NhanVien.resx">
       <DependentUpon>Report_DS_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\REPORT_VIEW\Report_DS_VatTu.resx">
+      <DependentUpon>Report_DS_VatTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\TaoTaiKhoan.resx">
       <DependentUpon>TaoTaiKhoan.cs</DependentUpon>

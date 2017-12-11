@@ -15,10 +15,19 @@ namespace QLYVATTU.MODEL
         public static String SP_CHUYEN_NV = "SP_CHUYEN_NV";
         public static String SP_KIEMTRA_ROLE = "SP_KIEMTRA_ROLE";
         public static String SP_LOAD_USER = "SP_LOAD_USER";
+        public static string SP_DOIMATKHAU = "SP_DOIMATKHAU";
         public DataTable getNhanVien() // lay nhan vien
         {
             DataTable nhanvien = Access.ExecuteQuery(SP_LAY_NHANVIEN, null);
             return nhanvien;
+        }
+
+
+        public int DoiMatKhau(string[] param) // doi mat khau
+        {
+           string[] name = { "@oldpassword", "@newpassword", "@login" };
+            int x = Access.ExecuteNonQuery(SP_DOIMATKHAU, name, param, 3);
+            return x;
         }
 
         public DataTable getUser() // lay nhan vien để chuyển chi nhánh

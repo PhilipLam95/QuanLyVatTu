@@ -37,14 +37,11 @@ namespace QLYVATTU.VIEW.REPORT_VIEW
                 }
 
             }
-            cboxCHINHANH.Text = Access.MACN;
-            
-            
-            
-            
-            if(Access.ROLE == "CongTy")
+
+            if (Access.ROLE == "CongTy")
             {
                 cboxCHINHANH.Enabled = true;
+               
             }
             else
             {

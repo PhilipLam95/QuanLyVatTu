@@ -35,6 +35,10 @@ namespace QLYVATTU.VIEW
             _commands = new Stack<Command>();
             loadvattu();
             loadLoaiVT();
+            if(Access.ROLE == "User")
+            {
+                btnPrint.Enabled = false;
+            }
         }
 
         private void loadvattu()

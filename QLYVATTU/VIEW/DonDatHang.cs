@@ -250,25 +250,31 @@ namespace QLYVATTU.VIEW
 
         private void FocusedRowChanged()
         {
-            DataRow red = gridViewVatTu.GetFocusedDataRow();
-            tBoxMavattu.Text = red["MAVT"].ToString();
+            DataRow red = gridViewVatTu.GetFocusedDataRow();// doc du lieu red trong gridviewVatTu
+            tBoxMavattu.Text = red["MAVT"].ToString(); // doc gia tri text theo cot MAVT
             tBoxTenvattu.Text = red["TENVT"].ToString();
             tboxDonvi.Text = red["DONVI"].ToString();
             string makho = mAKHOComboBox.SelectedItem.ToString();
             for(int i = 0;i<gridView4.RowCount;i++)
             {
-                Console.WriteLine(gridView4.GetRowCellValue(i, gridView4.Columns["MAVT"]).ToString());
-                Console.WriteLine(gridView4.GetRowCellValue(i, gridView4.Columns["MAKHO"]).ToString());
                 if (tBoxMavattu.Text.ToString() == gridView4.GetRowCellValue(i, gridView4.Columns[0]).ToString()
                     && mAKHOComboBox.SelectedItem.ToString() == gridView4.GetRowCellValue(i, gridView4.Columns[7]).ToString())
                 {
+
                     tBoxSoluongKho.Text = gridView4.GetRowCellValue(i, gridView4.Columns[6]).ToString();
+                    
                     break;
                 }
                 else
                 {
                     tBoxSoluongKho.Text = "0";
                 }
+            }
+
+
+            if(gridView4.RowCount == 0)
+            {
+                tBoxSoluongKho.Text = "0";
             }
         }
 
@@ -415,9 +421,13 @@ namespace QLYVATTU.VIEW
                 }
 
             }
+
             loadVatthTrongKho();
             load_soluongTrongKhoTheoCompoBox();
-
+            if(gridView4.RowCount == 0)
+            {
+                tBoxSoluongKho.Text = "0";
+            }
 
         }
 

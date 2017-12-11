@@ -77,7 +77,7 @@ namespace QLYVATTU.VIEW
                     Connection cnn = Access.CnnList[comboBox1.SelectedIndex];
                     Access.DATA_SOURCE = cnn.DataSource;
                     Access.MACN = cnn.MaCN;
-                    string username = tboxTaiKhoan.Text.Trim().ToUpper();
+                    string username = tboxTaiKhoan.Text.Trim();
                     string password = tboxMatKhau.Text.Trim();
                     Access.USERNAME = username;
                     Access.PASSWORD = password;
@@ -121,6 +121,7 @@ namespace QLYVATTU.VIEW
                             }
 
                         }
+                        reader.Close();
                     }
 
                     catch (Exception ex)

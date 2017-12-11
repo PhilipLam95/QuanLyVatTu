@@ -80,9 +80,9 @@
             // 
             this.tboxMatKhau.Location = new System.Drawing.Point(397, 198);
             this.tboxMatKhau.Name = "tboxMatKhau";
-            this.tboxMatKhau.PasswordChar = '*';
             this.tboxMatKhau.Size = new System.Drawing.Size(220, 21);
             this.tboxMatKhau.TabIndex = 4;
+            this.tboxMatKhau.UseSystemPasswordChar = true;
             // 
             // panel1
             // 

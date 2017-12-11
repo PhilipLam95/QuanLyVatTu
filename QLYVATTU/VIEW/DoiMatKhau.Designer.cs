@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiMatKhau));
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label mANVLabel;
             System.Windows.Forms.Label label2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DoiMatKhau));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.labelUserName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tBoxNewPassword = new DevExpress.XtraEditors.TextEdit();
@@ -53,72 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tboxConfirmPassword.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
-            // 
-            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(832, 89);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.labelUserName);
-            this.groupBox2.Controls.Add(this.panel2);
-            this.groupBox2.Controls.Add(label3);
-            this.groupBox2.Controls.Add(this.tBoxNewPassword);
-            this.groupBox2.Controls.Add(label4);
-            this.groupBox2.Controls.Add(mANVLabel);
-            this.groupBox2.Controls.Add(this.btnDoiMatKhau);
-            this.groupBox2.Controls.Add(this.tboxOldPassword);
-            this.groupBox2.Controls.Add(this.tboxConfirmPassword);
-            this.groupBox2.Controls.Add(label2);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(0, 89);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(832, 324);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Thông Tin Tài Khoản";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(288, 16);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 31);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ĐỔI MẬT KHẨU";
-            // 
-            // labelUserName
-            // 
-            this.labelUserName.AutoSize = true;
-            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.labelUserName.ForeColor = System.Drawing.Color.Gray;
-            this.labelUserName.Location = new System.Drawing.Point(585, 67);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(60, 24);
-            this.labelUserName.TabIndex = 23;
-            this.labelUserName.Text = "label5";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.Location = new System.Drawing.Point(41, 34);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(188, 234);
-            this.panel2.TabIndex = 24;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -129,15 +63,6 @@
             label3.Size = new System.Drawing.Size(158, 25);
             label3.TabIndex = 20;
             label3.Text = "Tên truy cập :";
-            // 
-            // tBoxNewPassword
-            // 
-            this.tBoxNewPassword.Location = new System.Drawing.Point(496, 152);
-            this.tBoxNewPassword.Name = "tBoxNewPassword";
-            this.tBoxNewPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tBoxNewPassword.Properties.Appearance.Options.UseFont = true;
-            this.tBoxNewPassword.Size = new System.Drawing.Size(250, 26);
-            this.tBoxNewPassword.TabIndex = 22;
             // 
             // label4
             // 
@@ -161,33 +86,6 @@
             mANVLabel.TabIndex = 15;
             mANVLabel.Text = "Mật khẩu cũ :";
             // 
-            // btnDoiMatKhau
-            // 
-            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(419, 218);
-            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(154, 43);
-            this.btnDoiMatKhau.TabIndex = 19;
-            this.btnDoiMatKhau.Text = "ĐỔI MẬT KHẨU";
-            // 
-            // tboxOldPassword
-            // 
-            this.tboxOldPassword.Location = new System.Drawing.Point(496, 111);
-            this.tboxOldPassword.Name = "tboxOldPassword";
-            this.tboxOldPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tboxOldPassword.Properties.Appearance.Options.UseFont = true;
-            this.tboxOldPassword.Size = new System.Drawing.Size(250, 26);
-            this.tboxOldPassword.TabIndex = 16;
-            // 
-            // tboxConfirmPassword
-            // 
-            this.tboxConfirmPassword.Location = new System.Drawing.Point(496, 186);
-            this.tboxConfirmPassword.Name = "tboxConfirmPassword";
-            this.tboxConfirmPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tboxConfirmPassword.Properties.Appearance.Options.UseFont = true;
-            this.tboxConfirmPassword.Size = new System.Drawing.Size(250, 26);
-            this.tboxConfirmPassword.TabIndex = 18;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -198,6 +96,112 @@
             label2.Size = new System.Drawing.Size(228, 25);
             label2.TabIndex = 17;
             label2.Text = "Xác nhận mật khẩu :";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(832, 89);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label1.Location = new System.Drawing.Point(288, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(222, 31);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ĐỔI MẬT KHẨU";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.labelUserName);
+            this.groupBox2.Controls.Add(this.panel2);
+            this.groupBox2.Controls.Add(label3);
+            this.groupBox2.Controls.Add(this.tBoxNewPassword);
+            this.groupBox2.Controls.Add(label4);
+            this.groupBox2.Controls.Add(mANVLabel);
+            this.groupBox2.Controls.Add(this.btnDoiMatKhau);
+            this.groupBox2.Controls.Add(this.tboxOldPassword);
+            this.groupBox2.Controls.Add(this.tboxConfirmPassword);
+            this.groupBox2.Controls.Add(label2);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox2.Location = new System.Drawing.Point(0, 89);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(832, 324);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Thông Tin Tài Khoản";
+            // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.labelUserName.ForeColor = System.Drawing.Color.Gray;
+            this.labelUserName.Location = new System.Drawing.Point(585, 67);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(60, 24);
+            this.labelUserName.TabIndex = 23;
+            this.labelUserName.Text = "label5";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.Location = new System.Drawing.Point(41, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(188, 234);
+            this.panel2.TabIndex = 24;
+            // 
+            // tBoxNewPassword
+            // 
+            this.tBoxNewPassword.Location = new System.Drawing.Point(496, 152);
+            this.tBoxNewPassword.Name = "tBoxNewPassword";
+            this.tBoxNewPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tBoxNewPassword.Properties.Appearance.Options.UseFont = true;
+            this.tBoxNewPassword.Properties.UseSystemPasswordChar = true;
+            this.tBoxNewPassword.Size = new System.Drawing.Size(250, 26);
+            this.tBoxNewPassword.TabIndex = 22;
+            // 
+            // btnDoiMatKhau
+            // 
+            this.btnDoiMatKhau.Image = ((System.Drawing.Image)(resources.GetObject("btnDoiMatKhau.Image")));
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(419, 218);
+            this.btnDoiMatKhau.Name = "btnDoiMatKhau";
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(154, 43);
+            this.btnDoiMatKhau.TabIndex = 19;
+            this.btnDoiMatKhau.Text = "ĐỔI MẬT KHẨU";
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
+            // 
+            // tboxOldPassword
+            // 
+            this.tboxOldPassword.Location = new System.Drawing.Point(496, 111);
+            this.tboxOldPassword.Name = "tboxOldPassword";
+            this.tboxOldPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tboxOldPassword.Properties.Appearance.Options.UseFont = true;
+            this.tboxOldPassword.Properties.UseSystemPasswordChar = true;
+            this.tboxOldPassword.Size = new System.Drawing.Size(250, 26);
+            this.tboxOldPassword.TabIndex = 16;
+            // 
+            // tboxConfirmPassword
+            // 
+            this.tboxConfirmPassword.Location = new System.Drawing.Point(496, 186);
+            this.tboxConfirmPassword.Name = "tboxConfirmPassword";
+            this.tboxConfirmPassword.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tboxConfirmPassword.Properties.Appearance.Options.UseFont = true;
+            this.tboxConfirmPassword.Properties.UseSystemPasswordChar = true;
+            this.tboxConfirmPassword.Size = new System.Drawing.Size(250, 26);
+            this.tboxConfirmPassword.TabIndex = 18;
             // 
             // DoiMatKhau
             // 

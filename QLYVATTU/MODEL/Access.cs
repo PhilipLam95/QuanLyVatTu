@@ -39,11 +39,11 @@ namespace QLYVATTU.MODEL
                 /*string connectionString = string.Format(@"Data Source={0};Initial Catalog={1};Persist Security Info=True;
                                         User ID={2};Password={3};", dataSource, initCatalog, username, password);*/
                 string connectionString = string.Format(@"Data Source=" + DATA_SOURCE + ";" + "Initial Catalog=" + INITIAL_CATALOG + ";"
-                    + "Persist Security Info=True" + ";" + "User ID=" +  USERNAME+ ";" + "password=" + PASSWORD + ";");
+                    + "Persist Security Info=True" + ";" + "User ID=" + USERNAME + ";" + "password=" + PASSWORD + ";");
 
 
-                
-               /* string connectionString = string.Format(@"Data Source=DELL-PC\SERVER_ONE;Initial Catalog=QLDSV;Persist Security Info=True;User ID=sa;Password=123");*/
+
+                /* string connectionString = string.Format(@"Data Source=DELL-PC\SERVER_ONE;Initial Catalog=QLDSV;Persist Security Info=True;User ID=sa;Password=123");*/
                 connection = new SqlConnection(connectionString);
                 connection.Open();
                 return true;
@@ -96,7 +96,7 @@ namespace QLYVATTU.MODEL
 
         }
 
-        
+
 
 
         public static SqlDataReader ExecSqlDataReader(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
@@ -117,6 +117,7 @@ namespace QLYVATTU.MODEL
                     reader = sqlCmd.ExecuteReader();
                 }
                 return reader;
+
             }
             catch (SqlException e)
             {
@@ -128,7 +129,7 @@ namespace QLYVATTU.MODEL
         }
 
         public static int ExecuteNonQuery(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
-            CommandType cmdType = CommandType.StoredProcedure)
+             CommandType cmdType = CommandType.StoredProcedure)
         {
             int retval;
             if (connection == null || connection.State == ConnectionState.Closed)
@@ -137,18 +138,14 @@ namespace QLYVATTU.MODEL
             }
             try
             {
+                
                 using (SqlCommand sqlCmd = new SqlCommand(_cmd, connection))
                 {
                     for (int i = 0; i < NoParam; i++)
                     {
                         sqlCmd.Parameters.AddWithValue(name[i], value[i]);
                     }
-                    SqlParameter retParam = new SqlParameter() 
-                        { 
-                            SqlDbType = SqlDbType.Int, 
-                            ParameterName = "@retParam", 
-                            Direction = ParameterDirection.ReturnValue 
-                        };
+                    SqlParameter retParam = new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@retParam", Direction = ParameterDirection.ReturnValue };
                     sqlCmd.Parameters.Add(retParam);
                     sqlCmd.CommandType = cmdType;
                     sqlCmd.ExecuteNonQuery();
@@ -163,6 +160,7 @@ namespace QLYVATTU.MODEL
                 return -1;
             }
             return retval;
+            
         }
     }
 }

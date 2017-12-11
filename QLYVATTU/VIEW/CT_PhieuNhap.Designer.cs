@@ -35,11 +35,11 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.qL_VATTUDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_CHITIET_PHIEUNHAPBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sP_DS_CHITIET_PHIEUNHAPGridControl)).BeginInit();
@@ -75,7 +75,9 @@
             // 
             this.gridView1.GridControl = this.sP_DS_CHITIET_PHIEUNHAPGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
             // 
             // label1
             // 
@@ -99,6 +101,17 @@
             this.panel1.Size = new System.Drawing.Size(514, 46);
             this.panel1.TabIndex = 3;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(54, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(222, 22);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "CHI TIẾT PHIẾU NHẬP :";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -110,14 +123,14 @@
             this.panel2.Size = new System.Drawing.Size(514, 318);
             this.panel2.TabIndex = 4;
             // 
-            // panel3
+            // panel4
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(483, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(31, 318);
-            this.panel3.TabIndex = 2;
+            this.panel4.Controls.Add(this.sP_DS_CHITIET_PHIEUNHAPGridControl);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(30, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(453, 318);
+            this.panel4.TabIndex = 3;
             // 
             // panel5
             // 
@@ -128,25 +141,14 @@
             this.panel5.Size = new System.Drawing.Size(30, 318);
             this.panel5.TabIndex = 0;
             // 
-            // panel4
+            // panel3
             // 
-            this.panel4.Controls.Add(this.sP_DS_CHITIET_PHIEUNHAPGridControl);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(30, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(453, 318);
-            this.panel4.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label2.Location = new System.Drawing.Point(54, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 22);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "CHI TIẾT PHIẾU NHẬP :";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(483, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(31, 318);
+            this.panel3.TabIndex = 2;
             // 
             // CT_PhieuNhap
             // 

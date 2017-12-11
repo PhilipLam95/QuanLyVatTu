@@ -306,6 +306,28 @@ namespace QLYVATTU
             }
         }
 
+        private void btnDSVT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(Report_DS_VatTu));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Report_DS_VatTu f = new Report_DS_VatTu() { MdiParent = this, Text = "Danh sách vật tư" };
+                f.Show();
+            }
+        }
+
+        private void btnNhaCC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form frm = this.CheckExists(typeof(VIEW.NhaCungCap));
+            if (frm != null) frm.Activate();
+            else
+            {
+                VIEW.NhaCungCap f = new VIEW.NhaCungCap() { MdiParent = this, Text = "Nhà cung cấp" };
+                f.Show();
+            }
+        }
+
         //----------------------------------------------------------GỌI FORM ----------------------------------------------------------
 
 
@@ -364,6 +386,7 @@ namespace QLYVATTU
             btnDangXuat.Visible = false;
             rbQLNhanvien.Visible = false;
             rbpNghiepVu.Visible = false;
+            rbpBaoCao.Visible = false;
             label1.Visible = false;
         }
 
@@ -418,8 +441,6 @@ namespace QLYVATTU
                 ActiveMdiChild.Hide();
             }
         }
-
-
 
         
 
