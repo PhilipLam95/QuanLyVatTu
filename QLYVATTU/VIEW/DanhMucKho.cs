@@ -115,10 +115,11 @@ namespace QLYVATTU.VIEW
             {
                 for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    if (tBoxMakho.Text == gridView1.GetRowCellValue(i, gridView1.Columns["MAKHO"]).ToString() || tboxTenKho.Text == gridView1.GetRowCellValue(i, gridView1.Columns["TENKHO"]).ToString())
+                    if (tBoxMakho.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns[0]).ToString() || 
+                        tboxTenKho.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns[1]).ToString() )
                     {
                         MessageBox.Show("Kho thêm đã tồn tại");
-                        break;
+                        return;
                     }
                     else
                     {
@@ -147,17 +148,31 @@ namespace QLYVATTU.VIEW
 
             else
             {
-                int code = Execute("update", Kho_TrongForm, Kho_TrongBang);
-                if (code == 0)
+                for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    MessageBox.Show("Update kho thành công");
-                    btnReload.PerformClick();
+                    if (tboxTenKho.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns[1]).ToString())
+                    {
+                        MessageBox.Show("Kho thêm đã tồn tại");
+                        break;
+                    }
+                    else
+                    {
+                        if (i == (gridView1.RowCount - 1))
+                        {
+                            int code = Execute("update", Kho_TrongForm, Kho_TrongBang);
+                            if (code == 0)
+                            {
+                                MessageBox.Show("Update kho thành công");
+                                btnReload.PerformClick();
 
-                }
-                else
-                {
-                    MessageBox.Show("Lưu vật tư thất bại");
-                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Lưu vật tư thất bại");
+                            }
+                        }
+                    }
+                }      
             }
         }
 

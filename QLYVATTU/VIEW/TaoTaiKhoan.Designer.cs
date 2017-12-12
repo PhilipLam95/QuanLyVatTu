@@ -771,6 +771,7 @@
             this.btnTao.Size = new System.Drawing.Size(146, 61);
             this.btnTao.TabIndex = 17;
             this.btnTao.Text = "Tạo Tài Khoản";
+            this.btnTao.Visible = false;
             this.btnTao.Click += new System.EventHandler(this.btnTao_Click);
             // 
             // panel4
