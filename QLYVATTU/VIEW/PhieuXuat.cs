@@ -465,6 +465,17 @@ namespace QLYVATTU.VIEW
                             lbTien.Text = "";
                             tbTenVT.Text = "";
                             tongTien = 0;
+                            //khach hang
+                            tbTenKH.Text = "";
+                            tbSDT.Text = "";
+                            tbDiaChi.Text = "";
+                            tbTenKH.Enabled = true;
+                            tbSDT.Enabled = true;
+                            tbDiaChi.Enabled = true;
+                            btTaoKH.Enabled = true;
+                            //kho
+                            cb_DSKho.Enabled = true;
+
                             return;
                         }
                     }

@@ -70,7 +70,6 @@ namespace QLYVATTU.VIEW
             Command command = new Vattu_Command(_operator, _operand, oldstate);
             int code = command.Execute();
             _commands.Push(command);
-            MessageBox.Show(_commands.Count.ToString());
             btnUndo.Enabled = true;
             return code;
         }
@@ -210,7 +209,8 @@ namespace QLYVATTU.VIEW
                 
                 for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    if (tBoxMaVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["MAVT"]).ToString() || tboxTenVT.Text.Trim().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString())
+                    if (tBoxMaVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["MAVT"]).ToString() ||
+                        tboxTenVT.Text.Trim().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString())
                     {
                         MessageBox.Show("Vat tu them da ton tai");
                         break;
@@ -248,17 +248,30 @@ namespace QLYVATTU.VIEW
             else
             {
 
-                int code = Execute("update", VT_TrongFORM, VT_TrongBang);
-                if (code == 0)
+                for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    btnReload.PerformClick();
+                    if (tboxTenVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString().Trim().ToUpper())
+                    {
+                        MessageBox.Show("Vat tu them da ton tai");
+                        break;
+                    }
+                    else
+                    {
+                        if (i == (gridView1.RowCount - 1))
+                        {
+                            int code = Execute("update", VT_TrongFORM, VT_TrongBang);
+                            if (code == 0)
+                            {
+                                btnReload.PerformClick();
 
+                            }
+                            else
+                            {
+                                MessageBox.Show("Lưu vật tư thất bại");
+                            }
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Lưu vật tư thất bại");
-                }
-
             }
         }
 
