@@ -207,9 +207,10 @@ namespace QLYVATTU.VIEW
 
             if (tBoxMaVT.Enabled)
             {
+                
                 for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    if (tBoxMaVT.Text == gridView1.GetRowCellValue(i, gridView1.Columns["MAVT"]).ToString() || tboxTenVT.Text == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString())
+                    if (tBoxMaVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["MAVT"]).ToString() || tboxTenVT.Text.Trim().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString())
                     {
                         MessageBox.Show("Vat tu them da ton tai");
                         break;
@@ -218,17 +219,24 @@ namespace QLYVATTU.VIEW
                     {
                         if (i == (gridView1.RowCount - 1))
                         {
-                            int code = Execute("insert", VT_TrongFORM, VT_TrongBang);
-                            if (code == 0)
+                            try
                             {
-                                btnReload.PerformClick();
+                                int code = Execute("insert", VT_TrongFORM, VT_TrongBang);
+                                if (code == 0)
+                                {
+                                    btnReload.PerformClick();
 
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Vat tu them da ton tai");
+                                }
+                                break;
                             }
-                            else
+                            catch
                             {
-                                MessageBox.Show("Thêm Vật tư thất bại");
+                                MessageBox.Show("Vat tu them da ton tai"); 
                             }
-                            break;
                         }
                     }
                 }

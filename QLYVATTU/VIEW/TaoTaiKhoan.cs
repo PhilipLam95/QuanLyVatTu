@@ -111,6 +111,16 @@ namespace QLYVATTU.VIEW
                 rabtnCongTy.Checked = true;
                 rabtnCongTy.Visible = true;
             }
+            else
+            {
+                rabtnChiNhanh.Checked = true;
+                rabtnChiNhanh.Visible = true;
+                rabtnUser.Checked = false;
+                rabtnUser.Visible = true;
+                rabtnCongTy.Checked = false;
+                rabtnCongTy.Visible = false;
+
+            }
         }
 
       
@@ -514,19 +524,37 @@ namespace QLYVATTU.VIEW
 
             };
 
-            
-            ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
+            if (red != null)
             {
-                MaNV = red["MANV"].ToString(),
-                HO = red["HO"].ToString(),
-                TEN = red["TEN"].ToString(),
-                Phai = red["PHAI"].ToString(),                
-                NgaySinh = red["NGAYSINH"].ToString(),
-                DiaChi = red["DIACHI"].ToString(),
-                Sdt = red["SODT"].ToString(),
-                role = red["CHUCVU"].ToString(),
-                Trangthai = red["TRTHAI"].ToString(),
-            };
+                ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
+                {
+                    MaNV = red["MANV"].ToString(),
+                    HO = red["HO"].ToString(),
+                    TEN = red["TEN"].ToString(),
+                    Phai = red["PHAI"].ToString(),
+                    NgaySinh = red["NGAYSINH"].ToString(),
+                    DiaChi = red["DIACHI"].ToString(),
+                    Sdt = red["SODT"].ToString(),
+                    role = red["CHUCVU"].ToString(),
+                    Trangthai = red["TRTHAI"].ToString(),
+                };
+            }
+            else
+            {
+                ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
+                {
+                    MaNV = "",
+                    HO = "",
+                    TEN = "",
+                    Phai = "",
+                    NgaySinh = "",
+                    DiaChi = "",
+                    Sdt = "",
+                    role = "",
+                    Trangthai = "",
+                };
+
+            }
 
 
 
