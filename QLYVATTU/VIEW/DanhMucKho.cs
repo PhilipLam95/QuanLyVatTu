@@ -104,7 +104,7 @@ namespace QLYVATTU.VIEW
                 MaKho = row["MAKHO"].ToString(),
                 TenKho = row["TENKHO"].ToString(),
             };
-            MessageBox.Show(row["MAKHO"].ToString());
+
             ListKho Kho_TrongForm = new ListKho
             {
                 MaKho= tBoxMakho.Text.Trim().ToString(),
@@ -133,14 +133,14 @@ namespace QLYVATTU.VIEW
                             }
                             else
                             {
-                                MessageBox.Show("Thêm Kho thất bại");
+                                MessageBox.Show("Kho này đã tồn tại ở chi nhánh bên kia");
                             }
                             break;
                         }
                     }
                 }
 
-                tBoxMakho.Enabled = false;
+                
                 btnLuu.Enabled = true;
 
             }

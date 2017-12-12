@@ -1,10 +1,10 @@
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.resx
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.cs
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\MatHang.Designer.cs
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\DangNhap.resx
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\DangNhap.cs
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\VIEW\DangNhap.Designer.cs
-F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe.config
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.exe
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\QLYVATTU.pdb
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\DevExpress.BonusSkins.v16.1.dll
@@ -191,6 +191,7 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\de\DevExpress.XtraChar
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\es\DevExpress.XtraCharts.v16.1.Wizard.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ja\DevExpress.XtraCharts.v16.1.Wizard.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ru\DevExpress.XtraCharts.v16.1.Wizard.resources.dll
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.FrmMain.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.Properties.Resources.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.REPORT.rptChiTietHangNhap.resources
@@ -202,6 +203,7 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.REPORT.rptTho
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.REPORT.rptTongChi.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.REPORT.rptTongThu.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.BackUp_Restore.resources
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.ChinhSuaNhanVien.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.CT_PhieuNhap.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DangNhap.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DanhMucKho.resources
@@ -209,6 +211,7 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DoiMatKh
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.DonDatHang.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.LoaiHang.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.MatHang.resources
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.NhaCungCap.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.PhieuNhap.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.PhieuXuat.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.REPORT_VIEW.ChiTietHangNhap.resources
@@ -220,6 +223,3 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.Genera
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
-F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.ChinhSuaNhanVien.resources
-F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
-F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.VIEW.NhaCungCap.resources

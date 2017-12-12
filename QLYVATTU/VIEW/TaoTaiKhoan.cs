@@ -21,8 +21,11 @@ namespace QLYVATTU.VIEW
             InitializeComponent();
         }
         private DataTable nv;
+        //private static List<string> NHANVIEN_TrongBang = null;
+
 
         private Stack<Command> _commands;
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -480,7 +483,6 @@ namespace QLYVATTU.VIEW
                 role_login = rabtnUser.Text.ToString();
             }
 
-            MessageBox.Show(role_login);
             string gioitinh = "";
             if(rabtnNam.Checked )
             {
@@ -524,37 +526,54 @@ namespace QLYVATTU.VIEW
 
             };
 
-            if (red != null)
-            {
-                ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
-                {
-                    MaNV = red["MANV"].ToString(),
-                    HO = red["HO"].ToString(),
-                    TEN = red["TEN"].ToString(),
-                    Phai = red["PHAI"].ToString(),
-                    NgaySinh = red["NGAYSINH"].ToString(),
-                    DiaChi = red["DIACHI"].ToString(),
-                    Sdt = red["SODT"].ToString(),
-                    role = red["CHUCVU"].ToString(),
-                    Trangthai = red["TRTHAI"].ToString(),
-                };
-            }
-            else
-            {
-                ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
-                {
-                    MaNV = "",
-                    HO = "",
-                    TEN = "",
-                    Phai = "",
-                    NgaySinh = "",
-                    DiaChi = "",
-                    Sdt = "",
-                    role = "",
-                    Trangthai = "",
-                };
+            //if (red == null)
+            //{
+            //    ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
+            //    {
+            //        MaNV = "",
+            //        HO = "",
+            //        TEN = "",
+            //        Phai = "",
+            //        NgaySinh = "",
+            //        DiaChi = "",
+            //        Sdt = "",
+            //        role = "",
+            //        Trangthai = "",
+            //    };
+            //}
 
-            }
+
+            
+            ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
+            {
+                MaNV = red["MANV"].ToString(),
+                HO = red["HO"].ToString(),
+                TEN = red["TEN"].ToString(),
+                Phai = red["PHAI"].ToString(),
+                NgaySinh = red["NGAYSINH"].ToString(),
+                DiaChi = red["DIACHI"].ToString(),
+                Sdt = red["SODT"].ToString(),
+                role = red["CHUCVU"].ToString(),
+                Trangthai = red["TRTHAI"].ToString(),
+            };
+
+            //}
+            //else
+            //{
+            //    ListNhanVien NHANVIEN_TrongBang = new ListNhanVien
+            //    {
+            //        MaNV = "",
+            //        HO = "",
+            //        TEN = "",
+            //        Phai = "",
+            //        NgaySinh = "",
+            //        DiaChi = "",
+            //        Sdt = "",
+            //        role = "",
+            //        Trangthai = "",
+            //    };
+            //}
+
 
 
 
@@ -567,6 +586,7 @@ namespace QLYVATTU.VIEW
                 }
                 else
                 {
+
                     int code = Execute("insert", NHANVIEN_TrongFORM, NHANVIEN_TrongBang);
                     if (code == 0)
                     {
