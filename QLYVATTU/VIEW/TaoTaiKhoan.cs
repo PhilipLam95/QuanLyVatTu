@@ -80,8 +80,15 @@ namespace QLYVATTU.VIEW
         {
             NhanVien nhanvien = new NhanVien();
             nv = nhanvien.getNhanVien_User_ChiNhanh();
-            sP_LAYNHANVIEN_USERGridControl.DataSource = nv;
-            sP_LAYNHANVIEN_USERGridControl.DataMember = nv.TableName;
+            if (nv == null)
+            {
+                sP_LAYNHANVIEN_USERGridControl.DataSource = null;
+            }
+            else
+            {
+                sP_LAYNHANVIEN_USERGridControl.DataSource = nv;
+                sP_LAYNHANVIEN_USERGridControl.DataMember = nv.TableName;
+            }
         }
 
         private void load_DS_Nhanvien_User()
