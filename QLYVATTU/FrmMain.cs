@@ -349,7 +349,7 @@ namespace QLYVATTU
             btnLoaiHang.Enabled = true;
             btnHang.Enabled = true;
             btnNhaCC.Enabled = true;
-            btnKhachHang.Enabled = true;
+            //btnKhachHang.Enabled = true;
             btnDoiMatKhau.Enabled = true;
             //btnDangXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnDangXuat.Visible = true;
@@ -380,7 +380,7 @@ namespace QLYVATTU
             btnLoaiHang.Enabled = false;
             btnHang.Enabled = false;
             btnNhaCC.Enabled = false;
-            btnKhachHang.Enabled = false;
+            //btnKhachHang.Enabled = false;
             btnDoiMatKhau.Enabled = false;
             // btnDangXuat.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnDangXuat.Visible = false;
@@ -398,6 +398,7 @@ namespace QLYVATTU
             HienThiTrangChu();
             label1.Visible = true;
             label1.Text = "Xin chào " + Access.HOTEN;
+            btnNhaCC.Enabled = false;
             if (ActiveMdiChild != null)
             {
                 ActiveMdiChild.Hide();
@@ -427,7 +428,7 @@ namespace QLYVATTU
             btnDoiMatKhau.Enabled = true;
             btnMatHang.Enabled = true;
             btnNhaCC.Enabled = true;
-            btnKhachHang.Enabled = true;
+            //btnKhachHang.Enabled = true;
             rbpBaoCao.Visible = true;
             rbQLNhanvien.Visible = true;
             btnMatHang.Enabled = true;

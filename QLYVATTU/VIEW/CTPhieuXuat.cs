@@ -22,8 +22,8 @@ namespace QLYVATTU.VIEW
             Sender = new SendMessage(GetMessage);
         }
 
-        private DataTable hd;
-        private DataTable ctHD;
+       
+        
 
         private void Load_CTPX(string ctPX)
         {

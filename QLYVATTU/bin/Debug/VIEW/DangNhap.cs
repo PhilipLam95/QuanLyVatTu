@@ -121,6 +121,10 @@ namespace QLYVATTU.VIEW
                             }
 
                         }
+                        else
+                        {
+                            MessageBox.Show("Nhân viên này đã nghỉ. Không thể đăng nhập");
+                        }
                         reader.Close();
                     }
 

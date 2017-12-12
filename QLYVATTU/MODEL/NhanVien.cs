@@ -16,9 +16,30 @@ namespace QLYVATTU.MODEL
         public static String SP_KIEMTRA_ROLE = "SP_KIEMTRA_ROLE";
         public static String SP_LOAD_USER = "SP_LOAD_USER";
         public static string SP_DOIMATKHAU = "SP_DOIMATKHAU";
+        public static String SP_LAYNHANVIEN_USER = "SP_LAYNHANVIEN_USER";
+        public static String SP_LAYNHANVIEN_USER_CHINHANH = "SP_LAYNHANVIEN_USER_CHINHANH";
+        public static String SP_LAYMA_NV_TUDONG = "SP_LAYMA_NV_TUDONG";
         public DataTable getNhanVien() // lay nhan vien
         {
             DataTable nhanvien = Access.ExecuteQuery(SP_LAY_NHANVIEN, null);
+            return nhanvien;
+        }
+
+        public DataTable getManvtudong()
+        {
+            DataTable nhanvien = Access.ExecuteQuery(SP_LAYMA_NV_TUDONG, null);
+            return nhanvien;
+        }
+
+        public DataTable getNhanVienUser()
+        {
+            DataTable nhanvien = Access.ExecuteQuery(SP_LAYNHANVIEN_USER, null);
+            return nhanvien;
+        }
+
+        public DataTable getNhanVien_User_ChiNhanh()
+        {
+            DataTable nhanvien = Access.ExecuteQuery(SP_LAYNHANVIEN_USER_CHINHANH, null);
             return nhanvien;
         }
 

@@ -152,12 +152,19 @@
     <Compile Include="STACK\Command.cs" />
     <Compile Include="STACK\KhoCommand.cs" />
     <Compile Include="STACK\LoaiVTCommand.cs" />
+    <Compile Include="STACK\NhanVienCommand.cs" />
     <Compile Include="STACK\VatTuCommand.cs" />
     <Compile Include="VIEW\BackUp-Restore.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VIEW\BackUp-Restore.Designer.cs">
       <DependentUpon>BackUp-Restore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\ChinhSuaNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\ChinhSuaNhanVien.Designer.cs">
+      <DependentUpon>ChinhSuaNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEW\CTPhieuXuat.cs">
       <SubType>Form</SubType>
@@ -308,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\BackUp-Restore.resx">
       <DependentUpon>BackUp-Restore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\ChinhSuaNhanVien.resx">
+      <DependentUpon>ChinhSuaNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\CT_PhieuNhap.resx">
       <DependentUpon>CT_PhieuNhap.cs</DependentUpon>

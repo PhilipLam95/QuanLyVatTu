@@ -36,7 +36,6 @@
             this.btnMatHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhaCC = new DevExpress.XtraBars.BarButtonItem();
-            this.btnKhachHang = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -81,7 +80,6 @@
             this.btnMatHang,
             this.btnHang,
             this.btnNhaCC,
-            this.btnKhachHang,
             this.barButtonItem1,
             this.barButtonItem3,
             this.barButtonItem4,
@@ -146,15 +144,6 @@
             this.btnNhaCC.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnNhaCC.LargeGlyph")));
             this.btnNhaCC.Name = "btnNhaCC";
             this.btnNhaCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhaCC_ItemClick);
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.Caption = "KHÁCH HÀNG";
-            this.btnKhachHang.Enabled = false;
-            this.btnKhachHang.Glyph = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.Glyph")));
-            this.btnKhachHang.Id = 6;
-            this.btnKhachHang.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.LargeGlyph")));
-            this.btnKhachHang.Name = "btnKhachHang";
             // 
             // barButtonItem1
             // 
@@ -299,7 +288,6 @@
             // rbDoiTac
             // 
             this.rbDoiTac.ItemLinks.Add(this.btnNhaCC);
-            this.rbDoiTac.ItemLinks.Add(this.btnKhachHang);
             this.rbDoiTac.Name = "rbDoiTac";
             this.rbDoiTac.Text = "ĐỐI TÁC";
             // 
@@ -464,7 +452,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbpHeThong;
         private DevExpress.XtraBars.BarButtonItem btnHang;
         private DevExpress.XtraBars.BarButtonItem btnNhaCC;
-        private DevExpress.XtraBars.BarButtonItem btnKhachHang;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbDoiTac;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbpNghiepVu;
         private DevExpress.XtraBars.Ribbon.RibbonPage rbpBaoCao;

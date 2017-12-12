@@ -137,6 +137,7 @@
             // tbSDT
             // 
             this.tbSDT.Location = new System.Drawing.Point(453, 31);
+            this.tbSDT.MaxLength = 11;
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.Size = new System.Drawing.Size(158, 22);
             this.tbSDT.TabIndex = 1;

@@ -18,6 +18,7 @@ namespace QLYVATTU.VIEW
         private DataTable nhaCC;
         private DataTable vatTu;
         private DataTable ctNCC;
+        DataTable temp = new DataTable();
         private String maNCC = "";  //ma chi nhanh null co nghi la tao chi nhanh moi, nêu khac thi cap nhat
         private String maVT = "";
         private String maLoai = "";
@@ -68,6 +69,11 @@ namespace QLYVATTU.VIEW
             ChiTietNCC.Columns.Add("Xóa", typeof(bool));
             ChiTietNCC.Columns[4].DefaultValue = false;
         }
+
+        private void BangTam()
+        {
+            temp.Columns.Add("Mã Vật Tư", typeof(string));
+        }
         private void NhaCungCap_Load(object sender, EventArgs e)
         {
             tbTenVT.ReadOnly = true;
@@ -83,6 +89,7 @@ namespace QLYVATTU.VIEW
             grvDSVT.DataMember = vatTu.TableName;
 
             GrvChiTietNCC();
+            BangTam();
         }
 
         private void DSNCC_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -110,7 +117,7 @@ namespace QLYVATTU.VIEW
                 grvCTNCC.DataSource = ChiTietNCC;
                 grvCTNCC.DataBindings.Clear();
             }
-            btTaoNCC.Text = "Cập Nhật NCC";
+            btTaoNCC.Enabled = false;
         }
 
         private void VatTu_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -143,7 +150,13 @@ namespace QLYVATTU.VIEW
             ChiTietNCC.Rows.Add(maVT, tenVT, maLoai, donVi);
             grvCTNCC.DataSource = ChiTietNCC;
             grvCTNCC.DataBindings.Clear();
-            return;
+            if(maNCC != "")
+            {
+                string[] param = { maNCC.Trim(), maVT.Trim() };
+                MDNhaCungCap nhacungcap = new MDNhaCungCap();
+                int x = nhacungcap.ThemVTNCC(param);
+                return;
+            }
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -155,7 +168,11 @@ namespace QLYVATTU.VIEW
                 bool check = (bool)gridView2.GetRowCellValue(i, gridView2.Columns[4]);
                 if (check)
                 {
+                    string mvattu = gridView2.GetRowCellValue(i, gridView2.Columns[0]).ToString();
                     gridView2.DeleteRow(i);
+                    string[] param = { maNCC, mvattu };
+                    MDNhaCungCap nhacungcap = new MDNhaCungCap();
+                    int x = nhacungcap.xoaVTNCC(param);
                     y--;
                     i = -1;
                 }
@@ -221,7 +238,7 @@ namespace QLYVATTU.VIEW
             ChiTietNCC.Clear();
             maNCC = "";
             maVT = "";
-            btTaoNCC.Text = "Tạo Nhà Cung Cấp";
+            btTaoNCC.Enabled = true;
         }
 
         private void gridView1_Click(object sender, EventArgs e)

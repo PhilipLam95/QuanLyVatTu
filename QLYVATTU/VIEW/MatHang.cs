@@ -31,7 +31,7 @@ namespace QLYVATTU.VIEW
         private void MatHang_Load(object sender, EventArgs e)
         {
 
-            btnReload.PerformClick();
+            //btnReload.PerformClick();
             _commands = new Stack<Command>();
             loadvattu();
             loadLoaiVT();
@@ -70,6 +70,7 @@ namespace QLYVATTU.VIEW
             Command command = new Vattu_Command(_operator, _operand, oldstate);
             int code = command.Execute();
             _commands.Push(command);
+            MessageBox.Show(_commands.Count.ToString());
             btnUndo.Enabled = true;
             return code;
         }

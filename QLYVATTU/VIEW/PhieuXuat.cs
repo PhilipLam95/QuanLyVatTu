@@ -35,7 +35,9 @@ namespace QLYVATTU.VIEW
         private string maKho;
         private string tKho;
         decimal tongTien = 0;
-        int rowCur = 0; //lấy số dòng hiện tại trong gridview chi tiết hóa đơn
+
+        private static int index = 0;
+        
         DataTable chiTietPX = new DataTable();
 
         FrmMain f = Program.fmain;
@@ -117,10 +119,14 @@ namespace QLYVATTU.VIEW
             //gvVatTu.DataMember = vt.TableName;
             lbMaKH.Hide();  //label lay ma khach hang khi lay ma tu dong hoac click chuot kh co san
 
-            Timer timer = new Timer();
-            timer.Interval = (10 * 700); // 7 secs
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
+            if(index == 1)
+            {
+                Timer timer = new Timer();
+                timer.Interval = (10 * 700); // 7 secs
+                timer.Tick += new EventHandler(timer_Tick);
+                timer.Start();
+            }
+            
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -186,6 +192,7 @@ namespace QLYVATTU.VIEW
 
         private void cb_DSKho_SelectedIndexChanged(object sender, EventArgs e)
         {
+            index = 1;
             string tenKho = cb_DSKho.SelectedItem.ToString();
             HoaDon hoaDon = new HoaDon();
             string[] param = { tenKho };
