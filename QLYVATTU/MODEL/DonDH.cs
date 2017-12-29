@@ -24,9 +24,11 @@ namespace QLYVATTU.MODEL
             return dondh;
         }
 
-        public DataTable getChiTietDonDatHang()
+        public DataTable getChiTietDonDatHang(string[] param)
         {
-            DataTable dondh = Access.ExecuteQuery(SP_DS_CHITIET_DONDATHANG, null);
+            string[] name = { "@MADDH" };
+            Console.WriteLine(name[0]);
+            DataTable dondh = Access.ExecuteQuery(SP_DS_CHITIET_DONDATHANG, name, param, 1);
             return dondh;
         }
         public DataTable getKho()

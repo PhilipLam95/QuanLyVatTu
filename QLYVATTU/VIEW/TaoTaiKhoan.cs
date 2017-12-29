@@ -47,10 +47,7 @@ namespace QLYVATTU.VIEW
             //int gioitinh = Convert.ToInt32(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, gridView1.Columns[4]));
             Check_role_congty();
 
-            Timer timer = new Timer();
-            timer.Interval = (10 * 700); // 6 secs
-            timer.Tick += new EventHandler(timer_Tick);
-            timer.Start();
+            
 
         }
         private int Execute(string _operator, ListNhanVien _operand, ListNhanVien oldstate)
@@ -58,16 +55,12 @@ namespace QLYVATTU.VIEW
             Command command = new NhanVienCommand(_operator, _operand, oldstate);
             int code = command.Execute();
             _commands.Push(command);
-            MessageBox.Show(_commands.Count.ToString());
             btnUndo.Enabled = true;
             return code;
         }
 
 
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            loadTheoRole();
-        }
+       
 
 
         private void load_DS_NHANVIEn()
@@ -98,8 +91,15 @@ namespace QLYVATTU.VIEW
         {
             NhanVien nhanvien = new NhanVien();
             nv = nhanvien.getNhanVienUser();
-            sP_LAYNHANVIEN_USERGridControl.DataSource = nv;
-            sP_LAYNHANVIEN_USERGridControl.DataMember = nv.TableName;
+            if (nv == null)
+            {
+                sP_LAYNHANVIEN_USERGridControl.DataSource = null;
+            }
+            else
+            {
+                sP_LAYNHANVIEN_USERGridControl.DataSource = nv;
+                sP_LAYNHANVIEN_USERGridControl.DataMember = nv.TableName;
+            }
         }
 
         private void Check_role_congty()
@@ -369,7 +369,7 @@ namespace QLYVATTU.VIEW
         {
             panel6.Visible = false;
             btnLuu.Enabled = true;
-            btnHuy.Enabled = false;
+            btnHuy.Enabled = true;
 
             tboxUserName.Enabled = false;
             tboxPassword.Enabled = false;

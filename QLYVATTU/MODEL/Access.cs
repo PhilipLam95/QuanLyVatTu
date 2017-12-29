@@ -62,27 +62,33 @@ namespace QLYVATTU.MODEL
                 connection.Close();
         }
 
-        public static DataTable ExecuteQuery(string _cmd, string[] name = null, object[] value = null, int NoParam = 0,
-            CommandType cmdType = CommandType.StoredProcedure)
+        public static DataTable ExecuteQuery(string _cmd, string[] name = null, object[] value = null, int NoParam = 0)
         {
             try
             {
+
+                CommandType cmdType = CommandType.StoredProcedure;
                 DataTable dataTable;
-                if (connection == null || connection.State == ConnectionState.Closed)
-                {
-                    Connect();
-                }
+                    if (connection == null || connection.State == ConnectionState.Closed)
+                    {
+                        Connect();
+                    }
                 using (SqlCommand sqlCmd = new SqlCommand(_cmd, connection))
                 {
                     for (int i = 0; i < NoParam; i++)
                     {
                         sqlCmd.Parameters.AddWithValue(name[i], value[i]);
                     }
+
+                    if (param != null)
+                    command.Parameters.AddRange(param);'
+
+                    
                     sqlCmd.CommandType = cmdType;
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCmd);
                     dataTable = new DataTable();
-                    Close();
                     dataAdapter.Fill(dataTable);
+
                     Close();
                 }
                 return dataTable;

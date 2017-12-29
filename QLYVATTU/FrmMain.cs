@@ -30,6 +30,15 @@ namespace QLYVATTU
         private void Form1_Load(object sender, EventArgs e)
         {
             LoadSetting();
+            foreach(Connection cnn in Access.CnnList)
+            {
+                Console.WriteLine(cnn.Name);
+            }
+
+            Connection[] myarray = Access.CnnList.ToArray();
+           
+
+            Console.WriteLine(Access.CnnList.ToArray());
             VIEW.DangNhap f = new VIEW.DangNhap() { MdiParent = this, Text = "Đăng nhập" };
             f.Show();
 

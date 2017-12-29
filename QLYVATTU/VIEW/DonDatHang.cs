@@ -120,10 +120,21 @@ namespace QLYVATTU.VIEW
 
         private void loadChiTiet_DDH() // load Chitiet DDH
         {
+            DataRow row = gridView1.GetFocusedDataRow();
+            string[] param = { row["MADDH"].ToString() };
+            MessageBox.Show(param[0].ToString());
             DonDH dondh = new DonDH();
-            ddh = dondh.getChiTietDonDatHang();
-            sP_DS_CHITIET_DONDATHANGGridControl.DataSource = ddh;
-            sP_DS_CHITIET_DONDATHANGGridControl.DataMember = ddh.TableName;
+            ddh = dondh.getChiTietDonDatHang(param);
+            if(ddh == null)
+            {
+                sP_DS_CHITIET_DONDATHANGGridControl.DataSource = null;
+            }
+            else
+            {
+                sP_DS_CHITIET_DONDATHANGGridControl.DataSource = ddh;
+                sP_DS_CHITIET_DONDATHANGGridControl.DataMember = ddh.TableName;
+            }
+           
         }
         // Cac function load khi moi bat dau mo page-----------------------------------------------------------------------------------------------
 
@@ -174,7 +185,7 @@ namespace QLYVATTU.VIEW
             loadVattu();
             loadVatthTrongKho();
             loadDDH();
-            loadChiTiet_DDH();
+            
             label12.Text = "'"+mAKHOComboBox.Text.Trim()+"':";
         }
         //---------------------------------------------------------------------------------------------------------
@@ -535,6 +546,11 @@ namespace QLYVATTU.VIEW
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void sP_DS_DONDATHANGGridControl_Click(object sender, EventArgs e)
+        {
+            loadChiTiet_DDH();
         }
     }
 }

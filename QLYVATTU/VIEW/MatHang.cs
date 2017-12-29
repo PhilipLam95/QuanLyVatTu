@@ -121,6 +121,7 @@ namespace QLYVATTU.VIEW
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             EnableFor();
+            btnLuu.Enabled = true;
         }
 
 
@@ -137,7 +138,8 @@ namespace QLYVATTU.VIEW
             cBoxLoaiVT.SelectedIndex = 0;
             tBoxDonvi.Text = "";
             tBoxDongia.Text = "";
-            btnLuu.Enabled = true;
+           
+            
             btnHuy.Enabled = true;
         }
 
@@ -203,14 +205,14 @@ namespace QLYVATTU.VIEW
                 MALOAI = MA_LOAI_TRONGFORM,
             };
 
-
+            DataRow row = gridView1.GetFocusedDataRow();
             if (tBoxMaVT.Enabled)
             {
                 
                 for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    if (tBoxMaVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["MAVT"]).ToString() ||
-                        tboxTenVT.Text.Trim().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString())
+                    if (tBoxMaVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["MAVT"]).ToString().Trim().ToUpper() ||
+                        tboxTenVT.Text.Trim().ToString().ToUpper() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString().Trim().ToUpper())
                     {
                         MessageBox.Show("Vat tu them da ton tai");
                         break;
@@ -224,7 +226,9 @@ namespace QLYVATTU.VIEW
                                 int code = Execute("insert", VT_TrongFORM, VT_TrongBang);
                                 if (code == 0)
                                 {
+                                    MessageBox.Show("Thêm vật tư thành công");
                                     btnReload.PerformClick();
+                                    EnableFor();
 
                                 }
                                 else
@@ -241,16 +245,17 @@ namespace QLYVATTU.VIEW
                     }
                 }
 
-                tBoxMaVT.Enabled = false;
+               
                 btnLuu.Enabled = true;
 
             }
             else
             {
-
+                string tenvt = row["TENVT"].ToString().Trim().ToUpper();
                 for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    if (tboxTenVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString().Trim().ToUpper())
+                    if (tboxTenVT.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENVT"]).ToString().Trim().ToUpper()
+                        && tboxTenVT.Text.Trim().ToUpper().ToString() != tenvt)
                     {
                         MessageBox.Show("Vat tu them da ton tai");
                         break;
@@ -262,8 +267,8 @@ namespace QLYVATTU.VIEW
                             int code = Execute("update", VT_TrongFORM, VT_TrongBang);
                             if (code == 0)
                             {
+                                MessageBox.Show("Lưu vật tư thành công");
                                 btnReload.PerformClick();
-
                             }
                             else
                             {
@@ -299,15 +304,28 @@ namespace QLYVATTU.VIEW
                 DONGIA = Convert.ToDecimal(tBoxDongia.Text.Trim()),
                 MALOAI = MA_LOAI_TRONGFORM,
             };
-
-            int code = Execute("delete", VT_TrongFORM, VT_TrongBang);
-            if (code == 0)
+            try
             {
-                //MessageBox.Show("Xoá thành công");
-                btnReload.PerformClick();
+                int code = Execute("delete", VT_TrongFORM, VT_TrongBang);
+                if (code == 0)
+                {
+                    //MessageBox.Show("Xoá thành công");
+                    btnReload.PerformClick();
+                    tBoxMaVT.Text = "";
+                    tboxTenVT.Text = "";
+                    tBoxDonvi.Text = "";
+                    tBoxDongia.Text = "";
+                    tBoxMaVT.Enabled = false;
+                    btnHuy.Enabled = false;
+                    btnLuu.Enabled = false;
+                }
+                else
+                    MessageBox.Show("Xoá thất bại.");
             }
-            else
-                MessageBox.Show("Xoá thất bại.");
+            catch
+            {
+                MessageBox.Show("Vật tư này đang được bán. Bạn không thể xóa");
+            }
             tBoxMaVT.Enabled = false;
             btnXoa.Enabled = true;
         }
@@ -417,7 +435,7 @@ namespace QLYVATTU.VIEW
         {
             loadvattu();
             btnLuu.Enabled = false;
-            FocusedRowChanged();
+            
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

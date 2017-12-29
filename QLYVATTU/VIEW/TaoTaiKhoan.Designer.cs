@@ -457,6 +457,7 @@
             this.sP_LAY_NHANVIENGridControl.TabIndex = 0;
             this.sP_LAY_NHANVIENGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.sP_LAY_NHANVIENGridControl.Visible = false;
             // 
             // sP_LAY_NHANVIENBindingSource
             // 
@@ -820,6 +821,7 @@
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colMANV
             // 

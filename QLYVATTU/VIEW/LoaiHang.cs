@@ -34,8 +34,16 @@ namespace QLYVATTU.VIEW
         {
             VatTu loaivattu = new VatTu();
             lvt = loaivattu.getLoaiVatTu();
-            sP_DS_LOAIVTGridControl.DataSource = lvt;
-            sP_DS_LOAIVTGridControl.DataMember = lvt.TableName;
+            if(lvt == null)
+            {
+                sP_DS_LOAIVTGridControl.DataSource = null;
+            }
+            else
+            {
+                sP_DS_LOAIVTGridControl.DataSource = lvt;
+                sP_DS_LOAIVTGridControl.DataMember = lvt.TableName;
+            }
+           
         }
 
         private void FocusRowChange()
@@ -103,32 +111,65 @@ namespace QLYVATTU.VIEW
 
             if(tBoxMaloai.Enabled)
             {
-                int code = Execute("insert", LvtTrongForm, LvtTrongBang);
-                if (code == 0)
+                for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    btnReload.PerformClick();
-                    MessageBox.Show("Them loai vat tu thanh cong");
-                    btnUndo.Enabled = true;
-                    //MessageBox.Show("Tạo môn học thành công");
+                    if (tBoxMaloai.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["MALOAI"]).ToString().Trim().ToUpper() ||
+                        tBoxTenLoai.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENLOAI"]).ToString().Trim().ToUpper())
+                    {
+                        MessageBox.Show(" Loại Vat tu them da ton tai");
+                        break;
+                    }
+                    else
+                    {
+                        if (i == (gridView1.RowCount - 1))
+                        {
+                            int code = Execute("insert", LvtTrongForm, LvtTrongBang);
+                            if (code == 0)
+                            {
+                                btnReload.PerformClick();
+                                MessageBox.Show("Them loai vat tu thanh cong");
+                                btnUndo.Enabled = true;
+                                return;
+                                //MessageBox.Show("Tạo môn học thành công");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Tạo loại vật tư thất bại");
+                            }
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Tạo loại vật tư thất bại");
-                }
-                tBoxMaloai.Enabled = false;
+                tBoxMaloai.Enabled = true;
+                
+               
             }
             else
             {
-                int code = Execute("update", LvtTrongForm, LvtTrongBang);
-                if (code == 0)
+                for (int i = 0; i < gridView1.RowCount; i++)
                 {
-                    btnReload.PerformClick();
-                   MessageBox.Show("Lưu loại vật tư thành công");
-                    btnUndo.Enabled = true;
-                }
-                else
-                {
-                    MessageBox.Show("Lưu loại vật tư thất bại");
+                    if (tBoxTenLoai.Text.Trim().ToUpper().ToString() == gridView1.GetRowCellValue(i, gridView1.Columns["TENLOAI"]).ToString().Trim().ToUpper())
+                    {
+                        MessageBox.Show(" Loại Vat tu them da ton tai");
+                        break;
+                    }
+                    else
+                    {
+                        if (i == (gridView1.RowCount - 1))
+                        {
+                            int code = Execute("update", LvtTrongForm, LvtTrongBang);
+                            if (code == 0)
+                            {
+                                btnReload.PerformClick();
+                                MessageBox.Show("Lưu loại vật tư thành công");
+                                btnUndo.Enabled = true;
+                                return;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Lưu loại vật tư thất bại");
+                            }
+                        }
+                    }
                 }
                
             }
@@ -154,7 +195,7 @@ namespace QLYVATTU.VIEW
         {
             loadLoaiVT();
             btnLuu.Enabled = false;
-            FocusRowChange();
+            
         }
 
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

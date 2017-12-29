@@ -38,7 +38,7 @@
             System.Windows.Forms.Label sOLUONGLabel;
             System.Windows.Forms.Label label3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PhieuNhap));
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.sP_DS_DONDATHANG_CHUANHAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qL_VATTUDataSet = new QLYVATTU.QL_VATTUDataSet();
             this.sP_DS_CHITIET_DONDATHANG_THEOMABindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -806,9 +806,9 @@
             // 
             this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.DataSource = this.sP_DS_CHITIET_DONDATHANG_THEOMABindingSource;
             this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.Location = new System.Drawing.Point(3, 16);
             this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.MainView = this.gridView2;
             this.sP_DS_CHITIET_DONDATHANG_THEOMAGridControl.Name = "sP_DS_CHITIET_DONDATHANG_THEOMAGridControl";

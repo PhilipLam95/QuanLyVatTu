@@ -70,7 +70,6 @@ namespace QLYVATTU.VIEW
             {
                 Connection cnn = Access.CnnList[cbChiNhanh.SelectedIndex];
                 string macn = cnn.MaCN;
-                MessageBox.Show(macn);
                 string manv = tbMaNV.Text;
                 SqlDataReader role;
                 NhanVien nhanvien = new NhanVien();

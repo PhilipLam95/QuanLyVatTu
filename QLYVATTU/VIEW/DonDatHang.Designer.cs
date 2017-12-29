@@ -329,6 +329,7 @@
             this.sP_DS_DONDATHANGGridControl.TabIndex = 0;
             this.sP_DS_DONDATHANGGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.sP_DS_DONDATHANGGridControl.Click += new System.EventHandler(this.sP_DS_DONDATHANGGridControl_Click);
             // 
             // gridView1
             // 
@@ -342,6 +343,7 @@
             this.gridView1.GridControl = this.sP_DS_DONDATHANGGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;

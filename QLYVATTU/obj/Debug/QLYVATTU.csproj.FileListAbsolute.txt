@@ -191,7 +191,6 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\de\DevExpress.XtraChar
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\es\DevExpress.XtraCharts.v16.1.Wizard.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ja\DevExpress.XtraCharts.v16.1.Wizard.resources.dll
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\bin\Debug\ru\DevExpress.XtraCharts.v16.1.Wizard.resources.dll
-F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.FrmMain.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.Properties.Resources.resources
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.REPORT.rptChiTietHangNhap.resources
@@ -223,3 +222,4 @@ F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csproj.Genera
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe.licenses
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.exe
 F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.pdb
+F:\ProjectPhantan\QLYVATTU\QuanLyVatTu\QLYVATTU\obj\Debug\QLYVATTU.csprojResolveAssemblyReference.cache
